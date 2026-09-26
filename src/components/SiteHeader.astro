@@ -8,11 +8,12 @@ const primary = [
   ['Arrangements', '/bouquets-and-arrangements/'],
   ['Gifts', '/gifts/'],
   ['Plants', '/plants/'],
+  ['Guides', '/guides/'],
+  ['Flower Culture', '/flower-culture/'],
+  ['FAQ', '/faq/'],
 ];
-const secondary = [['Guides', '/guides/'], ['Flower Culture', '/flower-culture/'], ['FAQ', '/faq/']];
 ---
 
-<div class="notice-band">Local flower guides for clearer gifting decisions.</div>
 <header class="site-header">
   <div class="inner shell">
     <a class="brand" href="/" aria-label="Online Florist Singapore home">
@@ -28,13 +29,10 @@ const secondary = [['Guides', '/guides/'], ['Flower Culture', '/flower-culture/'
         <X class="menu-close-icon" size={24} aria-hidden="true" />
       </summary>
       <nav class="mobile-panel" aria-label="Mobile navigation">
-        {[...primary, ...secondary].map(([label, href]) => <a href={href}>{label}</a>)}
+        {primary.map(([label, href]) => <a href={href}>{label}</a>)}
       </nav>
     </details>
   </div>
-  <nav class="secondary-nav shell" aria-label="Secondary navigation">
-    {secondary.map(([label, href]) => <a href={href}>{label}</a>)}
-  </nav>
 </header>
 
 <style>
