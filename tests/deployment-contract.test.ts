@@ -20,5 +20,16 @@ describe('deployment contract', () => {
   it('does not mention legacy uploaded media in deployable redirects', () => {
     expect(redirectsFile).not.toContain('/wp-content/uploads/');
   });
-});
 
+  it('contains no redirect that becomes a self-loop after slash normalization', () => {
+    const rules = redirectsFile
+      .split('\n')
+      .map((line) => line.trim().split(/\s+/))
+      .filter((parts) => parts.length === 3 && parts[0].startsWith('/'));
+
+    for (const [source, destination] of rules) {
+      const normalizedSource = source.replace(/\/{2,}/g, '/');
+      expect(normalizedSource, `${source} redirects to itself`).not.toBe(destination);
+    }
+  });
+});
