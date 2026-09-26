@@ -20,7 +20,11 @@ const representativePaths = [
 
 test('homepage presents a knowledge-first flower guide', async ({ page }) => {
   await page.goto('/');
-  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Flower knowledge for Singapore');
+  const headerBrand = page.locator('.site-header').getByLabel('Hyper Florist home');
+  await expect(headerBrand).toBeVisible();
+  await expect(headerBrand.getByRole('img', { name: 'Hyper Florist logo' })).toBeVisible();
+  await expect(page.locator('.hero .eyebrow')).toHaveText('Hyper Florist');
+  await expect(page.getByRole('heading', { level: 1 })).toHaveText('Flowers for real Singapore occasions');
   await expect(page.locator('.topic-card')).toHaveCount(8);
   await expect(page.locator('.popular-questions a:not(.all-questions)')).toHaveCount(6);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://onlinefloristsingapore.com/');
@@ -45,7 +49,7 @@ test('FAQ directory lists questions without answers', async ({ page }) => {
 test('FAQ answer page uses the exact question and a single answer paragraph', async ({ page }) => {
   const question = 'How to dry flowers?';
   await page.goto('/faq/how-to-dry-flowers/');
-  await expect(page).toHaveTitle(`${question} | Online Florist Singapore`);
+  await expect(page).toHaveTitle(`${question} | Hyper Florist`);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(question);
   await expect(page.locator('.faq-answer')).toHaveCount(1);
   await expect(page.locator('.faq-answer')).not.toBeEmpty();

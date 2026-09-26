@@ -2,6 +2,7 @@
 import '../styles/global.css';
 import SiteFooter from '../components/SiteFooter.astro';
 import SiteHeader from '../components/SiteHeader.astro';
+import { brand } from '../lib/brand';
 
 interface Props {
   title: string;
@@ -19,8 +20,8 @@ const cloudflareToken = import.meta.env.PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN;
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Online Florist Singapore',
-  url: 'https://onlinefloristsingapore.com/',
+  name: brand.name,
+  url: brand.url,
   description: 'Singapore flower guides for choosing, caring for, arranging, and gifting flowers.',
 };
 const additionalSchemas = structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : [];
@@ -39,7 +40,7 @@ const additionalSchemas = structuredData ? (Array.isArray(structuredData) ? stru
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={socialImage} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#ffffff" />
+    <meta name="theme-color" content="#166c58" />
     <title>{title}</title>
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
     {additionalSchemas.map((schema) => <script type="application/ld+json" set:html={JSON.stringify(schema)} />)}

@@ -1,8 +1,14 @@
+---
+import { brand } from '../lib/brand';
+---
+
 <footer class="site-footer">
   <div class="shell">
     <div class="footer-grid knowledge-footer">
       <div>
-        <a class="brand" href="/"><strong>Online Florist Singapore</strong></a>
+        <a class="brand" href="/" aria-label={`${brand.name} home`}>
+          <img src={brand.logoPath} alt={`${brand.name} logo`} width="2000" height="2000" />
+        </a>
         <p>Plain-spoken Singapore flower guides for gifts, occasions, care, and delivery decisions.</p>
       </div>
       <nav aria-label="Learn about flowers">
@@ -27,7 +33,7 @@
       </nav>
     </div>
     <div class="footer-bottom">
-      <span>© {new Date().getFullYear()} Online Florist Singapore</span>
+      <span>© {new Date().getFullYear()} {brand.name}</span>
       <span>Flower availability, substitutions, and delivery terms depend on the florist.</span>
     </div>
   </div>

@@ -2,6 +2,7 @@
 import { ArrowRight, BookOpen, Flower2, Search, Sprout } from '@lucide/astro';
 import { getCollection } from 'astro:content';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { brand } from '../lib/brand';
 import { canonicalPages } from '../lib/site-pages';
 
 const pages = await getCollection('knowledgePages');
@@ -15,7 +16,7 @@ const topics = topLevelPaths.map((path) => pages.find((page) => page.data.path =
   <section class="hero knowledge-home-hero">
     <img src="/images/hero-flowers.jpg" alt="Fresh flowers being arranged on a florist's worktable" width="1920" height="1280" fetchpriority="high" />
     <div class="hero-content shell">
-      <p class="eyebrow">Online Florist Singapore</p>
+      <p class="eyebrow">{brand.name}</p>
       <h1>Flowers for real Singapore occasions</h1>
       <p>Choose better flowers for birthdays, openings, condolence visits, proposals, office gifts, and the small “thinking of you” moments in between.</p>
       <div class="hero-actions">

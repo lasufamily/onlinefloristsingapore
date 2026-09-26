@@ -1,4 +1,6 @@
 ---
+import { brand } from '../lib/brand';
+
 const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
 ---
 
@@ -52,7 +54,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     <div class="field full">
       <label class="checkbox" for="consent">
         <input id="consent" name="consent" type="checkbox" required />
-        <span>I agree that Online Florist Singapore may use these details to reply to my enquiry.</span>
+        <span>I agree that {brand.name} may use these details to reply to my enquiry.</span>
       </label>
     </div>
     {turnstileSiteKey ? (

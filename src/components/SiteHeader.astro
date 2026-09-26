@@ -1,5 +1,6 @@
 ---
 import { Menu, X } from '@lucide/astro';
+import { brand } from '../lib/brand';
 
 const primary = [
   ['Flowers', '/flowers/'],
@@ -16,9 +17,9 @@ const primary = [
 
 <header class="site-header">
   <div class="inner shell">
-    <a class="brand" href="/" aria-label="Online Florist Singapore home">
-      <strong>Online Florist Singapore</strong>
-      <span>Singapore flower guides</span>
+    <a class="brand" href="/" aria-label={`${brand.name} home`}>
+      <img src={brand.logoPath} alt={`${brand.name} logo`} width="2000" height="2000" />
+      <span>{brand.tagline}</span>
     </a>
     <nav class="desktop-nav" aria-label="Primary navigation">
       {primary.map(([label, href]) => <a href={href}>{label}</a>)}
