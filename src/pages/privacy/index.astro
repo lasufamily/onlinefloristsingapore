@@ -1,14 +1,25 @@
 ---
 import BaseLayout from '../../layouts/BaseLayout.astro';
+import { canonicalPages } from '../../lib/site-pages';
+const metadata = canonicalPages.find((page) => page.path === '/privacy/')!;
 ---
-<BaseLayout title="Privacy | Hyper Florist" description="How Hyper Florist handles personal information submitted through the website." canonicalPath="/privacy/">
+<BaseLayout title={metadata.title} description={metadata.description} canonicalPath={metadata.path}>
   <section class="section"><div class="shell" style="max-width:760px">
-    <p class="eyebrow">Privacy</p><h1 style="font-size:clamp(42px,6vw,68px)">Privacy notice</h1>
+    <h1 style="font-size:clamp(42px,6vw,68px)">Privacy notice</h1>
     <h2 style="font-size:28px;margin-top:42px">Information we collect</h2>
-    <p>When you send an enquiry, we collect the contact, occasion, delivery, message, and referral details shown in the form. We also keep a one-way hash of the request address for short-term abuse prevention. The raw address is not stored in the enquiry database.</p>
+    <h3>Enquiry details</h3>
+    <p>When you send an enquiry, we collect the name, email address, phone number, occasion, budget, delivery date, delivery area, message, consent choice, and referral details shown in the form. Only submit information that is relevant to the request.</p>
+    <h3>Technical protection data</h3>
+    <p>We keep a one-way keyed hash of the request address for short-term abuse prevention and rate limiting. The raw address is not stored in the enquiry database. Standard website analytics may also record aggregated visit and device information when analytics is enabled.</p>
     <h2 style="font-size:28px;margin-top:42px">How it is used</h2>
-    <p>We use the information to reply to your enquiry, understand the requested delivery details, prevent repeated automated submissions, and see which pages helped visitors get in touch. We do not sell it.</p>
+    <h3>Replying and operating the service</h3>
+    <p>We use the information to reply to your enquiry, understand the requested delivery details, follow up on questions, prevent repeated automated submissions, and see which pages helped visitors get in touch. We do not sell personal information.</p>
+    <h3>Service providers</h3>
+    <p>Information may be processed by hosting, database, anti-abuse, analytics, or email providers used to operate the website. These providers receive only the information needed for their role and handle it under their own security and privacy obligations.</p>
     <h2 style="font-size:28px;margin-top:42px">Retention and requests</h2>
-    <p>Enquiry records are kept only for customer service and operational needs. For privacy requests, use the contact form and include “Privacy request” in your message.</p>
+    <h3>How long information is kept</h3>
+    <p>Enquiry records are kept only for customer service, security, and operational needs, then removed when they are no longer required. Retention may vary when information must be preserved to resolve a request, investigate abuse, or meet a legal obligation.</p>
+    <h3>Access and correction requests</h3>
+    <p>To ask about personal information submitted through this website, use the contact form and include “Privacy request” in your message. Provide enough detail to identify the enquiry without sending additional sensitive information.</p>
   </div></section>
 </BaseLayout>

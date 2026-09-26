@@ -16,7 +16,6 @@ const knowledgePages = defineCollection({
     kind: z.enum(['hub', 'topic', 'guide']),
     title: z.string(),
     description: z.string(),
-    eyebrow: z.string(),
     heading: z.string(),
     intro: z.string(),
     image: z.string(),

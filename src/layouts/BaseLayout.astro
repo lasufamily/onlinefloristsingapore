@@ -9,10 +9,11 @@ interface Props {
   description: string;
   canonicalPath: string;
   image?: string;
+  noindex?: boolean;
   structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title, description, canonicalPath, image = '/images/hero-flowers.jpg', structuredData } = Astro.props;
+const { title, description, canonicalPath, image = '/images/hero-flowers.jpg', noindex = false, structuredData } = Astro.props;
 const canonical = new URL(canonicalPath, Astro.site);
 const socialImage = new URL(image, Astro.site);
 const ga4Id = import.meta.env.PUBLIC_GA4_ID;
@@ -33,6 +34,7 @@ const additionalSchemas = structuredData ? (Array.isArray(structuredData) ? stru
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+    {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="icon" type="image/png" sizes="32x32" href={brand.favicons.icon} />
     <link rel="apple-touch-icon" sizes="180x180" href={brand.favicons.appleTouchIcon} />
     <link rel="canonical" href={canonical} />

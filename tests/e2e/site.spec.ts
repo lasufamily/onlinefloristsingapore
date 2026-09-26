@@ -1,4 +1,16 @@
 import { expect, test } from '@playwright/test';
+import { readFileSync } from 'node:fs';
+
+const knowledgePages = JSON.parse(readFileSync(new URL('../../src/data/knowledge-pages.json', import.meta.url), 'utf8')) as { path: string }[];
+const faqEntries = JSON.parse(readFileSync(new URL('../../src/data/faq.json', import.meta.url), 'utf8')) as { slug: string }[];
+const canonicalPaths = [
+  '/',
+  '/faq/',
+  '/contact/',
+  '/privacy/',
+  ...knowledgePages.map(({ path }) => path),
+  ...faqEntries.map(({ slug }) => `/faq/${slug}/`),
+];
 
 const representativePaths = [
   '/',
@@ -27,14 +39,58 @@ test('homepage presents a knowledge-first flower guide', async ({ page }, testIn
   await expect(page.locator('.site-header .brand span')).toHaveCount(0);
   await expect(page.locator('.site-footer .brand img')).toHaveCount(0);
   const logoBox = await headerLogo.boundingBox();
-  expect(logoBox?.height).toBeGreaterThanOrEqual(testInfo.project.name === 'mobile' ? 54 : 70);
-  await expect(page.locator('.hero .eyebrow')).toHaveText('Hyper Florist');
+  expect(logoBox?.height).toBeGreaterThanOrEqual(testInfo.project.name === 'mobile' ? 110 : 140);
+  await expect(page.locator('.eyebrow, .article-marker, .topic-card .copy > span, .link-card > span')).toHaveCount(0);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Flowers for real Singapore occasions');
   await expect(page.locator('.topic-card')).toHaveCount(8);
   await expect(page.locator('.popular-questions a:not(.all-questions)')).toHaveCount(6);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://onlinefloristsingapore.com/');
   await expect(page.locator('link[rel="icon"]')).toHaveAttribute('href', '/favicon-32x32.png');
   await expect(page.locator('link[rel="apple-touch-icon"]')).toHaveAttribute('href', '/apple-touch-icon.png');
+});
+
+test('all canonical pages meet the on-page SEO baseline', async ({ page }, testInfo) => {
+  test.skip(testInfo.project.name !== 'desktop', 'One full-site crawl is sufficient');
+  test.setTimeout(180_000);
+  const titles = new Set<string>();
+  const descriptions = new Set<string>();
+
+  for (const path of canonicalPaths) {
+    const response = await page.goto(path, { waitUntil: 'networkidle' });
+    expect(response?.status(), path).toBe(200);
+    await page.locator('main').waitFor();
+
+    const headings = await page.locator('main h1, main h2, main h3').evaluateAll((elements) =>
+      elements.map((element) => Number(element.tagName.slice(1))),
+    );
+    expect(headings.filter((level) => level === 1), `${path} must have one H1`).toHaveLength(1);
+    expect(headings.includes(2), `${path} must have an H2`).toBe(true);
+    expect(headings.includes(3), `${path} must use H3s below its H2 sections`).toBe(true);
+    expect(
+      headings.every((level, index) => index === 0 || level <= headings[index - 1] + 1),
+      `${path} must not skip heading levels`,
+    ).toBe(true);
+
+    const title = await page.title();
+    const description = await page.locator('meta[name="description"]').getAttribute('content');
+    expect(title.length, `${path} title length`).toBeGreaterThanOrEqual(30);
+    expect(title.length, `${path} title length`).toBeLessThanOrEqual(65);
+    expect(description?.length, `${path} description length`).toBeGreaterThanOrEqual(110);
+    expect(description?.length, `${path} description length`).toBeLessThanOrEqual(160);
+    expect(titles.has(title), `${path} title must be unique`).toBe(false);
+    expect(descriptions.has(description ?? ''), `${path} description must be unique`).toBe(false);
+    titles.add(title);
+    descriptions.add(description ?? '');
+
+    await expect(page.locator('link[rel="canonical"]'), `${path} canonical`).toHaveAttribute('href', `https://onlinefloristsingapore.com${path}`);
+    await expect(page.locator('meta[name="robots"][content*="noindex"]'), `${path} must be indexable`).toHaveCount(0);
+    const imageAlts = await page.locator('main img').evaluateAll((images) => images.map((image) => image.getAttribute('alt')?.trim() ?? ''));
+    expect(imageAlts.every(Boolean), `${path} images need alt text`).toBe(true);
+
+    const wordCount = await page.locator('main').innerText().then((text) => text.trim().split(/\s+/).filter(Boolean).length);
+    expect(wordCount, `${path} main content`).toBeGreaterThanOrEqual(200);
+    await expect(page.locator('.eyebrow, .article-marker, .topic-card .copy > span, .link-card > span'), path).toHaveCount(0);
+  }
 });
 
 test('representative knowledge routes are substantive canonical pages', async ({ page }) => {

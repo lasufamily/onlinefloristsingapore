@@ -12,10 +12,28 @@ const grouped = categoryOrder.map((category) => ({ category, entries: faqs.filte
 
 <BaseLayout title={metadata.title} description={metadata.description} canonicalPath="/faq/">
   <header class="directory-hero shell">
-    <p class="eyebrow">Frequently asked questions</p>
     <h1>Flower questions Singapore buyers ask</h1>
     <p>Short, useful answers for flower care, meanings, occasions, hampers, plants, and delivery decisions.</p>
   </header>
+  <section class="section faq-overview">
+    <div class="shell">
+      <h2>How to use these flower answers</h2>
+      <div class="guidance-grid">
+        <section>
+          <h3>Start with the exact question</h3>
+          <p>Choose the question closest to the decision in front of you. Each answer gives a concise starting point, then links to broader guides where flower type, recipient, occasion, care, or delivery details need more context.</p>
+        </section>
+        <section>
+          <h3>Check the Singapore conditions</h3>
+          <p>Heat, humidity, air-conditioning, travel time, venue access, and the handover schedule can change otherwise sensible advice. Apply the answer to the actual setting instead of treating it as a fixed rule for every order.</p>
+        </section>
+        <section>
+          <h3>Confirm important details</h3>
+          <p>Before ordering, confirm substitutions, final dimensions, packaging, card wording, delivery timing, and care instructions. For medical, veterinary, or plant-safety concerns, verify the exact species and consult an appropriate professional.</p>
+        </section>
+      </div>
+    </div>
+  </section>
   <section class="section faq-directory">
     <div class="shell faq-category-list">
       {grouped.map(({ category, entries }) => entries.length > 0 && (

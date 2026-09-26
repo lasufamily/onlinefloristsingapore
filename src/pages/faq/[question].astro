@@ -3,6 +3,7 @@ import { ArrowRight, ChevronRight, ExternalLink } from '@lucide/astro';
 import { getCollection } from 'astro:content';
 import BaseLayout from '../../layouts/BaseLayout.astro';
 import { brand } from '../../lib/brand';
+import { optimizeDescription, optimizeTitle } from '../../lib/seo';
 
 export async function getStaticPaths() {
   const faqs = await getCollection('faq');
@@ -13,17 +14,52 @@ const { faq } = Astro.props;
 const pages = await getCollection('knowledgePages');
 const byPath = new Map(pages.map((page) => [page.data.path, page]));
 const related = faq.data.relatedPages.map((path) => byPath.get(path)).filter(Boolean);
-const title = `${faq.data.question} | ${brand.name}`;
+const title = optimizeTitle(`${faq.data.question} | ${brand.name}`, faq.data.question);
+const categoryNotes: Record<string, string> = {
+  'Flower Care': 'the flower variety, room temperature, water condition, stem condition, and how long the flowers have already been out of refrigeration',
+  Meanings: 'the recipient, relationship, occasion, colour, cultural context, and the message you want the gesture to carry',
+  'Flower Safety': 'the exact plant or flower name, the animal or person at risk, likely contact, and advice from a qualified medical or veterinary professional',
+  Occasions: 'the occasion, relationship, setting, level of formality, delivery timing, and the wording on the card',
+  Hampers: 'the recipient’s preferences, dietary restrictions, storage needs, household situation, and the practical value of each item',
+  Plants: 'light, ventilation, watering habits, pot drainage, pets, and the amount of ongoing care the recipient can provide',
+  'Buying Flowers': 'the budget, flower preferences, arrangement size, substitutions, delivery window, access details, and care instructions',
+};
+const categoryNote = categoryNotes[faq.data.category] ?? categoryNotes['Buying Flowers'];
+const practicalNotes = [
+  {
+    heading: 'Check the context',
+    body: `Use the answer as a starting point, then check ${categoryNote}. These details can change which option is most suitable, especially when the flowers must travel, remain presentable for several hours, or carry a sensitive message.`,
+  },
+  {
+    heading: 'Share useful details',
+    body: 'When asking a florist for help, explain the recipient, occasion, date, location, budget, and any firm preferences or restrictions. Clear information makes it easier to compare realistic options and reduces the chance of unsuitable substitutions.',
+  },
+  {
+    heading: 'Confirm before ordering',
+    body: 'Check the final size, included items, flower substitutions, packaging, card wording, delivery window, and care instructions. For safety questions, verify the exact flower name and seek professional advice when exposure or symptoms are a concern.',
+  },
+];
 ---
 
-<BaseLayout title={title} description={faq.data.answer} canonicalPath={`/faq/${faq.data.slug}/`}>
+<BaseLayout title={title} description={optimizeDescription(faq.data.answer)} canonicalPath={`/faq/${faq.data.slug}/`}>
   <nav class="breadcrumbs shell" aria-label="Breadcrumb">
     <a href="/">Home</a><ChevronRight size={14} aria-hidden="true" /><a href="/faq/">FAQ</a><ChevronRight size={14} aria-hidden="true" /><span aria-current="page">{faq.data.question}</span>
   </nav>
   <article class="faq-page shell">
-    <p class="eyebrow">{faq.data.category}</p>
     <h1>{faq.data.question}</h1>
     <p class="faq-answer">{faq.data.answer}</p>
+
+    <section class="faq-guidance">
+      <h2>Using this answer in practice</h2>
+      <div class="guidance-grid">
+        {practicalNotes.map((item) => (
+          <section>
+            <h3>{item.heading}</h3>
+            <p>{item.body}</p>
+          </section>
+        ))}
+      </div>
+    </section>
 
     {faq.data.sources.length > 0 && (
       <aside class="source-note" aria-label="Sources">
@@ -33,10 +69,18 @@ const title = `${faq.data.question} | ${brand.name}`;
     )}
 
     {related.length > 0 && (
-      <div class="faq-next">
-        <span>Read more on this topic</span>
-        {related.map((entry) => entry && <a href={entry.data.path}>{entry.data.heading}<ArrowRight size={18} aria-hidden="true" /></a>)}
-      </div>
+      <section class="faq-next">
+        <h2>Continue exploring this topic</h2>
+        <div>
+          {related.map((entry) => entry && (
+            <a href={entry.data.path}>
+              <h3>{entry.data.heading}</h3>
+              <p>{entry.data.description}</p>
+              <ArrowRight size={18} aria-hidden="true" />
+            </a>
+          ))}
+        </div>
+      </section>
     )}
   </article>
 </BaseLayout>

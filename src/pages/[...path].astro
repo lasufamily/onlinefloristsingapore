@@ -3,6 +3,7 @@ import { getCollection } from 'astro:content';
 import KnowledgePage from '../components/KnowledgePage.astro';
 import affiliateLinks from '../data/affiliate-links.json';
 import BaseLayout from '../layouts/BaseLayout.astro';
+import { optimizeDescription, optimizeTitle } from '../lib/seo';
 
 type AffiliateLink = {
   id: string;
@@ -48,6 +49,6 @@ const structuredData = {
 };
 ---
 
-<BaseLayout title={page.data.title} description={page.data.description} canonicalPath={page.data.path} image={page.data.image} structuredData={structuredData}>
+<BaseLayout title={optimizeTitle(page.data.title, page.data.heading)} description={optimizeDescription(page.data.description, page.data.intro)} canonicalPath={page.data.path} image={page.data.image} structuredData={structuredData}>
   <KnowledgePage page={page} allPages={allPages} faqs={faqs} affiliate={affiliate} />
 </BaseLayout>

@@ -25,6 +25,32 @@ const related = page.data.relatedPages
 const relatedFaqs = faqs
   .filter((entry) => entry.data.relatedPages.includes(page.data.path))
   .sort((a, b) => a.data.priority - b.data.priority);
+const topic = page.data.heading.toLowerCase();
+const root = page.data.path.split('/').filter(Boolean)[0] ?? 'flowers';
+const categoryFocus: Record<string, string> = {
+  flowers: 'freshness, scent, colour, vase life, care needs, and whether the flowers suit the recipient',
+  occasions: 'the tone of the occasion, your relationship with the recipient, the venue, and the message on the card',
+  'flowers-for': 'the recipient’s preferences, the relationship, allergies or pets, and how formal the gesture should feel',
+  'bouquets-and-arrangements': 'the display space, arrangement size, water source, viewing angle, and how the flowers will be carried or installed',
+  gifts: 'the recipient’s preferences, dietary or household restrictions, storage, presentation, and the timing of the handover',
+  plants: 'available light, watering habits, ventilation, pets, pot drainage, and the amount of care the recipient can provide',
+  guides: 'the decision you need to make, the information still missing, your practical constraints, and the questions a florist should answer',
+  'flower-culture': 'the local context, cultural meaning, setting, audience, and whether a claim is historical, symbolic, or practical',
+};
+const practicalGuidance = [
+  {
+    heading: 'Define the purpose first',
+    body: `When considering ${topic}, decide what the flowers, plant, or gift needs to communicate. Consider ${categoryFocus[root] ?? categoryFocus.flowers}. A clear purpose makes it easier to compare options without being distracted by styling alone.`,
+  },
+  {
+    heading: 'Plan for the Singapore setting',
+    body: 'Think through where and when the flowers, plant, arrangement, or gift will be received. Heat, humidity, travel time, air-conditioning, venue access, and the time before display can affect what remains presentable. Share those conditions before the final design or delivery method is confirmed.',
+  },
+  {
+    heading: 'Confirm the order details',
+    body: `Ask for the final dimensions, flower or product substitutions, packaging, care instructions, delivery window, and the wording on the card. Check names, contact details, postal code, unit number, and access instructions before payment so avoidable corrections do not delay the handover.`,
+  },
+];
 
 const ancestors: CollectionEntry<'knowledgePages'>[] = [];
 let parentPath = page.data.parent;
@@ -48,7 +74,6 @@ while (parentPath && parentPath !== '/') {
 <article>
   <header class="knowledge-hero">
     <div class="knowledge-hero-copy">
-      <p class="eyebrow">{page.data.eyebrow}</p>
       <h1>{page.data.heading}</h1>
       <p>{page.data.intro}</p>
     </div>
@@ -61,13 +86,12 @@ while (parentPath && parentPath !== '/') {
     <section class="section topic-directory">
       <div class="shell">
         <div class="section-head compact-head">
-          <div><p class="eyebrow">Explore this topic</p><h2>Choose a place to begin</h2></div>
+          <div><h2>Choose a place to begin</h2></div>
           <p>Follow the subject from broad guidance into the flower, recipient, arrangement, or decision you are researching.</p>
         </div>
         <div class="link-card-grid">
           {children.map((child) => (
             <a class="link-card" href={child.data.path}>
-              <span>{child.data.kind === 'hub' ? 'Topic guide' : 'Practical guide'}</span>
               <h3>{child.data.heading}</h3>
               <p>{child.data.description}</p>
               <ArrowRight size={19} aria-hidden="true" />
@@ -80,7 +104,7 @@ while (parentPath && parentPath !== '/') {
 
   <section class="section article-band">
     <div class="article-layout shell">
-      <div class="article-marker"><BookOpen size={24} aria-hidden="true" /><span>Editorial guide</span></div>
+      <BookOpen class="article-icon" size={24} aria-hidden="true" />
       <div class="article-copy">
         {page.data.sections.map((section) => (
           <section>
@@ -93,10 +117,24 @@ while (parentPath && parentPath !== '/') {
     </div>
   </section>
 
+  <section class="section practical-section">
+    <div class="shell">
+      <h2>A practical checklist for {page.data.heading}</h2>
+      <div class="guidance-grid">
+        {practicalGuidance.map((item) => (
+          <section>
+            <h3>{item.heading}</h3>
+            <p>{item.body}</p>
+          </section>
+        ))}
+      </div>
+    </div>
+  </section>
+
   {relatedFaqs.length > 0 && (
     <section class="section question-links">
       <div class="shell two-column-heading">
-        <div><p class="eyebrow">Quick answers</p><h2>Related questions</h2></div>
+        <div><h2>Related questions</h2></div>
         <div class="question-list">
           {relatedFaqs.map((faq) => <a href={`/faq/${faq.data.slug}/`}>{faq.data.question}<ArrowRight size={18} aria-hidden="true" /></a>)}
         </div>
@@ -107,9 +145,15 @@ while (parentPath && parentPath !== '/') {
   {related.length > 0 && (
     <section class="section related-band">
       <div class="shell">
-        <p class="eyebrow">Related reading</p>
+        <h2>Related reading</h2>
         <div class="related-links">
-          {related.map((entry) => <a href={entry.data.path}>{entry.data.heading}<ArrowRight size={17} aria-hidden="true" /></a>)}
+          {related.map((entry) => (
+            <a href={entry.data.path}>
+              <h3>{entry.data.heading}</h3>
+              <p>{entry.data.description}</p>
+              <ArrowRight size={17} aria-hidden="true" />
+            </a>
+          ))}
         </div>
       </div>
     </section>
