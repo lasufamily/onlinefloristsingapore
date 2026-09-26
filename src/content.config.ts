@@ -2,33 +2,45 @@ import { defineCollection } from 'astro:content';
 import { file } from 'astro/loaders';
 import { z } from 'astro/zod';
 
-const categories = defineCollection({
-  loader: file('./src/data/categories.json'),
+const sourceSchema = z.object({
+  label: z.string(),
+  url: z.url(),
+});
+
+const knowledgePages = defineCollection({
+  loader: file('./src/data/knowledge-pages.json'),
   schema: z.object({
     id: z.string(),
-    name: z.string(),
     path: z.string(),
+    parent: z.string().nullable(),
+    kind: z.enum(['hub', 'topic', 'guide']),
+    title: z.string(),
+    description: z.string(),
     eyebrow: z.string(),
     heading: z.string(),
-    description: z.string(),
+    intro: z.string(),
     image: z.string(),
     imageAlt: z.string(),
-    tone: z.enum(['coral', 'sage', 'yellow']),
+    sections: z.array(z.object({ heading: z.string(), body: z.string() })),
+    relatedPages: z.array(z.string()),
+    affiliateLinkId: z.string().optional(),
   }),
 });
 
-const products = defineCollection({
-  loader: file('./src/data/products.json'),
+const faq = defineCollection({
+  loader: file('./src/data/faq.json'),
   schema: z.object({
     id: z.string(),
-    name: z.string(),
+    question: z.string(),
+    slug: z.string(),
+    answer: z.string(),
     category: z.string(),
-    summary: z.string(),
-    image: z.string(),
-    imageAlt: z.string(),
-    palette: z.string(),
-    availabilityNote: z.string(),
+    relatedPages: z.array(z.string()),
+    sources: z.array(sourceSchema),
+    priority: z.number().int().positive(),
+    searchVolume: z.number().int().nonnegative(),
+    affiliateLinkId: z.string().optional(),
   }),
 });
 
-export const collections = { categories, products };
+export const collections = { knowledgePages, faq };

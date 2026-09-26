@@ -1,6 +1,6 @@
 # OnlineFloristSingapore.com
 
-Static Astro storefront for the new **Stem & Story** working brand, with a Cloudflare Pages enquiry function. The site intentionally does not reuse the expired domain's former business identity, content, images, reviews, or claims.
+Static Astro knowledge base for flowers, arrangements, gifts, plants, occasions, recipients, and flower culture in Singapore. The site retains a Cloudflare Pages enquiry function as a secondary contact path and does not reuse the expired domain's former business identity, content, reviews, or claims.
 
 ## Local development
 
@@ -39,10 +39,9 @@ npx wrangler d1 execute ofs-enquiries --file=schema.sql --remote
 
 ## Launch gates
 
-- Confirm that **Stem & Story** is the final owned business name, or replace it site-wide before launch.
-- Supply and verify a real contact channel, legal entity details, privacy contact, delivery policy, coverage, charges, and operating process.
-- Validate every product direction, price, flower claim, and delivery commitment before publishing it as orderable inventory.
-- Replace concept photography if the final arrangements materially differ from the depicted directions.
+- Supply and verify a real editorial contact channel, legal entity details, privacy contact, and affiliate disclosure before launch.
+- Review every flower-care, safety, cultural, and delivery claim before publication; pet-safety guidance must retain authoritative citations.
+- Add affiliate destinations only after verifying the partner, destination page, disclosure copy, and `sponsored nofollow` treatment.
 - Submit `https://onlinefloristsingapore.com/sitemap-index.xml` to Google Search Console and Bing Webmaster Tools.
 - Request indexing for the homepage and the restored backlink destinations after DNS cutover.
 - Confirm the GA4 `generate_lead` event and Cloudflare Web Analytics beacon in production.
@@ -50,15 +49,16 @@ npx wrangler d1 execute ofs-enquiries --file=schema.sql --remote
 
 ## URL recovery
 
-Canonical pages are defined in [`src/lib/site-pages.ts`](./src/lib/site-pages.ts). Redirect logic is represented in [`src/lib/redirects.ts`](./src/lib/redirects.ts) and deployed through [`public/_redirects`](./public/_redirects).
+Canonical pages are derived from the structured knowledge and FAQ inventories in [`src/lib/site-pages.ts`](./src/lib/site-pages.ts). Redirect logic is represented in [`src/lib/redirects.ts`](./src/lib/redirects.ts) and deployed through [`public/_redirects`](./public/_redirects).
 
 Legacy `/wp-content/uploads/...` requests are intentionally excluded. There are no replacement media pages or media redirects; those URLs should remain `404` (or may be changed to `410` at the edge later).
 
 ## Content editing
 
-Editable category and product data lives in:
+Editable knowledge-base data lives in:
 
-- [`src/data/categories.json`](./src/data/categories.json)
-- [`src/data/products.json`](./src/data/products.json)
+- [`src/data/knowledge-pages.json`](./src/data/knowledge-pages.json)
+- [`src/data/faq.json`](./src/data/faq.json)
+- [`src/data/affiliate-links.json`](./src/data/affiliate-links.json)
 
-Keep product cards enquiry-only until the underlying items, prices, stock rules, and fulfilment process are operationally verified.
+The FAQ directory must contain linked questions only. Keep every FAQ answer to one body paragraph and use the full question as its slug, page title, and H1. Affiliate entries remain empty until real partner URLs are approved.

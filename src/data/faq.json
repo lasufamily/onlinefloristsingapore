@@ -1,0 +1,310 @@
+[
+  {
+    "id": "how-to-dry-flowers",
+    "question": "How to dry flowers?",
+    "slug": "how-to-dry-flowers",
+    "answer": "Air-dry sturdy flowers by removing excess leaves, tying small bundles, and hanging them upside down in a dark, dry, well-ventilated room. Keep the stems out of direct sunlight to limit fading. Most bouquets need two to three weeks before they feel completely dry.",
+    "category": "Flower Care",
+    "relatedPages": [
+      "/flowers/dried/"
+    ],
+    "sources": [],
+    "priority": 1,
+    "searchVolume": 210
+  },
+  {
+    "id": "how-to-preserve-flowers",
+    "question": "How to preserve flowers?",
+    "slug": "how-to-preserve-flowers",
+    "answer": "Choose fresh, unblemished blooms and remove damaged leaves before preserving them. Air drying suits sturdy flowers, while silica gel better retains the shape of delicate blooms. Keep the finished flowers away from humidity, direct sun, and water, which can fade colours or encourage mould.",
+    "category": "Flower Care",
+    "relatedPages": [
+      "/flowers/preserved/"
+    ],
+    "sources": [],
+    "priority": 2,
+    "searchVolume": 170
+  },
+  {
+    "id": "what-do-white-roses-mean",
+    "question": "What do white roses mean?",
+    "slug": "what-do-white-roses-mean",
+    "answer": "White roses commonly represent purity, sincerity, remembrance, and new beginnings. They are often chosen for weddings, sympathy arrangements, and understated gestures. Context still matters: a white rose bouquet can feel romantic, respectful, or ceremonial depending on its presentation, accompanying message, and recipient.",
+    "category": "Meanings",
+    "relatedPages": [
+      "/flowers/fresh/roses/white-roses-meaning/"
+    ],
+    "sources": [],
+    "priority": 3,
+    "searchVolume": 140
+  },
+  {
+    "id": "what-do-tulips-mean",
+    "question": "What do tulips mean?",
+    "slug": "what-do-tulips-mean",
+    "answer": "Tulips generally symbolise affection, renewal, and confident love. Red tulips are strongly romantic, yellow tulips suggest cheerfulness, and white tulips can express forgiveness or respect. Because meanings vary across cultures and relationships, use the colour and card message together to make your intention clear.",
+    "category": "Meanings",
+    "relatedPages": [
+      "/flowers/fresh/tulips/meaning/"
+    ],
+    "sources": [],
+    "priority": 4,
+    "searchVolume": 140
+  },
+  {
+    "id": "what-do-lilies-mean",
+    "question": "What do lilies mean?",
+    "slug": "what-do-lilies-mean",
+    "answer": "Lilies are associated with purity, renewal, devotion, and remembrance. White lilies often appear in sympathy flowers, while colourful varieties can suit celebrations and thank-you gifts. Their meaning depends on colour and occasion, so pair them with a direct message rather than relying on symbolism alone.",
+    "category": "Meanings",
+    "relatedPages": [
+      "/flowers/fresh/lilies/meaning/"
+    ],
+    "sources": [],
+    "priority": 5,
+    "searchVolume": 140
+  },
+  {
+    "id": "how-long-do-flowers-last",
+    "question": "How long do flowers last?",
+    "slug": "how-long-do-flowers-last",
+    "answer": "Most cut flowers last about five to ten days in a clean vase, although variety, freshness, and room conditions make a significant difference. Recut the stems, remove leaves below the waterline, change the water regularly, and keep the arrangement away from direct sun, heat, and ripening fruit.",
+    "category": "Flower Care",
+    "relatedPages": [
+      "/flowers/care/"
+    ],
+    "sources": [],
+    "priority": 6,
+    "searchVolume": 110
+  },
+  {
+    "id": "how-to-keep-flowers-fresh",
+    "question": "How to keep flowers fresh?",
+    "slug": "how-to-keep-flowers-fresh",
+    "answer": "Place flowers in a thoroughly cleaned vase with fresh water and the supplied flower food. Recut stems at an angle, remove foliage below the waterline, and refresh the water every one to two days. Keep the arrangement in a cool spot away from sunlight, draughts, and ripening fruit.",
+    "category": "Flower Care",
+    "relatedPages": [
+      "/flowers/care/"
+    ],
+    "sources": [],
+    "priority": 7,
+    "searchVolume": 110
+  },
+  {
+    "id": "what-do-sunflowers-mean",
+    "question": "What do sunflowers mean?",
+    "slug": "what-do-sunflowers-mean",
+    "answer": "Sunflowers commonly represent happiness, optimism, loyalty, and admiration. Their bright colour and upright form make them popular for birthdays, graduations, congratulations, and supportive gestures. They feel warm and encouraging rather than formal, although the accompanying message should still explain what you want the gift to convey.",
+    "category": "Meanings",
+    "relatedPages": [
+      "/flowers/fresh/sunflowers/meaning/"
+    ],
+    "sources": [],
+    "priority": 8,
+    "searchVolume": 110
+  },
+  {
+    "id": "what-do-orchids-mean",
+    "question": "What do orchids mean?",
+    "slug": "what-do-orchids-mean",
+    "answer": "Orchids commonly symbolise elegance, admiration, strength, and refined beauty. In Singapore they can also carry strong cultural and national associations. Their long-lasting, architectural appearance suits congratulations, corporate gifts, home displays, and romantic gestures, with colour and presentation determining how formal the gift feels.",
+    "category": "Meanings",
+    "relatedPages": [
+      "/flowers/fresh/orchids/"
+    ],
+    "sources": [],
+    "priority": 9,
+    "searchVolume": 70
+  },
+  {
+    "id": "what-flowers-are-safe-for-cats",
+    "question": "What flowers are safe for cats?",
+    "slug": "what-flowers-are-safe-for-cats",
+    "answer": "Roses, sunflowers, and many orchids are generally listed as non-toxic to cats, but any plant material can still cause stomach upset if eaten. Avoid lilies entirely because exposure can be life-threatening. Check every flower and foliage variety with a veterinary source before bringing a mixed bouquet into a cat’s home.",
+    "category": "Flower Safety",
+    "relatedPages": [
+      "/flowers/fresh/"
+    ],
+    "sources": [
+      {
+        "label": "ASPCA Toxic and Non-Toxic Plant List for Cats",
+        "url": "https://www.aspca.org/pet-care/animal-poison-control/cats-plant-list"
+      },
+      {
+        "label": "ASPCA guide to flowers and plants that are toxic to pets",
+        "url": "https://www.aspca.org/news/do-you-know-which-flowers-and-plants-are-toxic-pets-our-experts-explain"
+      }
+    ],
+    "priority": 10,
+    "searchVolume": 70
+  },
+  {
+    "id": "what-do-yellow-roses-mean",
+    "question": "What do yellow roses mean?",
+    "slug": "what-do-yellow-roses-mean",
+    "answer": "Yellow roses usually express friendship, warmth, optimism, and congratulations. They are a natural choice for birthdays, thank-you gifts, and encouraging someone without implying romance. Meanings are not fixed, so a thoughtful card message is the best way to prevent the colour from being misunderstood.",
+    "category": "Meanings",
+    "relatedPages": [
+      "/flowers/fresh/roses/yellow-roses-meaning/"
+    ],
+    "sources": [],
+    "priority": 11,
+    "searchVolume": 50
+  },
+  {
+    "id": "how-long-do-roses-last",
+    "question": "How long do roses last?",
+    "slug": "how-long-do-roses-last",
+    "answer": "Cut roses commonly last five to seven days, and fresh stems may reach ten days with attentive care. Use a clean vase, recut the stems, remove submerged leaves, and change the water regularly. Keep roses away from direct sunlight, strong air-conditioning, heat, and ripening fruit.",
+    "category": "Flower Care",
+    "relatedPages": [
+      "/flowers/fresh/roses/"
+    ],
+    "sources": [],
+    "priority": 12,
+    "searchVolume": 40
+  },
+  {
+    "id": "how-long-do-preserved-flowers-last",
+    "question": "How long do preserved flowers last?",
+    "slug": "how-long-do-preserved-flowers-last",
+    "answer": "Preserved flowers commonly remain presentable for one to three years, depending on their treatment, environment, and handling. They need no water. Keep them indoors, away from humidity, direct sunlight, heat, and frequent touching, and remove dust gently with cool air or a very soft brush.",
+    "category": "Flower Care",
+    "relatedPages": [
+      "/flowers/preserved/"
+    ],
+    "sources": [],
+    "priority": 13,
+    "searchVolume": 40
+  },
+  {
+    "id": "how-to-care-for-roses",
+    "question": "How to care for roses?",
+    "slug": "how-to-care-for-roses",
+    "answer": "Trim rose stems diagonally with clean shears and place them promptly in a clean vase with fresh water and flower food. Remove every leaf below the waterline, refresh the water regularly, and recut the stems when needed. Display roses somewhere cool and away from direct sun.",
+    "category": "Flower Care",
+    "relatedPages": [
+      "/flowers/fresh/roses/"
+    ],
+    "sources": [],
+    "priority": 14,
+    "searchVolume": 30
+  },
+  {
+    "id": "how-to-care-for-sunflowers",
+    "question": "How to care for sunflowers?",
+    "slug": "how-to-care-for-sunflowers",
+    "answer": "Give sunflowers a stable, clean vase because their heads and stems can become heavy. Recut the stems, remove submerged leaves, and use fresh water with flower food. Change the water frequently and keep the vase cool, away from harsh sun, heat, and ripening fruit.",
+    "category": "Flower Care",
+    "relatedPages": [
+      "/flowers/fresh/sunflowers/care/"
+    ],
+    "sources": [],
+    "priority": 15,
+    "searchVolume": 30
+  },
+  {
+    "id": "how-to-arrange-flowers-in-a-vase",
+    "question": "How to arrange flowers in a vase?",
+    "slug": "how-to-arrange-flowers-in-a-vase",
+    "answer": "Choose a clean vase roughly half to two-thirds the height of the finished arrangement. Remove leaves below the waterline, recut every stem, and begin with foliage or structural flowers. Add focal blooms at varied heights, turn the vase as you work, and leave enough space for movement.",
+    "category": "Flower Care",
+    "relatedPages": [
+      "/bouquets-and-arrangements/vase-arrangements/"
+    ],
+    "sources": [],
+    "priority": 16,
+    "searchVolume": 20
+  },
+  {
+    "id": "how-to-care-for-tulips",
+    "question": "How to care for tulips?",
+    "slug": "how-to-care-for-tulips",
+    "answer": "Place tulips in a clean vase with cool, shallow water after trimming the stems straight across. Remove foliage below the waterline and top up or replace the water daily. Tulips continue growing and bending after cutting, so keep them cool and rotate the vase if they lean.",
+    "category": "Flower Care",
+    "relatedPages": [
+      "/flowers/fresh/tulips/care/"
+    ],
+    "sources": [],
+    "priority": 17,
+    "searchVolume": 20
+  },
+  {
+    "id": "what-flowers-to-give-for-a-birthday",
+    "question": "What flowers to give for a birthday?",
+    "slug": "what-flowers-to-give-for-a-birthday",
+    "answer": "Choose birthday flowers around the recipient’s taste rather than a universal rule. Roses feel classic, sunflowers cheerful, tulips polished, and mixed seasonal bouquets expressive. Consider favourite colours, fragrance sensitivity, pets, vase availability, and delivery timing, then include a personal message that makes the choice feel intentional.",
+    "category": "Occasions",
+    "relatedPages": [
+      "/occasions/birthday/"
+    ],
+    "sources": [],
+    "priority": 18,
+    "searchVolume": 20
+  },
+  {
+    "id": "what-to-write-on-condolence-flowers",
+    "question": "What to write on condolence flowers?",
+    "slug": "what-to-write-on-condolence-flowers",
+    "answer": "Keep a condolence flower message brief, sincere, and centred on the bereaved person or the person who died. A simple expression such as “With deepest sympathy” followed by one personal sentence is enough. Avoid explanations, advice, clichés, or anything that places an obligation on the family to respond.",
+    "category": "Occasions",
+    "relatedPages": [
+      "/occasions/condolence/condolence-messages/"
+    ],
+    "sources": [],
+    "priority": 19,
+    "searchVolume": 10
+  },
+  {
+    "id": "what-to-put-in-a-get-well-soon-hamper",
+    "question": "What to put in a get well soon hamper?",
+    "slug": "what-to-put-in-a-get-well-soon-hamper",
+    "answer": "A useful get well soon hamper can include easy snacks, drinks, a comforting personal-care item, and a short handwritten note. Check dietary restrictions, allergies, hospital rules, and the recipient’s energy level first. Choose compact, low-maintenance items and avoid strongly scented products when sensitivity may be an issue.",
+    "category": "Hampers",
+    "relatedPages": [
+      "/gifts/hampers/get-well-soon/"
+    ],
+    "sources": [],
+    "priority": 20,
+    "searchVolume": 10
+  },
+  {
+    "id": "how-often-to-water-indoor-plants",
+    "question": "How often to water indoor plants?",
+    "slug": "how-often-to-water-indoor-plants",
+    "answer": "Water indoor plants according to the plant and potting mix rather than a fixed weekly schedule. Check the upper few centimetres of soil and water when it reaches the dryness level that species prefers. Singapore’s humidity slows some drying, while air-conditioning, sun, and small pots can speed it up.",
+    "category": "Plants",
+    "relatedPages": [
+      "/plants/care/"
+    ],
+    "sources": [],
+    "priority": 21,
+    "searchVolume": 10
+  },
+  {
+    "id": "how-to-care-for-orchids-in-singapore",
+    "question": "How to care for orchids in Singapore?",
+    "slug": "how-to-care-for-orchids-in-singapore",
+    "answer": "Give orchids bright, indirect light, moving air, and a free-draining orchid medium. Water thoroughly only when the roots and medium are approaching dryness, then let excess water drain completely. Singapore’s humidity can support orchids, but constantly wet roots and stagnant air increase the risk of rot.",
+    "category": "Plants",
+    "relatedPages": [
+      "/plants/orchids/"
+    ],
+    "sources": [],
+    "priority": 22,
+    "searchVolume": 10
+  },
+  {
+    "id": "can-i-send-flowers-anonymously",
+    "question": "Can I send flowers anonymously?",
+    "slug": "can-i-send-flowers-anonymously",
+    "answer": "Many florists allow an anonymous delivery, but you should confirm their policy before ordering. The florist may still need your identity and payment details for fraud prevention, while withholding them from the recipient. Avoid threatening, deceptive, or unwanted messages, and respect the recipient’s boundaries and delivery location rules.",
+    "category": "Buying Flowers",
+    "relatedPages": [
+      "/guides/flower-delivery/"
+    ],
+    "sources": [],
+    "priority": 23,
+    "searchVolume": 10
+  }
+]

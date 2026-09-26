@@ -1,25 +1,53 @@
 ---
 import { getCollection } from 'astro:content';
-import CategoryLanding from '../components/CategoryLanding.astro';
+import KnowledgePage from '../components/KnowledgePage.astro';
+import affiliateLinks from '../data/affiliate-links.json';
 import BaseLayout from '../layouts/BaseLayout.astro';
-import { canonicalPages } from '../lib/site-pages';
+
+type AffiliateLink = {
+  id: string;
+  href: string;
+  anchor: string;
+  partner: string;
+  disclosure: string;
+  active: boolean;
+};
 
 export async function getStaticPaths() {
-  const categories = await getCollection('categories');
-  return categories.map((category) => ({
-    params: { path: category.data.path.replace(/^\//, '').replace(/\/$/, '') },
-    props: { category },
+  const pages = await getCollection('knowledgePages');
+  return pages.map((page) => ({
+    params: { path: page.data.path.replace(/^\//, '').replace(/\/$/, '') },
+    props: { page },
   }));
 }
 
-const { category } = Astro.props;
-const allProducts = await getCollection('products');
-const categoryProducts = allProducts.filter((product) => product.data.category === category.id);
-const products = categoryProducts.length > 0 ? categoryProducts : allProducts.slice(0, 3);
-const metadata = canonicalPages.find((page) => page.path.replace(/\/$/, '') === category.data.path.replace(/\/$/, ''));
-if (!metadata) throw new Error(`Missing metadata for ${category.data.path}`);
+const { page } = Astro.props;
+const [allPages, faqs] = await Promise.all([
+  getCollection('knowledgePages'),
+  getCollection('faq'),
+]);
+const affiliate = page.data.affiliateLinkId
+  ? (affiliateLinks as AffiliateLink[]).find((entry) => entry.id === page.data.affiliateLinkId && entry.active)
+  : undefined;
+const pageByPath = new Map(allPages.map((entry) => [entry.data.path, entry]));
+const breadcrumbItems = [{ name: 'Home', item: 'https://onlinefloristsingapore.com/' }];
+const ancestors = [];
+let parentPath = page.data.parent;
+while (parentPath && parentPath !== '/') {
+  const parent = pageByPath.get(parentPath);
+  if (!parent) break;
+  ancestors.unshift(parent);
+  parentPath = parent.data.parent;
+}
+for (const ancestor of ancestors) breadcrumbItems.push({ name: ancestor.data.heading, item: new URL(ancestor.data.path, Astro.site).toString() });
+breadcrumbItems.push({ name: page.data.heading, item: new URL(page.data.path, Astro.site).toString() });
+const structuredData = {
+  '@context': 'https://schema.org',
+  '@type': 'BreadcrumbList',
+  itemListElement: breadcrumbItems.map((item, index) => ({ '@type': 'ListItem', position: index + 1, ...item })),
+};
 ---
 
-<BaseLayout title={metadata.title} description={metadata.description} canonicalPath={metadata.path} image={category.data.image}>
-  <CategoryLanding category={category} products={products} />
+<BaseLayout title={page.data.title} description={page.data.description} canonicalPath={page.data.path} image={page.data.image} structuredData={structuredData}>
+  <KnowledgePage page={page} allPages={allPages} faqs={faqs} affiliate={affiliate} />
 </BaseLayout>

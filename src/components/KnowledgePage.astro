@@ -1,0 +1,117 @@
+---
+import { ArrowRight, BookOpen, ChevronRight } from '@lucide/astro';
+import type { CollectionEntry } from 'astro:content';
+import AffiliateLink from './AffiliateLink.astro';
+
+interface Props {
+  page: CollectionEntry<'knowledgePages'>;
+  allPages: CollectionEntry<'knowledgePages'>[];
+  faqs: CollectionEntry<'faq'>[];
+  affiliate?: {
+    href: string;
+    anchor: string;
+    disclosure: string;
+  };
+}
+
+const { page, allPages, faqs, affiliate } = Astro.props;
+const byPath = new Map(allPages.map((entry) => [entry.data.path, entry]));
+const children = allPages
+  .filter((entry) => entry.data.parent === page.data.path)
+  .sort((a, b) => a.data.heading.localeCompare(b.data.heading));
+const related = page.data.relatedPages
+  .map((path) => byPath.get(path))
+  .filter((entry): entry is CollectionEntry<'knowledgePages'> => Boolean(entry));
+const relatedFaqs = faqs
+  .filter((entry) => entry.data.relatedPages.includes(page.data.path))
+  .sort((a, b) => a.data.priority - b.data.priority);
+
+const ancestors: CollectionEntry<'knowledgePages'>[] = [];
+let parentPath = page.data.parent;
+while (parentPath && parentPath !== '/') {
+  const parent = byPath.get(parentPath);
+  if (!parent) break;
+  ancestors.unshift(parent);
+  parentPath = parent.data.parent;
+}
+---
+
+<nav class="breadcrumbs shell" aria-label="Breadcrumb">
+  <a href="/">Home</a>
+  <ChevronRight size={14} aria-hidden="true" />
+  {ancestors.map((ancestor) => (
+    <><a href={ancestor.data.path}>{ancestor.data.heading}</a><ChevronRight size={14} aria-hidden="true" /></>
+  ))}
+  <span aria-current="page">{page.data.heading}</span>
+</nav>
+
+<article>
+  <header class="knowledge-hero">
+    <div class="knowledge-hero-copy">
+      <p class="eyebrow">{page.data.eyebrow}</p>
+      <h1>{page.data.heading}</h1>
+      <p>{page.data.intro}</p>
+    </div>
+    <div class="knowledge-hero-media">
+      <img src={page.data.image} alt={page.data.imageAlt} width="1200" height="900" />
+    </div>
+  </header>
+
+  {children.length > 0 && (
+    <section class="section topic-directory">
+      <div class="shell">
+        <div class="section-head compact-head">
+          <div><p class="eyebrow">Explore this topic</p><h2>Choose a place to begin</h2></div>
+          <p>Follow the subject from broad guidance into the flower, recipient, arrangement, or decision you are researching.</p>
+        </div>
+        <div class="link-card-grid">
+          {children.map((child) => (
+            <a class="link-card" href={child.data.path}>
+              <span>{child.data.kind === 'hub' ? 'Topic guide' : 'Practical guide'}</span>
+              <h3>{child.data.heading}</h3>
+              <p>{child.data.description}</p>
+              <ArrowRight size={19} aria-hidden="true" />
+            </a>
+          ))}
+        </div>
+      </div>
+    </section>
+  )}
+
+  <section class="section article-band">
+    <div class="article-layout shell">
+      <div class="article-marker"><BookOpen size={24} aria-hidden="true" /><span>Editorial guide</span></div>
+      <div class="article-copy">
+        {page.data.sections.map((section) => (
+          <section>
+            <h2>{section.heading}</h2>
+            <p>{section.body}</p>
+          </section>
+        ))}
+        {affiliate && <AffiliateLink href={affiliate.href} anchor={affiliate.anchor} disclosure={affiliate.disclosure} />}
+      </div>
+    </div>
+  </section>
+
+  {relatedFaqs.length > 0 && (
+    <section class="section question-links">
+      <div class="shell two-column-heading">
+        <div><p class="eyebrow">Quick answers</p><h2>Related questions</h2></div>
+        <div class="question-list">
+          {relatedFaqs.map((faq) => <a href={`/faq/${faq.data.slug}/`}>{faq.data.question}<ArrowRight size={18} aria-hidden="true" /></a>)}
+        </div>
+      </div>
+    </section>
+  )}
+
+  {related.length > 0 && (
+    <section class="section related-band">
+      <div class="shell">
+        <p class="eyebrow">Related reading</p>
+        <div class="related-links">
+          {related.map((entry) => <a href={entry.data.path}>{entry.data.heading}<ArrowRight size={17} aria-hidden="true" /></a>)}
+        </div>
+      </div>
+    </section>
+  )}
+</article>

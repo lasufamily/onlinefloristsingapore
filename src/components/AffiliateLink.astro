@@ -1,0 +1,13 @@
+---
+interface Props {
+  href: string;
+  anchor: string;
+  disclosure: string;
+}
+
+const { href, anchor, disclosure } = Astro.props;
+---
+
+<aside class="affiliate-note" aria-label="Partner recommendation">
+  <p>{disclosure} <a href={href} rel="sponsored nofollow">{anchor}</a>.</p>
+</aside>

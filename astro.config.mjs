@@ -8,7 +8,7 @@ export default defineConfig({
   build: { format: 'directory' },
   integrations: [
     sitemap({
-      filter: (page) => !page.includes('/api/') && !page.includes('/wp-content/uploads/'),
+      filter: (page) => !page.includes('/api/') && !page.includes('/404') && !page.includes('/wp-content/uploads/'),
     }),
   ],
   vite: {

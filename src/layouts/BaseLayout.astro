@@ -8,9 +8,10 @@ interface Props {
   description: string;
   canonicalPath: string;
   image?: string;
+  structuredData?: Record<string, unknown> | Record<string, unknown>[];
 }
 
-const { title, description, canonicalPath, image = '/images/hero-flowers.jpg' } = Astro.props;
+const { title, description, canonicalPath, image = '/images/hero-flowers.jpg', structuredData } = Astro.props;
 const canonical = new URL(canonicalPath, Astro.site);
 const socialImage = new URL(image, Astro.site);
 const ga4Id = import.meta.env.PUBLIC_GA4_ID;
@@ -18,10 +19,11 @@ const cloudflareToken = import.meta.env.PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN;
 const websiteSchema = {
   '@context': 'https://schema.org',
   '@type': 'WebSite',
-  name: 'Stem & Story',
+  name: 'Online Florist Singapore',
   url: 'https://onlinefloristsingapore.com/',
-  description: 'A Singapore flower studio accepting made-to-order arrangement enquiries.',
+  description: 'An independent Singapore flower knowledge base for choosing, caring for, arranging, and gifting flowers.',
 };
+const additionalSchemas = structuredData ? (Array.isArray(structuredData) ? structuredData : [structuredData]) : [];
 ---
 
 <!doctype html>
@@ -40,6 +42,7 @@ const websiteSchema = {
     <meta name="theme-color" content="#ffffff" />
     <title>{title}</title>
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    {additionalSchemas.map((schema) => <script type="application/ld+json" set:html={JSON.stringify(schema)} />)}
     {ga4Id && (
       <>
         <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
