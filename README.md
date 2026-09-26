@@ -22,23 +22,20 @@ npm run test:e2e
 
 ## Cloudflare Pages
 
-1. Create a Pages project connected to this repository.
-2. Set the build command to `npm run build` and output directory to `dist`.
-3. Create a D1 database and bind it to the Pages project as `DB` for both preview and production.
-4. Apply [`schema.sql`](./schema.sql) to that D1 database.
+1. The `onlinefloristsingapore` Pages project is live at `onlinefloristsingapore.pages.dev` and serves the custom apex and `www` domains.
+2. Build with `npm run build`, then deploy with `npx wrangler pages deploy dist --project-name onlinefloristsingapore --branch main`.
+3. The provisioned `ofs-enquiries` D1 database is bound as `DB` in [`wrangler.jsonc`](./wrangler.jsonc).
+4. Apply [`schema.sql`](./schema.sql) to that D1 database after any schema changes.
 5. Add the private runtime values listed in [`.env.example`](./.env.example) as encrypted secrets or variables.
 6. Add `PUBLIC_TURNSTILE_SITE_KEY`, `PUBLIC_GA4_ID`, and `PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN` as build-time variables when those services are ready.
 7. Configure Turnstile for `onlinefloristsingapore.com` and authorize the domain in Resend before enabling the public form.
-8. Point the apex domain to Pages only after preview QA passes. The checked-in [`public/_redirects`](./public/_redirects) file normalizes HTTP and `www` requests and restores the approved legacy HTML paths.
+8. The apex and `www` domains are attached to Pages. [`functions/_middleware.ts`](./functions/_middleware.ts) normalizes `www`, while [`public/_redirects`](./public/_redirects) restores the approved legacy HTML paths.
 
-Example D1 setup with Wrangler:
+Apply the D1 schema with Wrangler:
 
 ```bash
-npx wrangler d1 create ofs-enquiries
 npx wrangler d1 execute ofs-enquiries --file=schema.sql --remote
 ```
-
-Use the database identifier returned by the first command when creating the Pages `DB` binding. Do not commit production secrets or a made-up database identifier.
 
 ## Launch gates
 
@@ -65,4 +62,3 @@ Editable category and product data lives in:
 - [`src/data/products.json`](./src/data/products.json)
 
 Keep product cards enquiry-only until the underlying items, prices, stock rules, and fulfilment process are operationally verified.
-

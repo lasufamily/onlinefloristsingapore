@@ -1,0 +1,13 @@
+{
+  "$schema": "./node_modules/wrangler/config-schema.json",
+  "name": "onlinefloristsingapore",
+  "compatibility_date": "2026-09-26",
+  "pages_build_output_dir": "./dist",
+  "d1_databases": [
+    {
+      "binding": "DB",
+      "database_name": "ofs-enquiries",
+      "database_id": "959fe5b6-d4ee-497d-a404-5f4ec25598cf"
+    }
+  ]
+}
