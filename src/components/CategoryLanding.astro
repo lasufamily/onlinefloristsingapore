@@ -1,0 +1,72 @@
+---
+import { ArrowRight } from '@lucide/astro';
+import type { CollectionEntry } from 'astro:content';
+import EnquirySection from './EnquirySection.astro';
+import ProductCard from './ProductCard.astro';
+
+interface Props {
+  category: CollectionEntry<'categories'>;
+  products: CollectionEntry<'products'>[];
+}
+
+const { category, products } = Astro.props;
+---
+
+<section class="category-hero">
+  <div class="copy">
+    <p class="eyebrow">{category.data.eyebrow}</p>
+    <h1>{category.data.heading}</h1>
+    <p>{category.data.description}</p>
+    <div><a class="button" href="#enquire">Start an enquiry <ArrowRight size={18} aria-hidden="true" /></a></div>
+  </div>
+  <div class="image"><img src={category.data.image} alt={category.data.imageAlt} width="1200" height="1400" /></div>
+</section>
+
+<aside class="delivery-band" aria-label="Delivery terms">
+  <div class="shell delivery-grid">
+    <strong>Delivery is confirmed, never assumed.</strong>
+    <p>Dates, postal codes, venue access, charges, and flower availability are checked before an enquiry becomes an order.</p>
+    <a class="text-link" href="/fastest-online-flower-delivery-singapore/">Read about urgent requests <ArrowRight size={17} aria-hidden="true" /></a>
+  </div>
+</aside>
+
+<section class="section">
+  <div class="shell">
+    <div class="section-head">
+      <div><p class="eyebrow">Starting points</p><h2>Choose a direction, then make it yours</h2></div>
+      <p>These are arrangement directions, not live inventory. Your enquiry confirms stems, scale, timing, and delivery.</p>
+    </div>
+    {products.length > 0 ? (
+      <div class="product-grid">
+        {products.map((product) => <ProductCard {...product.data} categoryName={category.data.name} />)}
+      </div>
+    ) : (
+      <p class="category-note">This brief begins with the occasion rather than a fixed product. Share your palette, setting, date, and budget below.</p>
+    )}
+  </div>
+</section>
+
+<section class="section faq-section">
+  <div class="shell faq-layout">
+    <div>
+      <p class="eyebrow">Before you enquire</p>
+      <h2>Useful details for {category.data.name.toLowerCase()}</h2>
+    </div>
+    <div class="faq-list">
+      <details>
+        <summary>Can you guarantee the flowers shown?</summary>
+        <p>No. The images communicate shape, palette, and mood. The studio confirms the actual stems and suitable substitutions before accepting an order.</p>
+      </details>
+      <details>
+        <summary>Is the delivery date guaranteed when I submit the form?</summary>
+        <p>No. The form is an enquiry. Timing, destination, access, and delivery charges must be confirmed directly before the request is accepted.</p>
+      </details>
+      <details>
+        <summary>What should I include in my brief?</summary>
+        <p>Share the occasion, preferred date, six-digit postal code, budget, colour direction, recipient details, and any venue or card-message requirements.</p>
+      </details>
+    </div>
+  </div>
+</section>
+
+<EnquirySection />

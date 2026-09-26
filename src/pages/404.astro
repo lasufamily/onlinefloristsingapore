@@ -1,0 +1,11 @@
+---
+import { ArrowLeft } from '@lucide/astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+---
+<BaseLayout title="Page not found | Stem & Story" description="The requested page could not be found." canonicalPath="/404/">
+  <section class="section"><div class="shell" style="max-width:760px;text-align:center;padding-block:80px">
+    <p class="eyebrow">404</p><h1 style="font-size:clamp(42px,7vw,72px)">This page is no longer in the arrangement</h1>
+    <p style="color:var(--muted);margin:24px auto;max-width:560px">Browse the current flower directions or start a new enquiry from the homepage.</p>
+    <a class="button" href="/"><ArrowLeft size={18} aria-hidden="true" /> Return home</a>
+  </div></section>
+</BaseLayout>

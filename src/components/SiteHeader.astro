@@ -1,0 +1,39 @@
+---
+import { Menu, X } from '@lucide/astro';
+---
+
+<div class="notice-band">Made to order. Availability and delivery timing are confirmed after enquiry.</div>
+<header class="site-header">
+  <div class="inner shell">
+    <a class="brand" href="/" aria-label="Stem & Story home">
+      <strong>Stem & Story</strong>
+      <span>Singapore flower studio</span>
+    </a>
+    <nav class="desktop-nav" aria-label="Primary navigation">
+      <a href="/category/flowers/">Flowers</a>
+      <a href="/collections/birthday/">Birthdays</a>
+      <a href="/category/funeral-flowers/">Condolence</a>
+      <a href="/corporate-flowers/">Corporate</a>
+      <a class="button" href="/contact/">Make an enquiry</a>
+    </nav>
+    <details class="mobile-nav">
+      <summary class="icon-button" aria-label="Open navigation">
+        <Menu class="menu-open-icon" size={24} aria-hidden="true" />
+        <X class="menu-close-icon" size={24} aria-hidden="true" />
+      </summary>
+      <nav class="mobile-panel" aria-label="Mobile navigation">
+        <a href="/category/flowers/">Flowers</a>
+        <a href="/collections/birthday/">Birthdays</a>
+        <a href="/category/funeral-flowers/">Condolence</a>
+        <a href="/corporate-flowers/">Corporate</a>
+        <a href="/contact/">Make an enquiry</a>
+      </nav>
+    </details>
+  </div>
+</header>
+
+<style>
+  .menu-close-icon { display: none; }
+  details[open] .menu-open-icon { display: none; }
+  details[open] .menu-close-icon { display: block; }
+</style>

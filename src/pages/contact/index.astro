@@ -1,0 +1,17 @@
+---
+import EnquirySection from '../../components/EnquirySection.astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { canonicalPages } from '../../lib/site-pages';
+const metadata = canonicalPages.find((page) => page.path === '/contact/')!;
+---
+
+<BaseLayout title={metadata.title} description={metadata.description} canonicalPath={metadata.path}>
+  <section class="contact-page">
+    <div class="shell contact-intro">
+      <p class="eyebrow">Contact the studio</p>
+      <h1>Start with a clear flower brief</h1>
+      <p>Use the form below for bouquet, condolence, opening, hamper, event, and corporate enquiries. A reply will confirm whether the date and request can be accommodated.</p>
+    </div>
+  </section>
+  <EnquirySection />
+</BaseLayout>

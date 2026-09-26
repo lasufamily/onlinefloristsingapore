@@ -1,0 +1,25 @@
+---
+import { getCollection } from 'astro:content';
+import CategoryLanding from '../components/CategoryLanding.astro';
+import BaseLayout from '../layouts/BaseLayout.astro';
+import { canonicalPages } from '../lib/site-pages';
+
+export async function getStaticPaths() {
+  const categories = await getCollection('categories');
+  return categories.map((category) => ({
+    params: { path: category.data.path.replace(/^\//, '').replace(/\/$/, '') },
+    props: { category },
+  }));
+}
+
+const { category } = Astro.props;
+const allProducts = await getCollection('products');
+const categoryProducts = allProducts.filter((product) => product.data.category === category.id);
+const products = categoryProducts.length > 0 ? categoryProducts : allProducts.slice(0, 3);
+const metadata = canonicalPages.find((page) => page.path.replace(/\/$/, '') === category.data.path.replace(/\/$/, ''));
+if (!metadata) throw new Error(`Missing metadata for ${category.data.path}`);
+---
+
+<BaseLayout title={metadata.title} description={metadata.description} canonicalPath={metadata.path} image={category.data.image}>
+  <CategoryLanding category={category} products={products} />
+</BaseLayout>

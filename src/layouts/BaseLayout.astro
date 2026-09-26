@@ -1,0 +1,64 @@
+---
+import '../styles/global.css';
+import SiteFooter from '../components/SiteFooter.astro';
+import SiteHeader from '../components/SiteHeader.astro';
+
+interface Props {
+  title: string;
+  description: string;
+  canonicalPath: string;
+  image?: string;
+}
+
+const { title, description, canonicalPath, image = '/images/hero-flowers.jpg' } = Astro.props;
+const canonical = new URL(canonicalPath, Astro.site);
+const socialImage = new URL(image, Astro.site);
+const ga4Id = import.meta.env.PUBLIC_GA4_ID;
+const cloudflareToken = import.meta.env.PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN;
+const websiteSchema = {
+  '@context': 'https://schema.org',
+  '@type': 'WebSite',
+  name: 'Stem & Story',
+  url: 'https://onlinefloristsingapore.com/',
+  description: 'A Singapore flower studio accepting made-to-order arrangement enquiries.',
+};
+---
+
+<!doctype html>
+<html lang="en-SG">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width" />
+    <meta name="description" content={description} />
+    <link rel="canonical" href={canonical} />
+    <meta property="og:type" content="website" />
+    <meta property="og:title" content={title} />
+    <meta property="og:description" content={description} />
+    <meta property="og:url" content={canonical} />
+    <meta property="og:image" content={socialImage} />
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="theme-color" content="#ffffff" />
+    <title>{title}</title>
+    <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
+    {ga4Id && (
+      <>
+        <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
+        <script is:inline define:vars={{ ga4Id }}>
+          window.dataLayer = window.dataLayer || [];
+          function gtag(){dataLayer.push(arguments);}
+          gtag('js', new Date());
+          gtag('config', ga4Id);
+        </script>
+      </>
+    )}
+    {cloudflareToken && (
+      <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: cloudflareToken })}></script>
+    )}
+  </head>
+  <body>
+    <a class="skip-link" href="#main">Skip to content</a>
+    <SiteHeader />
+    <main id="main"><slot /></main>
+    <SiteFooter />
+  </body>
+</html>

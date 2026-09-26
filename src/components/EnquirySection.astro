@@ -1,0 +1,18 @@
+---
+import { CalendarDays, MapPin, MessageSquareText } from '@lucide/astro';
+import EnquiryForm from './EnquiryForm.astro';
+---
+
+<section class="section enquiry-band" id="enquire">
+  <div class="shell enquiry-layout">
+    <div class="enquiry-intro">
+      <p class="eyebrow">Begin with the details</p>
+      <h2>Tell us what the flowers need to do</h2>
+      <p>Send the occasion, date, destination, and budget. The studio will reply with what is available and the next step.</p>
+      <div class="trust-item"><CalendarDays size={22} aria-hidden="true" /><div><strong>Date first</strong><span>We check timing before suggesting an arrangement.</span></div></div>
+      <div class="trust-item"><MapPin size={22} aria-hidden="true" /><div><strong>Destination matters</strong><span>Venue and postal code shape delivery planning.</span></div></div>
+      <div class="trust-item"><MessageSquareText size={22} aria-hidden="true" /><div><strong>One clear brief</strong><span>Keep the flowers, message, and logistics together.</span></div></div>
+    </div>
+    <EnquiryForm />
+  </div>
+</section>

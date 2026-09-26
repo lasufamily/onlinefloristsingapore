@@ -1,0 +1,123 @@
+---
+const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
+---
+
+<form class="enquiry-form" id="enquiry-form" novalidate>
+  <div class="form-grid">
+    <div class="field">
+      <label for="name">Your name</label>
+      <input id="name" name="name" autocomplete="name" required maxlength="80" />
+    </div>
+    <div class="field">
+      <label for="phone">Phone</label>
+      <input id="phone" name="phone" autocomplete="tel" inputmode="tel" maxlength="30" />
+    </div>
+    <div class="field">
+      <label for="email">Email</label>
+      <input id="email" name="email" type="email" autocomplete="email" maxlength="160" />
+    </div>
+    <div class="field">
+      <label for="occasion">Occasion</label>
+      <select id="occasion" name="occasion">
+        <option value="">Choose one</option>
+        <option>Birthday</option><option>Anniversary</option><option>Condolence</option>
+        <option>Grand opening</option><option>Graduation</option><option>Newborn</option>
+        <option>Proposal</option><option>Corporate</option><option>Other</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="deliveryDate">Preferred delivery date</label>
+      <input id="deliveryDate" name="deliveryDate" type="date" required />
+    </div>
+    <div class="field">
+      <label for="deliveryPostalCode">Delivery postal code</label>
+      <input id="deliveryPostalCode" name="deliveryPostalCode" inputmode="numeric" pattern="[0-9]{6}" maxlength="6" required />
+    </div>
+    <div class="field">
+      <label for="budget">Budget</label>
+      <select id="budget" name="budget">
+        <option value="">Choose a range</option>
+        <option>Under SGD 100</option><option>SGD 100-150</option><option>SGD 150-250</option>
+        <option>SGD 250-400</option><option>Above SGD 400</option><option>Not sure yet</option>
+      </select>
+    </div>
+    <div class="field">
+      <label for="product">Arrangement or product</label>
+      <input id="product" name="product" maxlength="120" placeholder="Optional" />
+    </div>
+    <div class="field full">
+      <label for="message">What should we know?</label>
+      <textarea id="message" name="message" maxlength="2000" placeholder="Colour direction, recipient, card message, venue access, or other details"></textarea>
+    </div>
+    <div class="field full">
+      <label class="checkbox" for="consent">
+        <input id="consent" name="consent" type="checkbox" required />
+        <span>I agree that Stem & Story may use these details to respond to this enquiry.</span>
+      </label>
+    </div>
+    {turnstileSiteKey ? (
+      <div class="field full"><div class="cf-turnstile" data-sitekey={turnstileSiteKey}></div></div>
+    ) : (
+      <input type="hidden" name="cf-turnstile-response" value="local-preview-token" />
+    )}
+  </div>
+  <div class="form-actions">
+    <button class="button" type="submit">Send enquiry</button>
+  </div>
+  <p class="form-status" id="form-status" role="status" aria-live="polite"></p>
+</form>
+
+{turnstileSiteKey && <script src="https://challenges.cloudflare.com/turnstile/v0/api.js" async defer></script>}
+
+<script>
+  const form = document.querySelector<HTMLFormElement>('#enquiry-form');
+  const status = document.querySelector<HTMLParagraphElement>('#form-status');
+  const dateInput = document.querySelector<HTMLInputElement>('#deliveryDate');
+  const query = new URLSearchParams(window.location.search);
+
+  if (dateInput) dateInput.min = new Date().toISOString().slice(0, 10);
+  for (const key of ['product', 'occasion']) {
+    const field = form?.elements.namedItem(key);
+    const value = query.get(key);
+    if (value && field instanceof HTMLInputElement) field.value = value;
+    if (value && field instanceof HTMLSelectElement && [...field.options].some((option) => option.value === value)) field.value = value;
+  }
+
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    if (!form.reportValidity() || !status) return;
+    const button = form.querySelector<HTMLButtonElement>('button[type="submit"]');
+    const data = new FormData(form);
+    const url = new URL(window.location.href);
+    status.className = 'form-status';
+    status.textContent = 'Sending your enquiry...';
+    if (button) button.disabled = true;
+
+    const body = {
+      name: data.get('name'), phone: data.get('phone'), email: data.get('email'),
+      occasion: data.get('occasion'), product: data.get('product'), budget: data.get('budget'),
+      deliveryDate: data.get('deliveryDate'), deliveryPostalCode: data.get('deliveryPostalCode'),
+      message: data.get('message'), consent: data.get('consent') === 'on',
+      pagePath: window.location.pathname, referrer: document.referrer,
+      utmSource: url.searchParams.get('utm_source') ?? '', utmMedium: url.searchParams.get('utm_medium') ?? '',
+      utmCampaign: url.searchParams.get('utm_campaign') ?? '',
+      turnstileToken: data.get('cf-turnstile-response') ?? '',
+    };
+
+    try {
+      const response = await fetch('/api/enquiries', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
+      const result = await response.json() as { id?: string; error?: string };
+      if (!response.ok) throw new Error(result.error === 'rate_limited' ? 'Too many recent enquiries. Please try again in 15 minutes.' : 'Please check the form and try again.');
+      if (!result.id) throw new Error('The enquiry could not be confirmed. Please try again.');
+      form.reset();
+      status.className = 'form-status success';
+      status.textContent = `Enquiry received. Your reference is ${result.id}.`;
+      (window as Window & { gtag?: (...args: unknown[]) => void }).gtag?.('event', 'generate_lead', { enquiry_id: result.id });
+    } catch (error) {
+      status.className = 'form-status error';
+      status.textContent = error instanceof Error ? error.message : 'The enquiry could not be sent. Please try again.';
+    } finally {
+      if (button) button.disabled = false;
+    }
+  });
+</script>
