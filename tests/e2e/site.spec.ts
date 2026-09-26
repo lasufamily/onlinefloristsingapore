@@ -63,9 +63,15 @@ test('all canonical pages meet the on-page SEO baseline', async ({ page }, testI
     const headings = await page.locator('main h1, main h2, main h3').evaluateAll((elements) =>
       elements.map((element) => Number(element.tagName.slice(1))),
     );
+    const isFaqDirectory = path === '/faq/';
+    const isFaqAnswer = path.startsWith('/faq/') && !isFaqDirectory;
     expect(headings.filter((level) => level === 1), `${path} must have one H1`).toHaveLength(1);
-    expect(headings.includes(2), `${path} must have an H2`).toBe(true);
-    expect(headings.includes(3), `${path} must use H3s below its H2 sections`).toBe(true);
+    if (isFaqAnswer) {
+      expect(headings, `${path} must keep the answer page simple`).toEqual([1]);
+    } else {
+      expect(headings.includes(2), `${path} must have an H2`).toBe(true);
+      if (!isFaqDirectory) expect(headings.includes(3), `${path} must use H3s below its H2 sections`).toBe(true);
+    }
     expect(
       headings.every((level, index) => index === 0 || level <= headings[index - 1] + 1),
       `${path} must not skip heading levels`,
@@ -88,7 +94,7 @@ test('all canonical pages meet the on-page SEO baseline', async ({ page }, testI
     expect(imageAlts.every(Boolean), `${path} images need alt text`).toBe(true);
 
     const wordCount = await page.locator('main').innerText().then((text) => text.trim().split(/\s+/).filter(Boolean).length);
-    expect(wordCount, `${path} main content`).toBeGreaterThanOrEqual(200);
+    if (!isFaqDirectory && !isFaqAnswer) expect(wordCount, `${path} main content`).toBeGreaterThanOrEqual(200);
     await expect(page.locator('.eyebrow, .article-marker, .topic-card .copy > span, .link-card > span'), path).toHaveCount(0);
   }
 });
@@ -105,6 +111,7 @@ test('representative knowledge routes are substantive canonical pages', async ({
 test('FAQ directory lists questions without answers', async ({ page }) => {
   await page.goto('/faq/');
   await expect(page.locator('.faq-directory a')).toHaveCount(23);
+  await expect(page.locator('.faq-overview')).toHaveCount(0);
   await expect(page.locator('.faq-answer')).toHaveCount(0);
   await expect(page.locator('script[type="application/ld+json"]')).not.toContainText('FAQPage');
 });
@@ -116,6 +123,8 @@ test('FAQ answer page uses the exact question and a single answer paragraph', as
   await expect(page.getByRole('heading', { level: 1 })).toHaveText(question);
   await expect(page.locator('.faq-answer')).toHaveCount(1);
   await expect(page.locator('.faq-answer')).not.toBeEmpty();
+  await expect(page.locator('.breadcrumbs, .faq-guidance, .source-note, .faq-next')).toHaveCount(0);
+  await expect(page.locator('.faq-page > *')).toHaveCount(2);
 });
 
 test('mobile navigation exposes the knowledge hubs', async ({ page }, testInfo) => {
