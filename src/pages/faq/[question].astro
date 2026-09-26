@@ -33,7 +33,7 @@ const title = `${faq.data.question} | Online Florist Singapore`;
 
     {related.length > 0 && (
       <div class="faq-next">
-        <span>Continue with the full guide</span>
+        <span>Read more on this topic</span>
         {related.map((entry) => entry && <a href={entry.data.path}>{entry.data.heading}<ArrowRight size={18} aria-hidden="true" /></a>)}
       </div>
     )}

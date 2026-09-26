@@ -36,7 +36,7 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     <div class="field">
       <label for="budget">Budget</label>
       <select id="budget" name="budget">
-        <option value="">Choose a range</option>
+        <option value="">Choose a budget</option>
         <option>Under SGD 100</option><option>SGD 100-150</option><option>SGD 150-250</option>
         <option>SGD 250-400</option><option>Above SGD 400</option><option>Not sure yet</option>
       </select>
@@ -47,12 +47,12 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
     </div>
     <div class="field full">
       <label for="message">What should we know?</label>
-      <textarea id="message" name="message" maxlength="2000" placeholder="Colour direction, recipient, card message, venue access, or other details"></textarea>
+      <textarea id="message" name="message" maxlength="2000" placeholder="Preferred colours, recipient, card message, venue access, or anything we should take note of"></textarea>
     </div>
     <div class="field full">
       <label class="checkbox" for="consent">
         <input id="consent" name="consent" type="checkbox" required />
-        <span>I agree that Online Florist Singapore may use these details to respond to this enquiry.</span>
+        <span>I agree that Online Florist Singapore may use these details to reply to my enquiry.</span>
       </label>
     </div>
     {turnstileSiteKey ? (
@@ -108,14 +108,14 @@ const turnstileSiteKey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY;
       const response = await fetch('/api/enquiries', { method: 'POST', headers: { 'content-type': 'application/json' }, body: JSON.stringify(body) });
       const result = await response.json() as { id?: string; error?: string };
       if (!response.ok) throw new Error(result.error === 'rate_limited' ? 'Too many recent enquiries. Please try again in 15 minutes.' : 'Please check the form and try again.');
-      if (!result.id) throw new Error('The enquiry could not be confirmed. Please try again.');
+      if (!result.id) throw new Error('We could not confirm the enquiry. Please try again.');
       form.reset();
       status.className = 'form-status success';
-      status.textContent = `Enquiry received. Your reference is ${result.id}.`;
+      status.textContent = `Thanks, we received your enquiry. Your reference is ${result.id}.`;
       (window as Window & { gtag?: (...args: unknown[]) => void }).gtag?.('event', 'generate_lead', { enquiry_id: result.id });
     } catch (error) {
       status.className = 'form-status error';
-      status.textContent = error instanceof Error ? error.message : 'The enquiry could not be sent. Please try again.';
+      status.textContent = error instanceof Error ? error.message : 'We could not send the enquiry. Please try again.';
     } finally {
       if (button) button.disabled = false;
     }

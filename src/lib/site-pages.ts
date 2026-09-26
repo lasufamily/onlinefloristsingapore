@@ -10,8 +10,8 @@ export type CanonicalPage = {
 const fixedPages: CanonicalPage[] = [
   {
     path: '/',
-    title: 'Flower knowledge for Singapore | Online Florist Singapore',
-    description: 'Learn how to choose, care for, arrange, and gift flowers in Singapore before deciding what to buy.',
+    title: 'Singapore Flower Guides | Online Florist Singapore',
+    description: 'Choose better flowers for Singapore occasions, gifts, arrangements, plant care, and delivery decisions.',
   },
   {
     path: '/faq/',
@@ -21,7 +21,7 @@ const fixedPages: CanonicalPage[] = [
   {
     path: '/contact/',
     title: 'Contact | Online Florist Singapore',
-    description: 'Contact Online Florist Singapore about corrections, partnerships, and flower knowledge resources.',
+    description: 'Send a flower enquiry to Online Florist Singapore with your occasion, date, delivery area, and budget.',
   },
   {
     path: '/privacy/',
