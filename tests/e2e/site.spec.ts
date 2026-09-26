@@ -28,6 +28,8 @@ test('homepage presents a knowledge-first flower guide', async ({ page }) => {
   await expect(page.locator('.topic-card')).toHaveCount(8);
   await expect(page.locator('.popular-questions a:not(.all-questions)')).toHaveCount(6);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://onlinefloristsingapore.com/');
+  await expect(page.locator('link[rel="icon"]')).toHaveAttribute('href', '/favicon-32x32.png');
+  await expect(page.locator('link[rel="apple-touch-icon"]')).toHaveAttribute('href', '/apple-touch-icon.png');
 });
 
 test('representative knowledge routes are substantive canonical pages', async ({ page }) => {

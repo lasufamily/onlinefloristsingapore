@@ -33,6 +33,8 @@ const additionalSchemas = structuredData ? (Array.isArray(structuredData) ? stru
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width" />
     <meta name="description" content={description} />
+    <link rel="icon" type="image/png" sizes="32x32" href={brand.favicons.icon} />
+    <link rel="apple-touch-icon" sizes="180x180" href={brand.favicons.appleTouchIcon} />
     <link rel="canonical" href={canonical} />
     <meta property="og:type" content="website" />
     <meta property="og:title" content={title} />
@@ -40,7 +42,7 @@ const additionalSchemas = structuredData ? (Array.isArray(structuredData) ? stru
     <meta property="og:url" content={canonical} />
     <meta property="og:image" content={socialImage} />
     <meta name="twitter:card" content="summary_large_image" />
-    <meta name="theme-color" content="#166c58" />
+    <meta name="theme-color" content={brand.colors.green} />
     <title>{title}</title>
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
     {additionalSchemas.map((schema) => <script type="application/ld+json" set:html={JSON.stringify(schema)} />)}
