@@ -18,11 +18,16 @@ const representativePaths = [
   '/faq/how-to-dry-flowers/',
 ];
 
-test('homepage presents a knowledge-first flower guide', async ({ page }) => {
+test('homepage presents a knowledge-first flower guide', async ({ page }, testInfo) => {
   await page.goto('/');
   const headerBrand = page.locator('.site-header').getByLabel('Hyper Florist home');
+  const headerLogo = headerBrand.getByRole('img', { name: 'Hyper Florist logo' });
   await expect(headerBrand).toBeVisible();
-  await expect(headerBrand.getByRole('img', { name: 'Hyper Florist logo' })).toBeVisible();
+  await expect(headerLogo).toBeVisible();
+  await expect(page.locator('.site-header .brand span')).toHaveCount(0);
+  await expect(page.locator('.site-footer .brand img')).toHaveCount(0);
+  const logoBox = await headerLogo.boundingBox();
+  expect(logoBox?.height).toBeGreaterThanOrEqual(testInfo.project.name === 'mobile' ? 54 : 70);
   await expect(page.locator('.hero .eyebrow')).toHaveText('Hyper Florist');
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Flowers for real Singapore occasions');
   await expect(page.locator('.topic-card')).toHaveCount(8);
