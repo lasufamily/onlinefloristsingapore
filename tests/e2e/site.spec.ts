@@ -40,6 +40,7 @@ test('homepage presents a knowledge-first flower guide', async ({ page }, testIn
   await expect(headerBrand).toBeVisible();
   await expect(headerLogo).toBeVisible();
   await expect(page.locator('.site-header .brand span')).toHaveCount(0);
+  await expect(page.locator('.desktop-nav a')).toHaveText(['Flowers', 'Plants', 'Occasions', 'Gift Ideas', 'FAQ']);
   await expect(page.locator('.site-footer .brand img')).toHaveCount(0);
   await expect(page.locator('.site-footer nav')).toHaveText([
     'AboutAbout UsContactPrivacy',
@@ -144,8 +145,7 @@ test('mobile navigation exposes the knowledge hubs', async ({ page }, testInfo) 
   await page.goto('/');
   await page.locator('.mobile-nav summary').click();
   await expect(page.locator('.mobile-panel')).toBeVisible();
-  await expect(page.locator('.mobile-panel a[href="/flowers-for/"]')).toBeVisible();
-  await expect(page.locator('.mobile-panel a[href="/faq/"]')).toBeVisible();
+  await expect(page.locator('.mobile-panel a')).toHaveText(['Flowers', 'Plants', 'Occasions', 'Gift Ideas', 'FAQ']);
 });
 
 test('contact form posts a simple required message to Formspark', async ({ page }) => {
