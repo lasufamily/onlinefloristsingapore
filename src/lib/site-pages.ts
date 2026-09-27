@@ -22,8 +22,8 @@ const fixedPages: CanonicalPage[] = [
   },
   {
     path: '/contact/',
-    title: `Contact Hyper Florist | Flower Enquiries Singapore`,
-    description: `Send a flower enquiry to ${brand.name} with the occasion, date, delivery area, budget, recipient details, and message preferences.`,
+    title: `Contact Hyper Florist | Singapore Flower Guide`,
+    description: `Contact ${brand.name} with questions, feedback, corrections, collaboration notes, or general messages for the Singapore flower guide team.`,
   },
   {
     path: '/about/',
@@ -33,7 +33,7 @@ const fixedPages: CanonicalPage[] = [
   {
     path: '/privacy/',
     title: `Privacy Notice | ${brand.name} Singapore`,
-    description: `Read how ${brand.name} collects, uses, protects, and retains information submitted through flower enquiries and website analytics.`,
+    description: `Read how ${brand.name} handles contact form details, service provider processing, retention, privacy requests, and website analytics.`,
   },
 ];
 

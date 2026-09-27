@@ -148,6 +148,25 @@ test('mobile navigation exposes the knowledge hubs', async ({ page }, testInfo) 
   await expect(page.locator('.mobile-panel a[href="/faq/"]')).toBeVisible();
 });
 
+test('contact form posts a simple required message to Formspark', async ({ page }) => {
+  await page.goto('/contact/');
+  const form = page.locator('#contact-form');
+
+  await expect(form).toHaveAttribute('action', 'https://submit-form.com/6Aa3k1TjD');
+  await expect(form).toHaveAttribute('method', 'POST');
+  await expect(form.locator('input, textarea')).toHaveCount(4);
+
+  for (const name of ['name', 'phone', 'email', 'message']) {
+    await expect(form.locator(`[name="${name}"]`)).toHaveAttribute('required', '');
+    await expect(form.locator(`label[for="${name}"] .required-marker`)).toHaveText('*');
+  }
+
+  await expect(form.locator('[name="phone"]')).toHaveAttribute('pattern', '[0-9]{8}');
+  await expect(form.locator('[name="phone"]')).toHaveAttribute('inputmode', 'numeric');
+  await expect(form.locator('[name="phone"]')).toHaveAttribute('maxlength', '8');
+  await expect(form.locator('select, input[name="deliveryDate"], input[name="deliveryPostalCode"], input[name="budget"], input[name="product"], input[name="consent"]')).toHaveCount(0);
+});
+
 test('legacy media remains unrestored', async ({ request }) => {
   const response = await request.get('/wp-content/uploads/2020/01/legacy-flower.jpg');
   expect(response.status()).toBe(404);

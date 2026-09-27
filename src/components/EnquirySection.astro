@@ -1,16 +1,16 @@
 ---
-import { CalendarDays, MapPin, MessageSquareText } from '@lucide/astro';
+import { Mail, MessageSquareText, Phone } from '@lucide/astro';
 import EnquiryForm from './EnquiryForm.astro';
 ---
 
 <section class="section enquiry-band" id="enquire">
   <div class="shell enquiry-layout">
     <div class="enquiry-intro">
-      <h2>Tell us what you are trying to send</h2>
-      <p>Share the occasion, date, delivery area, budget, preferred style, and any practical constraints. Those details make it easier to understand the request and identify what still needs to be confirmed.</p>
-      <div class="trust-item"><CalendarDays size={22} aria-hidden="true" /><div><h3>Date first</h3><span>Include the required date and a useful delivery window. Timing affects flower availability, preparation, transport, and whether the recipient can receive the order.</span></div></div>
-      <div class="trust-item"><MapPin size={22} aria-hidden="true" /><div><h3>Location matters</h3><span>Provide the postal code, unit number, venue name, access instructions, and recipient contact. Building rules and handover arrangements can change the delivery plan.</span></div></div>
-      <div class="trust-item"><MessageSquareText size={22} aria-hidden="true" /><div><h3>Keep the message clear</h3><span>Put the flower preferences, card wording, recipient details, and delivery notes in one place so the important instructions can be checked together.</span></div></div>
+      <h2>Reach out to us</h2>
+      <p>Use this form for general questions, feedback, corrections, collaborations, or anything else you would like to send to the Hyper Florist team.</p>
+      <div class="trust-item"><MessageSquareText size={22} aria-hidden="true" /><div><h3>Keep it simple</h3><span>Tell us what you need in a short note. We are not using this form for purchase enquiries, order handling, quotes, or lead collection.</span></div></div>
+      <div class="trust-item"><Phone size={22} aria-hidden="true" /><div><h3>Singapore phone format</h3><span>Enter an 8-digit local phone number without country code, spaces, or punctuation, so the contact details stay clear and consistent.</span></div></div>
+      <div class="trust-item"><Mail size={22} aria-hidden="true" /><div><h3>Reply details</h3><span>Leave a valid email address so we can respond if your message needs a follow-up, especially for corrections, source notes, or collaboration questions.</span></div></div>
     </div>
     <EnquiryForm />
   </div>

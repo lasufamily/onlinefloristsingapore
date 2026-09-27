@@ -133,6 +133,7 @@ h3 { font-size: 19px; line-height: 1.25; margin: 0; }
 .field { min-width: 0; }
 .field.full { grid-column: 1 / -1; }
 .field label, .field legend { display: block; font-weight: 800; font-size: 13px; margin-bottom: 7px; }
+.required-marker { color: #c82118; }
 .field input, .field select, .field textarea { width: 100%; min-height: 46px; border: 1px solid #b8bcb4; border-radius: 4px; background: white; color: var(--ink); padding: 10px 11px; }
 .field textarea { min-height: 120px; resize: vertical; }
 .field input:focus, .field select:focus, .field textarea:focus { outline: 3px solid rgba(79,116,95,.22); border-color: var(--sage); }
