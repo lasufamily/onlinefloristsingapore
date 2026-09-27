@@ -3,6 +3,7 @@ import { readFileSync } from 'node:fs';
 
 const knowledgePages = JSON.parse(readFileSync(new URL('../../src/data/knowledge-pages.json', import.meta.url), 'utf8')) as { path: string }[];
 const faqEntries = JSON.parse(readFileSync(new URL('../../src/data/faq.json', import.meta.url), 'utf8')) as { slug: string }[];
+const knowledgePaths = new Set(knowledgePages.map(({ path }) => path));
 const canonicalPaths = [
   '/',
   '/faq/',
@@ -79,7 +80,7 @@ test('all canonical pages meet the on-page SEO baseline', async ({ page }, testI
       expect(headings, `${path} must keep the answer page simple`).toEqual([1]);
     } else {
       expect(headings.includes(2), `${path} must have an H2`).toBe(true);
-      if (!isFaqDirectory) expect(headings.includes(3), `${path} must use H3s below its H2 sections`).toBe(true);
+      if (knowledgePaths.has(path)) expect(headings.includes(3), `${path} must use H3s below its H2 sections`).toBe(true);
     }
     expect(
       headings.every((level, index) => index === 0 || level <= headings[index - 1] + 1),
@@ -88,12 +89,8 @@ test('all canonical pages meet the on-page SEO baseline', async ({ page }, testI
 
     const title = await page.title();
     const description = await page.locator('meta[name="description"]').getAttribute('content');
-    if (path === '/about/') {
-      expect(title, `${path} title`).toBe('About Us');
-    } else {
-      expect(title.length, `${path} title length`).toBeGreaterThanOrEqual(30);
-      expect(title.length, `${path} title length`).toBeLessThanOrEqual(65);
-    }
+    expect(title.length, `${path} title length`).toBeGreaterThanOrEqual(30);
+    expect(title.length, `${path} title length`).toBeLessThanOrEqual(65);
     expect(description?.length, `${path} description length`).toBeGreaterThanOrEqual(110);
     expect(description?.length, `${path} description length`).toBeLessThanOrEqual(160);
     expect(titles.has(title), `${path} title must be unique`).toBe(false);

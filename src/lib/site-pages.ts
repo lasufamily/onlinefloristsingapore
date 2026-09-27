@@ -27,7 +27,7 @@ const fixedPages: CanonicalPage[] = [
   },
   {
     path: '/about/',
-    title: 'About Us',
+    title: `About ${brand.name} | Singapore Flower Guide`,
     description: `${brand.name} is a Singapore editorial guide for flower gifting, fresh flower care, plant ideas, and practical local floral advice.`,
   },
   {
