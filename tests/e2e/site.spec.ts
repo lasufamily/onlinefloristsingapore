@@ -41,6 +41,11 @@ test('homepage presents a knowledge-first flower guide', async ({ page }, testIn
   await expect(headerLogo).toBeVisible();
   await expect(page.locator('.site-header .brand span')).toHaveCount(0);
   await expect(page.locator('.site-footer .brand img')).toHaveCount(0);
+  await expect(page.locator('.site-footer nav')).toHaveText([
+    'AboutAbout UsContactPrivacy',
+    'LearnFlowersArrangementsPlantsGuidesFAQ',
+    'GiftingOccasionsFlowers ForGift IdeasHampers',
+  ]);
   const logoBox = await headerLogo.boundingBox();
   expect(logoBox?.height).toBeGreaterThanOrEqual(testInfo.project.name === 'mobile' ? 110 : 140);
   await expect(page.locator('.eyebrow, .article-marker, .topic-card .copy > span, .link-card > span')).toHaveCount(0);
