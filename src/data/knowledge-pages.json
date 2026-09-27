@@ -2103,13 +2103,13 @@
     ]
   },
   {
-    "id": "gifts",
-    "path": "/gifts/",
+    "id": "gift-ideas",
+    "path": "/gift-ideas/",
     "parent": "/",
     "kind": "hub",
-    "title": "Gifts | Hyper Florist",
+    "title": "Gift Ideas in Singapore | Hyper Florist",
     "description": "A practical Singapore guide to non-flower gifts and gifts that pair well with flowers, with tips on fit, timing, and presentation.",
-    "heading": "Gifts",
+    "heading": "Gift Ideas in Singapore",
     "intro": "Gifts do not always need to be flowers. Use this guide to compare non-floral gifts and small add-ons that can make a flower gesture feel more personal.",
     "image": "/images/quiet-flowers.jpg",
     "imageAlt": "Thoughtful gifts arranged beside flowers for a Singapore gift guide",
@@ -2133,9 +2133,9 @@
     ]
   },
   {
-    "id": "gifts--wallets",
-    "path": "/gifts/wallets/",
-    "parent": "/gifts/",
+    "id": "gift-ideas--wallets",
+    "path": "/gift-ideas/wallets/",
+    "parent": "/gift-ideas/",
     "kind": "guide",
     "title": "Wallet gifts | Hyper Florist",
     "description": "A practical Singapore guide to wallet gifts, with tips on style, everyday usefulness, presentation, and pairing wallets with flowers.",
@@ -2158,13 +2158,13 @@
       }
     ],
     "relatedPages": [
-      "/gifts/"
+      "/gift-ideas/"
     ]
   },
   {
-    "id": "gifts--jewellery",
-    "path": "/gifts/jewellery/",
-    "parent": "/gifts/",
+    "id": "gift-ideas--jewellery",
+    "path": "/gift-ideas/jewellery/",
+    "parent": "/gift-ideas/",
     "kind": "guide",
     "title": "Jewellery gifts | Hyper Florist",
     "description": "A practical Singapore guide to jewellery gifts, with tips on taste, meaning, sizing, presentation, and pairing jewellery with flowers.",
@@ -2187,13 +2187,13 @@
       }
     ],
     "relatedPages": [
-      "/gifts/"
+      "/gift-ideas/"
     ]
   },
   {
-    "id": "gifts--gadgets",
-    "path": "/gifts/gadgets/",
-    "parent": "/gifts/",
+    "id": "gift-ideas--gadgets",
+    "path": "/gift-ideas/gadgets/",
+    "parent": "/gift-ideas/",
     "kind": "guide",
     "title": "Gadget gifts | Hyper Florist",
     "description": "A practical Singapore guide to gadget gifts, with tips on compatibility, usefulness, charging, presentation, and pairing gadgets with flowers.",
@@ -2216,13 +2216,13 @@
       }
     ],
     "relatedPages": [
-      "/gifts/"
+      "/gift-ideas/"
     ]
   },
   {
-    "id": "gifts--with-flowers",
-    "path": "/gifts/with-flowers/",
-    "parent": "/gifts/",
+    "id": "gift-ideas--with-flowers",
+    "path": "/gift-ideas/with-flowers/",
+    "parent": "/gift-ideas/",
     "kind": "guide",
     "title": "Gifts with flowers | Hyper Florist",
     "description": "A practical Singapore guide to gifts that pair well with flowers, with tips on balance, presentation, timing, and recipient comfort.",
@@ -2245,8 +2245,70 @@
       }
     ],
     "relatedPages": [
-      "/gifts/",
+      "/gift-ideas/",
       "/flowers/"
+    ]
+  },
+  {
+    "id": "gift-ideas--wife",
+    "path": "/gift-ideas/wife/",
+    "parent": "/gift-ideas/",
+    "kind": "guide",
+    "title": "Gift Ideas for Wife | Hyper Florist",
+    "description": "A practical Singapore guide to gift ideas for wife, with tips on personal meaning, flowers, keepsakes, timing, and presentation.",
+    "heading": "Gift Ideas for Wife",
+    "intro": "Gift ideas for your wife should feel personal, considered, and matched to the moment rather than chosen from a generic list.",
+    "image": "/images/quiet-flowers.jpg",
+    "imageAlt": "Gift ideas for wife arranged beside flowers for a Singapore gift guide",
+    "sections": [
+      {
+        "heading": "Start from what she values",
+        "body": "Think about what she enjoys keeping, wearing, using, eating, or experiencing. The strongest gifts often reflect a detail you noticed rather than the highest price."
+      },
+      {
+        "heading": "Match the occasion",
+        "body": "An anniversary, birthday, apology, thank-you, or ordinary encouragement each needs a different tone. Let the reason guide whether the gift should feel romantic, practical, playful, or quietly supportive."
+      },
+      {
+        "heading": "Use flowers with intention",
+        "body": "Flowers can make the gift feel ceremonial, but they should suit her taste and the message. Pair them with a card that explains the thought behind the gesture."
+      }
+    ],
+    "relatedPages": [
+      "/gift-ideas/",
+      "/gift-ideas/with-flowers/",
+      "/flowers-for/wife/"
+    ]
+  },
+  {
+    "id": "gift-ideas--mother",
+    "path": "/gift-ideas/mother/",
+    "parent": "/gift-ideas/",
+    "kind": "guide",
+    "title": "Gift Ideas for Mother | Hyper Florist",
+    "description": "A practical Singapore guide to gift ideas for mother, with tips on comfort, usefulness, flowers, timing, and presentation.",
+    "heading": "Gift Ideas for Mother",
+    "intro": "Gift ideas for your mother should feel warm, useful, and easy for her to enjoy without extra effort.",
+    "image": "/images/quiet-flowers.jpg",
+    "imageAlt": "Gift ideas for mother arranged beside flowers for a Singapore gift guide",
+    "sections": [
+      {
+        "heading": "Choose comfort and usefulness",
+        "body": "Consider gifts that suit her routine, home, health needs, hobbies, or favourite treats. A useful gift can feel deeply thoughtful when it shows you understand her day."
+      },
+      {
+        "heading": "Keep presentation gracious",
+        "body": "Mothers may appreciate a gift that is easy to open, share, display, or put away. Avoid oversized packaging if storage or carrying will be inconvenient."
+      },
+      {
+        "heading": "Let flowers add warmth",
+        "body": "A bouquet, preserved arrangement, or small floral accent can make the gift feel celebratory. Choose colours and styles that match her taste rather than only the occasion."
+      }
+    ],
+    "relatedPages": [
+      "/gift-ideas/",
+      "/gift-ideas/with-flowers/",
+      "/flowers-for/mother/"
     ]
   },
   {
@@ -2275,7 +2337,7 @@
       }
     ],
     "relatedPages": [
-      "/gifts/",
+      "/gift-ideas/",
       "/occasions/"
     ]
   },
@@ -2480,7 +2542,7 @@
     ],
     "relatedPages": [
       "/hampers/",
-      "/gifts/"
+      "/gift-ideas/"
     ]
   },
   {
@@ -2509,7 +2571,7 @@
       }
     ],
     "relatedPages": [
-      "/gifts/"
+      "/gift-ideas/"
     ]
   },
   {

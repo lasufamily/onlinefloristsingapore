@@ -36,7 +36,7 @@ const requiredHubs = [
   '/occasions/',
   '/flowers-for/',
   '/bouquets-and-arrangements/',
-  '/gifts/',
+  '/gift-ideas/',
   '/hampers/',
   '/plants/',
   '/guides/',
@@ -66,16 +66,27 @@ describe('knowledge-base content inventory', () => {
       '/occasions/condolence/condolence-messages/',
       '/flowers-for/girlfriend/',
       '/flowers-for/teacher/',
-      '/gifts/wallets/',
-      '/gifts/jewellery/',
-      '/gifts/gadgets/',
-      '/gifts/with-flowers/',
+      '/gift-ideas/wallets/',
+      '/gift-ideas/jewellery/',
+      '/gift-ideas/gadgets/',
+      '/gift-ideas/with-flowers/',
+      '/gift-ideas/wife/',
+      '/gift-ideas/mother/',
       '/hampers/newborn/',
       '/plants/indoor/low-light/',
       '/flower-culture/vanda-miss-joaquim/',
     ]));
     expect([...paths].filter((path) => path.startsWith('/gifts/hampers/'))).toEqual([]);
     expect(paths.has('/gifts/hampers/')).toBe(false);
+    expect(paths.has('/gifts/')).toBe(false);
+
+    const giftIdeas = pages.find(({ path }) => path === '/gift-ideas/');
+    expect(giftIdeas?.title).toBe('Gift Ideas in Singapore | Hyper Florist');
+    expect(giftIdeas?.heading).toBe('Gift Ideas in Singapore');
+    expect(pages.find(({ path }) => path === '/gift-ideas/wife/')?.title).toBe('Gift Ideas for Wife | Hyper Florist');
+    expect(pages.find(({ path }) => path === '/gift-ideas/wife/')?.heading).toBe('Gift Ideas for Wife');
+    expect(pages.find(({ path }) => path === '/gift-ideas/mother/')?.title).toBe('Gift Ideas for Mother | Hyper Florist');
+    expect(pages.find(({ path }) => path === '/gift-ideas/mother/')?.heading).toBe('Gift Ideas for Mother');
   });
 
   it('uses unique titles, descriptions, ids, and paths', () => {
