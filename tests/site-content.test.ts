@@ -17,6 +17,8 @@ type KnowledgePage = {
   title: string;
   description: string;
   heading: string;
+  image: string;
+  imageAlt: string;
   relatedPages: string[];
 };
 
@@ -93,6 +95,20 @@ describe('knowledge-base content inventory', () => {
     const pages = loadJson<KnowledgePage[]>(knowledgePath);
     for (const key of ['id', 'path', 'title', 'description'] as const) {
       expect(new Set(pages.map((page) => page[key])).size, key).toBe(pages.length);
+    }
+  });
+
+  it('uses real local images with descriptive Singapore alt text', () => {
+    const pages = loadJson<KnowledgePage[]>(knowledgePath);
+    const images = pages.map(({ image }) => image);
+
+    expect(new Set(images).size).toBe(images.length);
+
+    for (const page of pages) {
+      expect(page.image, page.path).toMatch(/^\/images\/.+\.(jpg|png|webp)$/);
+      expect(existsSync(new URL(`../public${page.image}`, import.meta.url)), page.image).toBe(true);
+      if (page.path !== '/hampers/wine/') expect(page.imageAlt, page.path).toContain(page.heading);
+      expect(page.imageAlt, page.path).toContain('Singapore');
     }
   });
 
