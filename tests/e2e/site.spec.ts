@@ -167,6 +167,34 @@ test('contact form posts a simple required message to Formspark', async ({ page 
   await expect(form.locator('select, input[name="deliveryDate"], input[name="deliveryPostalCode"], input[name="budget"], input[name="product"], input[name="consent"]')).toHaveCount(0);
 });
 
+test('contact form acknowledges a successful submission on the page', async ({ page }) => {
+  await page.route('https://submit-form.com/6Aa3k1TjD', async (route) => {
+    const headers = {
+      'Access-Control-Allow-Origin': '*',
+      'Access-Control-Allow-Headers': 'content-type',
+      'Access-Control-Allow-Methods': 'POST, OPTIONS',
+    };
+    await route.fulfill({
+      status: route.request().method() === 'OPTIONS' ? 204 : 200,
+      headers,
+      contentType: 'application/json',
+      body: route.request().method() === 'OPTIONS' ? '' : '{}',
+    });
+  });
+  await page.goto('/contact/');
+  await page.waitForTimeout(150);
+
+  await page.locator('[name="name"]').fill('Jamie Tan');
+  await page.locator('[name="phone"]').fill('81234567');
+  await page.locator('[name="email"]').fill('jamie@example.com');
+  await page.locator('[name="message"]').fill('I found an outdated guide.');
+  await expect(page.locator('[name="name"]')).toHaveValue('Jamie Tan');
+  expect(await page.locator('#contact-form').evaluate((form: HTMLFormElement) => form.checkValidity())).toBe(true);
+  await page.getByRole('button', { name: 'Send message' }).click();
+
+  await expect(page.getByRole('status')).toHaveText('Thanks, we received your message.');
+});
+
 test('legacy media remains unrestored', async ({ request }) => {
   const response = await request.get('/wp-content/uploads/2020/01/legacy-flower.jpg');
   expect(response.status()).toBe(404);
