@@ -119,6 +119,7 @@ describe('knowledge-base content inventory', () => {
     expect(paths.has('/gifts/hampers/')).toBe(false);
     expect(paths.has('/gifts/')).toBe(false);
     expect(paths.has('/hampers/wine/')).toBe(false);
+    expect(paths.has('/guides/same-day-flower-delivery/')).toBe(false);
 
     const giftIdeas = pages.find(({ path }) => path === '/gift-ideas/');
     expect(giftIdeas?.title).toBe('Gift Ideas in Singapore | Hyper Florist');

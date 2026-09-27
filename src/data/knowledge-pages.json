@@ -2837,35 +2837,6 @@
     ]
   },
   {
-    "id": "guides--same-day-flower-delivery",
-    "path": "/guides/same-day-flower-delivery/",
-    "parent": "/guides/",
-    "kind": "guide",
-    "title": "Same-day flower delivery | Hyper Florist",
-    "description": "Practical Singapore advice on same-day flower delivery, written for real flower budgets, delivery needs, and gifting decisions.",
-    "heading": "Same-day flower delivery",
-    "intro": "This guide helps you make a clearer flower decision in Singapore, from budget and freshness to delivery timing and the message on the card.",
-    "image": "/images/generated/pages/guides-same-day-flower-delivery.jpg",
-    "imageAlt": "Ready bouquet clock and parcel for same-day flower delivery in Singapore",
-    "sections": [
-      {
-        "heading": "Decide what matters most",
-        "body": "Before comparing florists, settle the basics: occasion, budget, delivery date, recipient, and whether freshness, size, colour, or convenience matters most."
-      },
-      {
-        "heading": "Read the details",
-        "body": "Look beyond the main photo. Check flower substitutions, delivery windows, card message limits, vase requirements, and what happens if the recipient is not available."
-      },
-      {
-        "heading": "Keep choices manageable",
-        "body": "Shortlist a few suitable options instead of browsing endlessly. The best choice is usually the one that fits the occasion cleanly and can be delivered reliably."
-      }
-    ],
-    "relatedPages": [
-      "/guides/"
-    ]
-  },
-  {
     "id": "guides--flower-budgets",
     "path": "/guides/flower-budgets/",
     "parent": "/guides/",

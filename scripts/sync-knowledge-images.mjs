@@ -100,7 +100,6 @@ const altByPath = new Map([
   ['/guides/', 'Flower guide materials on a Singapore florist consultation table'],
   ['/guides/choosing-flowers/', 'Roses orchids and gerberas compared at a Singapore florist'],
   ['/guides/flower-delivery/', 'Fresh bouquet packed securely for flower delivery in Singapore'],
-  ['/guides/same-day-flower-delivery/', 'Ready bouquet clock and parcel for same-day flower delivery in Singapore'],
   ['/guides/flower-budgets/', 'Small medium and generous flower bouquets compared in Singapore'],
   ['/guides/message-writing/', 'Flower posy with blank message cards on a Singapore writing desk'],
   ['/guides/flower-etiquette/', 'Formal casual and respectful bouquets compared for Singapore flower etiquette'],

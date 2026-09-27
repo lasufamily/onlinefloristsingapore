@@ -28,7 +28,7 @@ const representativePaths = [
   '/gift-ideas/wife/',
   '/hampers/newborn/',
   '/plants/indoor/low-light/',
-  '/guides/same-day-flower-delivery/',
+  '/guides/flower-delivery/',
   '/flower-culture/vanda-miss-joaquim/',
   '/faq/',
   '/faq/how-to-dry-flowers/',
