@@ -37,6 +37,7 @@ const requiredHubs = [
   '/flowers-for/',
   '/bouquets-and-arrangements/',
   '/gifts/',
+  '/hampers/',
   '/plants/',
   '/guides/',
   '/flower-culture/',
@@ -65,10 +66,16 @@ describe('knowledge-base content inventory', () => {
       '/occasions/condolence/condolence-messages/',
       '/flowers-for/girlfriend/',
       '/flowers-for/teacher/',
-      '/gifts/hampers/newborn/',
+      '/gifts/wallets/',
+      '/gifts/jewellery/',
+      '/gifts/gadgets/',
+      '/gifts/with-flowers/',
+      '/hampers/newborn/',
       '/plants/indoor/low-light/',
       '/flower-culture/vanda-miss-joaquim/',
     ]));
+    expect([...paths].filter((path) => path.startsWith('/gifts/hampers/'))).toEqual([]);
+    expect(paths.has('/gifts/hampers/')).toBe(false);
   });
 
   it('uses unique titles, descriptions, ids, and paths', () => {

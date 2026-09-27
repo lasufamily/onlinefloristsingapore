@@ -23,7 +23,8 @@ const representativePaths = [
   '/flowers-for/girlfriend/',
   '/flowers-for/teacher/',
   '/bouquets-and-arrangements/bridal-bouquets/',
-  '/gifts/hampers/newborn/',
+  '/gifts/with-flowers/',
+  '/hampers/newborn/',
   '/plants/indoor/low-light/',
   '/guides/same-day-flower-delivery/',
   '/flower-culture/vanda-miss-joaquim/',
@@ -43,7 +44,7 @@ test('homepage presents a knowledge-first flower guide', async ({ page }, testIn
   expect(logoBox?.height).toBeGreaterThanOrEqual(testInfo.project.name === 'mobile' ? 110 : 140);
   await expect(page.locator('.eyebrow, .article-marker, .topic-card .copy > span, .link-card > span')).toHaveCount(0);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Flowers for real Singapore occasions');
-  await expect(page.locator('.topic-card')).toHaveCount(8);
+  await expect(page.locator('.topic-card')).toHaveCount(9);
   await expect(page.locator('.popular-questions a:not(.all-questions)')).toHaveCount(6);
   await expect(page.locator('link[rel="canonical"]')).toHaveAttribute('href', 'https://onlinefloristsingapore.com/');
   await expect(page.locator('link[rel="icon"]')).toHaveAttribute('href', '/favicon-32x32.png');

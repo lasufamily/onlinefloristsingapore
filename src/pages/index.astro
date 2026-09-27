@@ -7,7 +7,7 @@ import { canonicalPages } from '../lib/site-pages';
 const pages = await getCollection('knowledgePages');
 const faqs = (await getCollection('faq')).sort((a, b) => a.data.priority - b.data.priority);
 const home = canonicalPages.find((page) => page.path === '/')!;
-const topLevelPaths = ['/flowers/', '/occasions/', '/flowers-for/', '/bouquets-and-arrangements/', '/gifts/', '/plants/', '/guides/', '/flower-culture/'];
+const topLevelPaths = ['/flowers/', '/occasions/', '/flowers-for/', '/bouquets-and-arrangements/', '/gifts/', '/hampers/', '/plants/', '/guides/', '/flower-culture/'];
 const topics = topLevelPaths.map((path) => pages.find((page) => page.data.path === path)).filter(Boolean);
 ---
 

@@ -2107,24 +2107,24 @@
     "path": "/gifts/",
     "parent": "/",
     "kind": "hub",
-    "title": "Flower gifts | Hyper Florist",
-    "description": "A practical Singapore guide to flower gifts, with tips on fit, timing, presentation, and recipient comfort.",
-    "heading": "Flower gifts",
-    "intro": "Flower gifts work best when the contents suit the person, the occasion, and the delivery timing. Use this as a quick sense-check before buying.",
-    "image": "/images/newborn-hamper.jpg",
-    "imageAlt": "Flower gifts arranged for a Singapore flower guide",
+    "title": "Gifts | Hyper Florist",
+    "description": "A practical Singapore guide to non-flower gifts and gifts that pair well with flowers, with tips on fit, timing, and presentation.",
+    "heading": "Gifts",
+    "intro": "Gifts do not always need to be flowers. Use this guide to compare non-floral gifts and small add-ons that can make a flower gesture feel more personal.",
+    "image": "/images/quiet-flowers.jpg",
+    "imageAlt": "Thoughtful gifts arranged beside flowers for a Singapore gift guide",
     "sections": [
       {
-        "heading": "Choose useful over impressive",
-        "body": "Flower gifts should suit the person receiving them. Check dietary needs, storage space, hospital rules, office policies, and whether the items will actually be enjoyed."
+        "heading": "Start with the person",
+        "body": "A good gift should reflect the recipient more than the sender. Think about what they carry, wear, use, collect, avoid, or already own before choosing something decorative or expensive."
       },
       {
-        "heading": "Mind the presentation",
-        "body": "The gift should arrive neat, fresh, and easy to open. For corporate or family gifts, a clean presentation and a sensible card message often feel better than anything too flashy."
+        "heading": "Decide if flowers should be involved",
+        "body": "Some gifts can stand alone, while others feel warmer with a bouquet or a small floral note. Match the flowers to the gift instead of treating them as an automatic extra."
       },
       {
-        "heading": "Confirm timing",
-        "body": "For food, fruit, wine, and wellness items, delivery timing matters. Make sure someone can receive the hamper and that perishable items will not sit outside too long."
+        "heading": "Keep the handover easy",
+        "body": "Check whether the recipient can carry, store, or safely receive the gift. For office, hospital, school, or event settings, compact presentation and clear delivery instructions matter."
       }
     ],
     "relatedPages": [
@@ -2133,28 +2133,28 @@
     ]
   },
   {
-    "id": "gifts--hampers",
-    "path": "/gifts/hampers/",
+    "id": "gifts--wallets",
+    "path": "/gifts/wallets/",
     "parent": "/gifts/",
-    "kind": "hub",
-    "title": "Gift hampers | Hyper Florist",
-    "description": "A practical Singapore guide to gift hampers, with tips on fit, timing, presentation, and recipient comfort.",
-    "heading": "Gift hampers",
-    "intro": "Gift hampers work best when the contents suit the person, the occasion, and the delivery timing. Use this as a quick sense-check before buying.",
-    "image": "/images/newborn-hamper.jpg",
-    "imageAlt": "Gift hampers arranged for a Singapore flower guide",
+    "kind": "guide",
+    "title": "Wallet gifts | Hyper Florist",
+    "description": "A practical Singapore guide to wallet gifts, with tips on style, everyday usefulness, presentation, and pairing wallets with flowers.",
+    "heading": "Wallet gifts",
+    "intro": "Wallet gifts can feel personal without being too intimate when the style, material, and presentation suit the recipient's daily routine.",
+    "image": "/images/quiet-flowers.jpg",
+    "imageAlt": "Wallet gifts considered beside flowers for a Singapore gift guide",
     "sections": [
       {
-        "heading": "Choose useful over impressive",
-        "body": "Gift hampers should suit the person receiving them. Check dietary needs, storage space, hospital rules, office policies, and whether the items will actually be enjoyed."
+        "heading": "Match daily habits",
+        "body": "Consider whether the recipient prefers a slim cardholder, a classic wallet, a coin section, or space for receipts. A beautiful wallet that is too bulky may stay unused."
       },
       {
-        "heading": "Mind the presentation",
-        "body": "The gift should arrive neat, fresh, and easy to open. For corporate or family gifts, a clean presentation and a sensible card message often feel better than anything too flashy."
+        "heading": "Keep style restrained",
+        "body": "Neutral colours, clean stitching, and practical compartments usually age better than novelty details. If you are unsure, choose something the recipient can use in work and casual settings."
       },
       {
-        "heading": "Confirm timing",
-        "body": "For food, fruit, wine, and wellness items, delivery timing matters. Make sure someone can receive the hamper and that perishable items will not sit outside too long."
+        "heading": "Pair softly with flowers",
+        "body": "A compact bouquet or preserved flower note can make a wallet gift feel warmer without overpowering it. Keep the card message simple so the gift still feels personal."
       }
     ],
     "relatedPages": [
@@ -2162,227 +2162,112 @@
     ]
   },
   {
-    "id": "gifts--hampers--newborn",
-    "path": "/gifts/hampers/newborn/",
-    "parent": "/gifts/hampers/",
-    "kind": "guide",
-    "title": "Newborn hampers | Hyper Florist",
-    "description": "A practical Singapore guide to newborn hampers, with tips on fit, timing, presentation, and recipient comfort.",
-    "heading": "Newborn hampers",
-    "intro": "Newborn hampers work best when the contents suit the person, the occasion, and the delivery timing. Use this as a quick sense-check before buying.",
-    "image": "/images/newborn-hamper.jpg",
-    "imageAlt": "Newborn hampers arranged for a Singapore flower guide",
-    "sections": [
-      {
-        "heading": "Choose useful over impressive",
-        "body": "Newborn hampers should suit the person receiving them. Check dietary needs, storage space, hospital rules, office policies, and whether the items will actually be enjoyed."
-      },
-      {
-        "heading": "Mind the presentation",
-        "body": "The gift should arrive neat, fresh, and easy to open. For corporate or family gifts, a clean presentation and a sensible card message often feel better than anything too flashy."
-      },
-      {
-        "heading": "Confirm timing",
-        "body": "For food, fruit, wine, and wellness items, delivery timing matters. Make sure someone can receive the hamper and that perishable items will not sit outside too long."
-      }
-    ],
-    "relatedPages": [
-      "/gifts/hampers/"
-    ]
-  },
-  {
-    "id": "gifts--hampers--get-well-soon",
-    "path": "/gifts/hampers/get-well-soon/",
-    "parent": "/gifts/hampers/",
-    "kind": "guide",
-    "title": "Get well soon hampers | Hyper Florist",
-    "description": "A practical Singapore guide to get well soon hampers, with tips on fit, timing, presentation, and recipient comfort.",
-    "heading": "Get well soon hampers",
-    "intro": "Get well soon hampers work best when the contents suit the person, the occasion, and the delivery timing. Use this as a quick sense-check before buying.",
-    "image": "/images/newborn-hamper.jpg",
-    "imageAlt": "Get well soon hampers arranged for a Singapore flower guide",
-    "sections": [
-      {
-        "heading": "Choose useful over impressive",
-        "body": "Get well soon hampers should suit the person receiving them. Check dietary needs, storage space, hospital rules, office policies, and whether the items will actually be enjoyed."
-      },
-      {
-        "heading": "Mind the presentation",
-        "body": "The gift should arrive neat, fresh, and easy to open. For corporate or family gifts, a clean presentation and a sensible card message often feel better than anything too flashy."
-      },
-      {
-        "heading": "Confirm timing",
-        "body": "For food, fruit, wine, and wellness items, delivery timing matters. Make sure someone can receive the hamper and that perishable items will not sit outside too long."
-      }
-    ],
-    "relatedPages": [
-      "/gifts/hampers/"
-    ]
-  },
-  {
-    "id": "gifts--hampers--fruit",
-    "path": "/gifts/hampers/fruit/",
-    "parent": "/gifts/hampers/",
-    "kind": "guide",
-    "title": "Fruit hampers | Hyper Florist",
-    "description": "A practical Singapore guide to fruit hampers, with tips on fit, timing, presentation, and recipient comfort.",
-    "heading": "Fruit hampers",
-    "intro": "Fruit hampers work best when the contents suit the person, the occasion, and the delivery timing. Use this as a quick sense-check before buying.",
-    "image": "/images/newborn-hamper.jpg",
-    "imageAlt": "Fruit hampers arranged for a Singapore flower guide",
-    "sections": [
-      {
-        "heading": "Choose useful over impressive",
-        "body": "Fruit hampers should suit the person receiving them. Check dietary needs, storage space, hospital rules, office policies, and whether the items will actually be enjoyed."
-      },
-      {
-        "heading": "Mind the presentation",
-        "body": "The gift should arrive neat, fresh, and easy to open. For corporate or family gifts, a clean presentation and a sensible card message often feel better than anything too flashy."
-      },
-      {
-        "heading": "Confirm timing",
-        "body": "For food, fruit, wine, and wellness items, delivery timing matters. Make sure someone can receive the hamper and that perishable items will not sit outside too long."
-      }
-    ],
-    "relatedPages": [
-      "/gifts/hampers/"
-    ]
-  },
-  {
-    "id": "gifts--hampers--chocolate",
-    "path": "/gifts/hampers/chocolate/",
-    "parent": "/gifts/hampers/",
-    "kind": "guide",
-    "title": "Chocolate hampers | Hyper Florist",
-    "description": "A practical Singapore guide to chocolate hampers, with tips on fit, timing, presentation, and recipient comfort.",
-    "heading": "Chocolate hampers",
-    "intro": "Chocolate hampers work best when the contents suit the person, the occasion, and the delivery timing. Use this as a quick sense-check before buying.",
-    "image": "/images/newborn-hamper.jpg",
-    "imageAlt": "Chocolate hampers arranged for a Singapore flower guide",
-    "sections": [
-      {
-        "heading": "Choose useful over impressive",
-        "body": "Chocolate hampers should suit the person receiving them. Check dietary needs, storage space, hospital rules, office policies, and whether the items will actually be enjoyed."
-      },
-      {
-        "heading": "Mind the presentation",
-        "body": "The gift should arrive neat, fresh, and easy to open. For corporate or family gifts, a clean presentation and a sensible card message often feel better than anything too flashy."
-      },
-      {
-        "heading": "Confirm timing",
-        "body": "For food, fruit, wine, and wellness items, delivery timing matters. Make sure someone can receive the hamper and that perishable items will not sit outside too long."
-      }
-    ],
-    "relatedPages": [
-      "/gifts/hampers/"
-    ]
-  },
-  {
-    "id": "gifts--hampers--wine",
-    "path": "/gifts/hampers/wine/",
-    "parent": "/gifts/hampers/",
-    "kind": "guide",
-    "title": "Wine hampers | Hyper Florist",
-    "description": "A practical Singapore guide to wine hampers, with tips on fit, timing, presentation, and recipient comfort.",
-    "heading": "Wine hampers",
-    "intro": "Wine hampers work best when the contents suit the person, the occasion, and the delivery timing. Use this as a quick sense-check before buying.",
-    "image": "/images/newborn-hamper.jpg",
-    "imageAlt": "Wine hampers arranged for a Singapore flower guide",
-    "sections": [
-      {
-        "heading": "Choose useful over impressive",
-        "body": "Wine hampers should suit the person receiving them. Check dietary needs, storage space, hospital rules, office policies, and whether the items will actually be enjoyed."
-      },
-      {
-        "heading": "Mind the presentation",
-        "body": "The gift should arrive neat, fresh, and easy to open. For corporate or family gifts, a clean presentation and a sensible card message often feel better than anything too flashy."
-      },
-      {
-        "heading": "Confirm timing",
-        "body": "For food, fruit, wine, and wellness items, delivery timing matters. Make sure someone can receive the hamper and that perishable items will not sit outside too long."
-      }
-    ],
-    "relatedPages": [
-      "/gifts/hampers/"
-    ]
-  },
-  {
-    "id": "gifts--hampers--wellness",
-    "path": "/gifts/hampers/wellness/",
-    "parent": "/gifts/hampers/",
-    "kind": "guide",
-    "title": "Wellness hampers | Hyper Florist",
-    "description": "A practical Singapore guide to wellness hampers, with tips on fit, timing, presentation, and recipient comfort.",
-    "heading": "Wellness hampers",
-    "intro": "Wellness hampers work best when the contents suit the person, the occasion, and the delivery timing. Use this as a quick sense-check before buying.",
-    "image": "/images/newborn-hamper.jpg",
-    "imageAlt": "Wellness hampers arranged for a Singapore flower guide",
-    "sections": [
-      {
-        "heading": "Choose useful over impressive",
-        "body": "Wellness hampers should suit the person receiving them. Check dietary needs, storage space, hospital rules, office policies, and whether the items will actually be enjoyed."
-      },
-      {
-        "heading": "Mind the presentation",
-        "body": "The gift should arrive neat, fresh, and easy to open. For corporate or family gifts, a clean presentation and a sensible card message often feel better than anything too flashy."
-      },
-      {
-        "heading": "Confirm timing",
-        "body": "For food, fruit, wine, and wellness items, delivery timing matters. Make sure someone can receive the hamper and that perishable items will not sit outside too long."
-      }
-    ],
-    "relatedPages": [
-      "/gifts/hampers/"
-    ]
-  },
-  {
-    "id": "gifts--hampers--corporate",
-    "path": "/gifts/hampers/corporate/",
-    "parent": "/gifts/hampers/",
-    "kind": "guide",
-    "title": "Corporate hampers | Hyper Florist",
-    "description": "A practical Singapore guide to corporate hampers, with tips on fit, timing, presentation, and recipient comfort.",
-    "heading": "Corporate hampers",
-    "intro": "Corporate hampers work best when the contents suit the person, the occasion, and the delivery timing. Use this as a quick sense-check before buying.",
-    "image": "/images/newborn-hamper.jpg",
-    "imageAlt": "Corporate hampers arranged for a Singapore flower guide",
-    "sections": [
-      {
-        "heading": "Choose useful over impressive",
-        "body": "Corporate hampers should suit the person receiving them. Check dietary needs, storage space, hospital rules, office policies, and whether the items will actually be enjoyed."
-      },
-      {
-        "heading": "Mind the presentation",
-        "body": "The gift should arrive neat, fresh, and easy to open. For corporate or family gifts, a clean presentation and a sensible card message often feel better than anything too flashy."
-      },
-      {
-        "heading": "Confirm timing",
-        "body": "For food, fruit, wine, and wellness items, delivery timing matters. Make sure someone can receive the hamper and that perishable items will not sit outside too long."
-      }
-    ],
-    "relatedPages": [
-      "/gifts/hampers/"
-    ]
-  },
-  {
-    "id": "gifts--flowers-with-gifts",
-    "path": "/gifts/flowers-with-gifts/",
+    "id": "gifts--jewellery",
+    "path": "/gifts/jewellery/",
     "parent": "/gifts/",
     "kind": "guide",
-    "title": "Flowers with gifts | Hyper Florist",
-    "description": "A practical Singapore guide to flowers with gifts, with tips on fit, timing, presentation, and recipient comfort.",
-    "heading": "Flowers with gifts",
-    "intro": "Flowers with gifts work best when the contents suit the person, the occasion, and the delivery timing. Use this as a quick sense-check before buying.",
+    "title": "Jewellery gifts | Hyper Florist",
+    "description": "A practical Singapore guide to jewellery gifts, with tips on taste, meaning, sizing, presentation, and pairing jewellery with flowers.",
+    "heading": "Jewellery gifts",
+    "intro": "Jewellery gifts can be meaningful, but they need care. Think through style, symbolism, sizing, and how close the relationship is before choosing.",
+    "image": "/images/quiet-flowers.jpg",
+    "imageAlt": "Jewellery gifts considered beside flowers for a Singapore gift guide",
+    "sections": [
+      {
+        "heading": "Read the relationship",
+        "body": "Jewellery can feel romantic, ceremonial, or deeply personal. Match the piece to the relationship and occasion so the gesture does not feel heavier than intended."
+      },
+      {
+        "heading": "Avoid guessing on fit",
+        "body": "Rings, bracelets, and chains can be difficult to size. When uncertain, choose adjustable pieces, earrings, pendants, or designs where exact fit is less likely to spoil the gift."
+      },
+      {
+        "heading": "Let flowers set the tone",
+        "body": "Flowers can soften the moment around a jewellery gift. Use colour and message to clarify whether the gesture is romantic, congratulatory, thankful, or simply thoughtful."
+      }
+    ],
+    "relatedPages": [
+      "/gifts/"
+    ]
+  },
+  {
+    "id": "gifts--gadgets",
+    "path": "/gifts/gadgets/",
+    "parent": "/gifts/",
+    "kind": "guide",
+    "title": "Gadget gifts | Hyper Florist",
+    "description": "A practical Singapore guide to gadget gifts, with tips on compatibility, usefulness, charging, presentation, and pairing gadgets with flowers.",
+    "heading": "Gadget gifts",
+    "intro": "Gadget gifts work best when they solve a real everyday problem. Check compatibility, charging needs, and whether the recipient will actually use it.",
+    "image": "/images/quiet-flowers.jpg",
+    "imageAlt": "Gadget gifts considered beside flowers for a Singapore gift guide",
+    "sections": [
+      {
+        "heading": "Check compatibility first",
+        "body": "For tech accessories, confirm device type, charging port, operating system, plug needs, and whether the item works with what the recipient already owns."
+      },
+      {
+        "heading": "Choose useful over flashy",
+        "body": "A simple power bank, tracker, speaker, or desk accessory can be better than a complicated novelty item. The best gadget gifts become part of a routine."
+      },
+      {
+        "heading": "Use flowers for warmth",
+        "body": "Technology can feel practical rather than emotional. A modest bouquet or floral card can add warmth while keeping the main gift useful and easy to understand."
+      }
+    ],
+    "relatedPages": [
+      "/gifts/"
+    ]
+  },
+  {
+    "id": "gifts--with-flowers",
+    "path": "/gifts/with-flowers/",
+    "parent": "/gifts/",
+    "kind": "guide",
+    "title": "Gifts with flowers | Hyper Florist",
+    "description": "A practical Singapore guide to gifts that pair well with flowers, with tips on balance, presentation, timing, and recipient comfort.",
+    "heading": "Gifts with flowers",
+    "intro": "Some gifts feel better when they arrive with flowers. The key is choosing a pairing where the bouquet supports the gift instead of distracting from it.",
     "image": "/images/newborn-hamper.jpg",
-    "imageAlt": "Flowers with gifts arranged for a Singapore flower guide",
+    "imageAlt": "Gifts paired with flowers for a Singapore flower guide",
+    "sections": [
+      {
+        "heading": "Pick one main message",
+        "body": "Decide whether the flowers or the gift should carry the gesture. A romantic bouquet with a keepsake feels different from a practical gift with a small floral accent."
+      },
+      {
+        "heading": "Balance size and handling",
+        "body": "The combined gift should still be easy to receive, carry, and store. This matters for workplaces, hospitals, restaurants, schools, and homes with limited table space."
+      },
+      {
+        "heading": "Let the card connect them",
+        "body": "A short card can explain why the pairing was chosen. This helps the gift feel intentional rather than like two unrelated items bundled together."
+      }
+    ],
+    "relatedPages": [
+      "/gifts/",
+      "/flowers/"
+    ]
+  },
+  {
+    "id": "hampers",
+    "path": "/hampers/",
+    "parent": "/",
+    "kind": "hub",
+    "title": "Hampers | Hyper Florist",
+    "description": "A practical Singapore guide to gift hampers, with tips on contents, timing, dietary fit, presentation, and recipient comfort.",
+    "heading": "Hampers",
+    "intro": "Hampers deserve their own checklist. Use this guide to compare food, fruit, wellness, newborn, corporate, and occasion-based hampers.",
+    "image": "/images/newborn-hamper.jpg",
+    "imageAlt": "Gift hampers arranged for a Singapore hamper guide",
     "sections": [
       {
         "heading": "Choose useful over impressive",
-        "body": "Flowers with gifts should suit the person receiving them. Check dietary needs, storage space, hospital rules, office policies, and whether the items will actually be enjoyed."
+        "body": "A hamper should suit the person receiving it. Check dietary needs, household restrictions, hospital rules, office policies, storage space, and whether the items will actually be enjoyed."
       },
       {
         "heading": "Mind the presentation",
-        "body": "The gift should arrive neat, fresh, and easy to open. For corporate or family gifts, a clean presentation and a sensible card message often feel better than anything too flashy."
+        "body": "The hamper should arrive neat, fresh, and easy to open. For corporate or family gifts, clean presentation and a sensible card message often feel better than anything too flashy."
       },
       {
         "heading": "Confirm timing",
@@ -2390,6 +2275,211 @@
       }
     ],
     "relatedPages": [
+      "/gifts/",
+      "/occasions/"
+    ]
+  },
+  {
+    "id": "hampers--newborn",
+    "path": "/hampers/newborn/",
+    "parent": "/hampers/",
+    "kind": "guide",
+    "title": "Newborn hampers | Hyper Florist",
+    "description": "A practical Singapore guide to newborn hampers, with tips on baby-safe choices, parent comfort, timing, and presentation.",
+    "heading": "Newborn hampers",
+    "intro": "Newborn hampers work best when the contents are useful, gentle, and easy for tired parents to receive and sort through.",
+    "image": "/images/newborn-hamper.jpg",
+    "imageAlt": "Newborn hampers arranged for a Singapore hamper guide",
+    "sections": [
+      {
+        "heading": "Think about the parents too",
+        "body": "Baby items are helpful, but parents may also appreciate practical snacks, simple comforts, or items that reduce errands. Avoid anything that creates extra work."
+      },
+      {
+        "heading": "Keep choices gentle",
+        "body": "For baby-related items, avoid strong scents, complicated use instructions, and products where safety or suitability is unclear. When uncertain, choose simple everyday essentials."
+      },
+      {
+        "heading": "Plan a calm delivery",
+        "body": "New parents may be resting, at appointments, or managing visitors. Confirm the best delivery window and avoid oversized hampers if storage space is limited."
+      }
+    ],
+    "relatedPages": [
+      "/hampers/"
+    ]
+  },
+  {
+    "id": "hampers--get-well-soon",
+    "path": "/hampers/get-well-soon/",
+    "parent": "/hampers/",
+    "kind": "guide",
+    "title": "Get well soon hampers | Hyper Florist",
+    "description": "A practical Singapore guide to get well soon hampers, with tips on hospital rules, diet, comfort, timing, and presentation.",
+    "heading": "Get well soon hampers",
+    "intro": "Get well soon hampers should be comforting, practical, and considerate of where the recipient is recovering.",
+    "image": "/images/newborn-hamper.jpg",
+    "imageAlt": "Get well soon hampers arranged for a Singapore hamper guide",
+    "sections": [
+      {
+        "heading": "Check recovery setting",
+        "body": "A hospital ward, home recovery, and office return all call for different choices. Confirm visitor rules, room space, allergies, dietary limits, and whether flowers are suitable."
+      },
+      {
+        "heading": "Choose comfort over drama",
+        "body": "Soft snacks, fruit, drinks, and simple care items often work better than elaborate packaging. Avoid strong scents or products that assume too much about the illness."
+      },
+      {
+        "heading": "Write a gentle message",
+        "body": "Keep the card warm and low-pressure. A simple note of encouragement is usually safer than jokes, medical comments, or expectations about a quick recovery."
+      }
+    ],
+    "relatedPages": [
+      "/hampers/"
+    ]
+  },
+  {
+    "id": "hampers--fruit",
+    "path": "/hampers/fruit/",
+    "parent": "/hampers/",
+    "kind": "guide",
+    "title": "Fruit hampers | Hyper Florist",
+    "description": "A practical Singapore guide to fruit hampers, with tips on freshness, ripeness, dietary fit, delivery timing, and presentation.",
+    "heading": "Fruit hampers",
+    "intro": "Fruit hampers can feel fresh and generous, but they need sensible timing, ripeness, and storage planning in Singapore weather.",
+    "image": "/images/newborn-hamper.jpg",
+    "imageAlt": "Fruit hampers arranged for a Singapore hamper guide",
+    "sections": [
+      {
+        "heading": "Check freshness and ripeness",
+        "body": "Fruit should arrive in a condition the recipient can enjoy soon. Ask whether the selection is ready to eat, partly ripened, or chosen for longer storage."
+      },
+      {
+        "heading": "Mind storage conditions",
+        "body": "Singapore heat can shorten the window for perishable gifts. Confirm someone can receive the hamper and move the fruit to a suitable place quickly."
+      },
+      {
+        "heading": "Keep dietary fit in mind",
+        "body": "Fruit feels broadly safe, but preferences, medical diets, and household size still matter. A smaller fresh selection can be better than an oversized basket."
+      }
+    ],
+    "relatedPages": [
+      "/hampers/"
+    ]
+  },
+  {
+    "id": "hampers--chocolate",
+    "path": "/hampers/chocolate/",
+    "parent": "/hampers/",
+    "kind": "guide",
+    "title": "Chocolate hampers | Hyper Florist",
+    "description": "A practical Singapore guide to chocolate hampers, with tips on flavour, heat-sensitive delivery, dietary fit, and presentation.",
+    "heading": "Chocolate hampers",
+    "intro": "Chocolate hampers feel celebratory, but Singapore delivery conditions and dietary preferences can change what makes sense.",
+    "image": "/images/newborn-hamper.jpg",
+    "imageAlt": "Chocolate hampers arranged for a Singapore hamper guide",
+    "sections": [
+      {
+        "heading": "Plan for heat",
+        "body": "Chocolate can soften quickly in warm handovers. Confirm packaging, delivery timing, and whether the recipient can bring the hamper indoors soon after it arrives."
+      },
+      {
+        "heading": "Choose flavours carefully",
+        "body": "Dark, milk, white, nut-filled, alcohol-filled, and assorted chocolates suit different people. Check allergies and preferences before choosing a large mixed hamper."
+      },
+      {
+        "heading": "Match the occasion",
+        "body": "Chocolate hampers can suit thanks, birthdays, apologies, and congratulations. For formal settings, keep the packaging polished and the message direct."
+      }
+    ],
+    "relatedPages": [
+      "/hampers/"
+    ]
+  },
+  {
+    "id": "hampers--wine",
+    "path": "/hampers/wine/",
+    "parent": "/hampers/",
+    "kind": "guide",
+    "title": "Wine hampers | Hyper Florist",
+    "description": "A practical Singapore guide to wine hampers, with tips on recipient fit, alcohol sensitivity, timing, presentation, and delivery.",
+    "heading": "Wine hampers",
+    "intro": "Wine hampers can feel polished, but they are not suitable for every recipient or setting. Check preferences before sending.",
+    "image": "/images/newborn-hamper.jpg",
+    "imageAlt": "Wine hampers arranged for a Singapore hamper guide",
+    "sections": [
+      {
+        "heading": "Confirm alcohol is appropriate",
+        "body": "Wine is not a neutral gift. Consider religious, personal, medical, workplace, and family preferences before choosing alcohol for a hamper."
+      },
+      {
+        "heading": "Pair it thoughtfully",
+        "body": "Snacks, chocolate, fruit, or simple savoury items can make a wine hamper feel complete. Avoid pairings that require refrigeration unless timing is clear."
+      },
+      {
+        "heading": "Keep formal gifts polished",
+        "body": "For corporate or client contexts, use restrained packaging and a clear card. The hamper should feel respectful, not overly personal."
+      }
+    ],
+    "relatedPages": [
+      "/hampers/"
+    ]
+  },
+  {
+    "id": "hampers--wellness",
+    "path": "/hampers/wellness/",
+    "parent": "/hampers/",
+    "kind": "guide",
+    "title": "Wellness hampers | Hyper Florist",
+    "description": "A practical Singapore guide to wellness hampers, with tips on comfort, scent sensitivity, dietary fit, timing, and presentation.",
+    "heading": "Wellness hampers",
+    "intro": "Wellness hampers should feel comforting rather than prescriptive. Choose items that are gentle, usable, and appropriate for the recipient.",
+    "image": "/images/newborn-hamper.jpg",
+    "imageAlt": "Wellness hampers arranged for a Singapore hamper guide",
+    "sections": [
+      {
+        "heading": "Avoid making assumptions",
+        "body": "Wellness means different things to different people. Be careful with supplements, strong scents, diet products, or anything that could imply criticism."
+      },
+      {
+        "heading": "Choose gentle comforts",
+        "body": "Tea, simple snacks, soft textures, care items, or calming home goods can work well when they suit the recipient's habits and living space."
+      },
+      {
+        "heading": "Keep the message warm",
+        "body": "A wellness hamper should feel like support, not advice. Use a card that expresses care without telling the recipient how to rest, heal, or improve."
+      }
+    ],
+    "relatedPages": [
+      "/hampers/"
+    ]
+  },
+  {
+    "id": "hampers--corporate",
+    "path": "/hampers/corporate/",
+    "parent": "/hampers/",
+    "kind": "guide",
+    "title": "Corporate hampers | Hyper Florist",
+    "description": "A practical Singapore guide to corporate hampers, with tips on client fit, office delivery, presentation, timing, and message tone.",
+    "heading": "Corporate hampers",
+    "intro": "Corporate hampers need to feel polished, easy to receive, and appropriate for the relationship between sender and recipient.",
+    "image": "/images/newborn-hamper.jpg",
+    "imageAlt": "Corporate hampers arranged for a Singapore hamper guide",
+    "sections": [
+      {
+        "heading": "Keep it broadly suitable",
+        "body": "Corporate hampers often pass through reception desks, shared offices, or teams. Choose contents that are easy to share and unlikely to create dietary or cultural awkwardness."
+      },
+      {
+        "heading": "Respect office logistics",
+        "body": "Confirm company name, recipient name, floor, unit, reception rules, and delivery window. A handsome hamper still fails if it cannot reach the right person."
+      },
+      {
+        "heading": "Use a clear message",
+        "body": "Corporate cards should be concise and specific. Thank the recipient, mark the occasion, or state congratulations without making claims or promises the sender cannot stand behind."
+      }
+    ],
+    "relatedPages": [
+      "/hampers/",
       "/gifts/"
     ]
   },
