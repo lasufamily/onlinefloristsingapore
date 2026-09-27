@@ -42,7 +42,10 @@ test('homepage presents a knowledge-first flower guide', async ({ page }, testIn
   await expect(headerLogo).toBeVisible();
   await expect(page.locator('.site-header .brand span')).toHaveCount(0);
   await expect(page.locator('.desktop-nav a')).toHaveText(['Flowers', 'Plants', 'Occasions', 'Gift Ideas', 'FAQ']);
-  await expect(page.locator('.site-footer .brand img')).toHaveCount(0);
+  const footerLogo = page.locator('.site-footer .footer-logo');
+  await expect(page.locator('.site-footer')).not.toContainText('Plain-spoken Singapore flower guides for gifts, occasions, care, and delivery decisions.');
+  await expect(footerLogo).toHaveAttribute('src', '/images/brand/hyper-florist-logo-white.png');
+  await expect(footerLogo).toHaveAttribute('alt', 'Hyper Florist logo');
   await expect(page.locator('.site-footer nav')).toHaveText([
     'AboutAbout UsContactPrivacy',
     'LearnFlowersArrangementsPlantsGuidesFAQ',
