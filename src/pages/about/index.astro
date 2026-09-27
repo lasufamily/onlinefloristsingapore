@@ -1,0 +1,105 @@
+---
+import { ArrowRight, BookOpen, Flower2, Sprout } from '@lucide/astro';
+import BaseLayout from '../../layouts/BaseLayout.astro';
+import { canonicalPages } from '../../lib/site-pages';
+
+const metadata = canonicalPages.find((page) => page.path === '/about/')!;
+const sources = [
+  {
+    label: 'NParks: Vanda Miss Joaquim',
+    href: 'https://www.nparks.gov.sg/florafaunaweb/flora/2/5/2539',
+  },
+  {
+    label: 'NParks: importing cut flowers and foliage',
+    href: 'https://www.nparks.gov.sg/services/import-plant-plant-products/check-plant-health-requirements/flowers-foliage',
+  },
+  {
+    label: 'UN Comtrade reporting via Trading Economics',
+    href: 'https://tradingeconomics.com/singapore/imports/live-trees-plants-bulbs-roots-cut-flowers',
+  },
+];
+---
+
+<BaseLayout title={metadata.title} description={metadata.description} canonicalPath={metadata.path}>
+  <section class="about-hero">
+    <div class="shell about-hero-grid">
+      <div class="about-hero-copy">
+        <h1>About Us</h1>
+        <p>Hyper Florist exists because buying, sending, and looking after flowers in Singapore should not feel like guesswork.</p>
+        <a class="button" href="/guides/">Read our guides <ArrowRight size={18} aria-hidden="true" /></a>
+      </div>
+      <img src="/images/flower-room.jpg" alt="Fresh flowers arranged in a Singapore flower room" width="1920" height="1280" />
+    </div>
+  </section>
+
+  <section class="section about-intro">
+    <div class="shell about-two-column">
+      <div>
+        <h2>Good flowers need good context</h2>
+      </div>
+      <div class="about-prose">
+        <p>Singapore has no shortage of bouquets, hampers, opening stands, condolence flowers, and plant gifts. What is harder to find is clear, local advice before you spend: what suits the occasion, what the colours might imply, what lasts in our heat, and what to do once the bouquet reaches the table.</p>
+        <p>Many of us receive fresh flowers, say thank you, put them in water, then wonder why they start looking tired so fast. Between air-con rooms, humid corridors, afternoon heat, and tight delivery windows, flower care here has its own rhythm.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about-mission">
+    <div class="shell about-feature-grid">
+      <article>
+        <BookOpen size={30} aria-hidden="true" />
+        <h3>Useful guides before you buy</h3>
+        <p>We explain flower meanings, arrangement types, care steps, and gifting etiquette in plain English, with Singapore occasions in mind.</p>
+      </article>
+      <article>
+        <Flower2 size={30} aria-hidden="true" />
+        <h3>Fresh ideas for real life</h3>
+        <p>Not every gift has to be a default rose bouquet. We look at plants, preserved flowers, hampers, condolence choices, and thoughtful alternatives.</p>
+      </article>
+      <article>
+        <Sprout size={30} aria-hidden="true" />
+        <h3>An editorial guide, not a hard sell</h3>
+        <p>Our aim is to become Singapore's main editorial guide for flowers, plants, and gifting decisions: practical, searchable, and steady lah.</p>
+      </article>
+    </div>
+  </section>
+
+  <section class="section about-scene">
+    <div class="shell about-scene-layout">
+      <div>
+        <h2>The Singapore flower scene is bigger than one bouquet</h2>
+        <p>Flowers here sit at the crossroads of trade, culture, climate, and everyday relationships. That is why a good flower guide should cover more than just pretty photos.</p>
+      </div>
+      <div class="about-stat-list" aria-label="Singapore flower facts">
+        <article>
+          <strong>1981</strong>
+          <p>Vanda Miss Joaquim was chosen as Singapore's national flower after standing out among 40 flowers, according to NParks.</p>
+        </article>
+        <article>
+          <strong>1893</strong>
+          <p>The orchid hybrid was created by Agnes Joaquim, making it part of Singapore's own horticultural story.</p>
+        </article>
+        <article>
+          <strong>US$99.1m</strong>
+          <p>Singapore imported about this much in live trees, plants, bulbs, roots, and cut flowers in 2025 under the broad UN Comtrade category reported by Trading Economics.</p>
+        </article>
+        <article>
+          <strong>Regulated</strong>
+          <p>NParks requires plant-health documentation for cut flower and foliage imports, a reminder that freshness depends on a wider supply chain.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section class="section about-closing">
+    <div class="shell about-closing-copy">
+      <h2>We are here for the thoughtful sender</h2>
+      <p>Hyper Florist was created to make flower gifting feel less blur and more considered. Whether you are ordering for a birthday, a wake, a new shop opening, a new baby, or just because, we want you to understand the choice before you send it.</p>
+      <a class="text-link" href="/flowers/">Explore flower guides <ArrowRight size={17} aria-hidden="true" /></a>
+      <div class="about-sources">
+        <h3>Sources</h3>
+        {sources.map((source) => <a href={source.href} rel="noopener noreferrer">{source.label}</a>)}
+      </div>
+    </div>
+  </section>
+</BaseLayout>

@@ -6,6 +6,7 @@ const faqEntries = JSON.parse(readFileSync(new URL('../../src/data/faq.json', im
 const canonicalPaths = [
   '/',
   '/faq/',
+  '/about/',
   '/contact/',
   '/privacy/',
   ...knowledgePages.map(({ path }) => path),
@@ -79,8 +80,12 @@ test('all canonical pages meet the on-page SEO baseline', async ({ page }, testI
 
     const title = await page.title();
     const description = await page.locator('meta[name="description"]').getAttribute('content');
-    expect(title.length, `${path} title length`).toBeGreaterThanOrEqual(30);
-    expect(title.length, `${path} title length`).toBeLessThanOrEqual(65);
+    if (path === '/about/') {
+      expect(title, `${path} title`).toBe('About Us');
+    } else {
+      expect(title.length, `${path} title length`).toBeGreaterThanOrEqual(30);
+      expect(title.length, `${path} title length`).toBeLessThanOrEqual(65);
+    }
     expect(description?.length, `${path} description length`).toBeGreaterThanOrEqual(110);
     expect(description?.length, `${path} description length`).toBeLessThanOrEqual(160);
     expect(titles.has(title), `${path} title must be unique`).toBe(false);

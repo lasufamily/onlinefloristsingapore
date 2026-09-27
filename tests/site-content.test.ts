@@ -46,7 +46,7 @@ const requiredHubs = [
 describe('knowledge-base content inventory', () => {
   it('defines every primary knowledge hub as a canonical page', () => {
     const paths = canonicalPages.map(({ path }) => path);
-    expect(paths).toEqual(expect.arrayContaining(['/', ...requiredHubs, '/contact/', '/privacy/']));
+    expect(paths).toEqual(expect.arrayContaining(['/', ...requiredHubs, '/about/', '/contact/', '/privacy/']));
     expect(paths.some((path) => path.startsWith('/singapore-flower-culture/'))).toBe(false);
   });
 

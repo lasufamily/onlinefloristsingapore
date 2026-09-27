@@ -145,6 +145,35 @@ h3 { font-size: 19px; line-height: 1.25; margin: 0; }
 .contact-page { background: var(--soft); }
 .contact-intro { max-width: 760px; padding: 82px 0 44px; }
 .contact-intro p { color: var(--muted); font-size: 18px; max-width: 620px; }
+.about-hero { background: var(--soft); border-bottom: 1px solid var(--line); }
+.about-hero-grid { display: grid; grid-template-columns: minmax(0, .95fr) minmax(420px, 1.05fr); align-items: stretch; min-height: 560px; }
+.about-hero-copy { display: flex; flex-direction: column; justify-content: center; align-items: flex-start; padding: 76px 54px 76px 0; }
+.about-hero-copy h1 { font-size: clamp(48px, 7vw, 82px); }
+.about-hero-copy p { max-width: 560px; color: #465149; font-size: 20px; margin: 24px 0 30px; }
+.about-hero-grid img { height: 100%; min-height: 460px; object-fit: cover; border-left: 1px solid var(--line); }
+.about-two-column { display: grid; grid-template-columns: .8fr 1.2fr; gap: 76px; align-items: start; }
+.about-prose p { color: #303b35; font-size: 19px; margin-top: 0; }
+.about-prose p + p { margin-top: 22px; }
+.about-mission { background: #f1f4ee; border-block: 1px solid var(--line); }
+.about-feature-grid { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 26px; }
+.about-feature-grid article { min-height: 280px; padding: 28px; border: 1px solid #cdd3ca; border-radius: 6px; background: white; }
+.about-feature-grid svg { color: var(--coral-dark); margin-bottom: 22px; }
+.about-feature-grid h3 { font-family: Georgia, "Times New Roman", serif; font-size: 28px; font-weight: 500; }
+.about-feature-grid p { color: var(--muted); margin-bottom: 0; }
+.about-scene { background: var(--sage); color: white; }
+.about-scene-layout { display: grid; grid-template-columns: minmax(0, .8fr) minmax(420px, 1.2fr); gap: 70px; align-items: start; }
+.about-scene-layout > div:first-child p { max-width: 460px; color: rgba(255,255,255,.82); font-size: 18px; }
+.about-stat-list { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); border-top: 1px solid rgba(255,255,255,.28); border-left: 1px solid rgba(255,255,255,.28); }
+.about-stat-list article { min-height: 210px; padding: 24px; border-right: 1px solid rgba(255,255,255,.28); border-bottom: 1px solid rgba(255,255,255,.28); }
+.about-stat-list strong { display: block; color: var(--yellow); font-family: Georgia, "Times New Roman", serif; font-size: 42px; line-height: 1; font-weight: 500; margin-bottom: 18px; }
+.about-stat-list p { color: rgba(255,255,255,.86); margin: 0; }
+.about-closing { background: var(--yellow); }
+.about-closing-copy { max-width: 880px; }
+.about-closing-copy p { max-width: 720px; font-size: 19px; color: #2f3a34; }
+.about-sources { margin-top: 40px; padding-top: 22px; border-top: 1px solid rgba(22,108,88,.28); }
+.about-sources h3 { font-size: 15px; text-transform: uppercase; letter-spacing: .04em; margin-bottom: 12px; }
+.about-sources a { display: inline-flex; margin: 0 18px 10px 0; color: #24543a; font-weight: 800; text-decoration: none; }
+.about-sources a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .site-footer { background: var(--ink); color: white; padding: 54px 0 30px; }
 .footer-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: 48px; }
 .footer-grid p, .footer-grid a { color: #c9ccc6; }
@@ -244,6 +273,10 @@ h3 { font-size: 19px; line-height: 1.25; margin: 0; }
   .delivery-grid, .faq-layout { grid-template-columns: 1fr; gap: 22px; }
   .enquiry-intro { position: static; }
   .topic-grid { grid-template-columns: repeat(2, minmax(0, 1fr)); }
+  .about-hero-grid, .about-two-column, .about-scene-layout { grid-template-columns: 1fr; gap: 34px; }
+  .about-hero-copy { padding: 64px 0 20px; }
+  .about-hero-grid img { border-left: 0; min-height: 360px; }
+  .about-feature-grid, .about-stat-list { grid-template-columns: repeat(2, minmax(0, 1fr)); }
   .knowledge-hero { grid-template-columns: 1fr; }
   .knowledge-hero-copy { padding: 64px 24px; }
   .knowledge-hero-media { min-height: 360px; max-height: 520px; }
@@ -271,6 +304,10 @@ h3 { font-size: 19px; line-height: 1.25; margin: 0; }
   .form-grid { grid-template-columns: 1fr; }
   .field.full { grid-column: auto; }
   .enquiry-form { padding: 20px; }
+  .about-hero-copy p, .about-prose p, .about-closing-copy p { font-size: 17px; }
+  .about-feature-grid, .about-stat-list { grid-template-columns: 1fr; }
+  .about-feature-grid article, .about-stat-list article { min-height: 0; }
+  .about-stat-list strong { font-size: 36px; }
   .footer-bottom { display: block; }
   .footer-bottom span { display: block; }
   .footer-bottom span + span { margin-top: 8px; }

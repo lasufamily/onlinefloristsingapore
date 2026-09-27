@@ -26,6 +26,11 @@ const fixedPages: CanonicalPage[] = [
     description: `Send a flower enquiry to ${brand.name} with the occasion, date, delivery area, budget, recipient details, and message preferences.`,
   },
   {
+    path: '/about/',
+    title: 'About Us',
+    description: `${brand.name} is a Singapore editorial guide for flower gifting, fresh flower care, plant ideas, and practical local floral advice.`,
+  },
+  {
     path: '/privacy/',
     title: `Privacy Notice | ${brand.name} Singapore`,
     description: `Read how ${brand.name} collects, uses, protects, and retains information submitted through flower enquiries and website analytics.`,
