@@ -4,6 +4,7 @@ import { canonicalPages } from '../src/lib/site-pages';
 import { redirects } from '../src/lib/redirects';
 
 const redirectsFile = readFileSync(new URL('../public/_redirects', import.meta.url), 'utf8');
+const headersFile = readFileSync(new URL('../public/_headers', import.meta.url), 'utf8');
 
 describe('deployment contract', () => {
   it('keeps the code redirect map synchronized with Cloudflare', () => {
@@ -31,5 +32,15 @@ describe('deployment contract', () => {
       const normalizedSource = source.replace(/\/{2,}/g, '/');
       expect(normalizedSource, `${source} redirects to itself`).not.toBe(destination);
     }
+  });
+
+  it('allows Google Tag Manager image beacons in the CSP', () => {
+    const csp = headersFile.match(/Content-Security-Policy:\s*(.+)/)?.[1] ?? '';
+    const imgSrc = csp
+      .split(';')
+      .map((directive) => directive.trim())
+      .find((directive) => directive.startsWith('img-src '));
+
+    expect(imgSrc).toContain('https://www.googletagmanager.com');
   });
 });
