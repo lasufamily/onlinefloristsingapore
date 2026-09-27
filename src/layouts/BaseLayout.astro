@@ -16,7 +16,6 @@ interface Props {
 const { title, description, canonicalPath, image = '/images/hero-flowers.jpg', noindex = false, structuredData } = Astro.props;
 const canonical = new URL(canonicalPath, Astro.site);
 const socialImage = new URL(image, Astro.site);
-const ga4Id = import.meta.env.PUBLIC_GA4_ID;
 const cloudflareToken = import.meta.env.PUBLIC_CLOUDFLARE_ANALYTICS_TOKEN;
 const websiteSchema = {
   '@context': 'https://schema.org',
@@ -33,6 +32,15 @@ const additionalSchemas = structuredData ? (Array.isArray(structuredData) ? stru
   <head>
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1" />
+    <!-- Google Tag Manager -->
+    <script is:inline>
+      (function(w,d,s,l,i){w[l]=w[l]||[];w[l].push({'gtm.start':
+      new Date().getTime(),event:'gtm.js'});var f=d.getElementsByTagName(s)[0],
+      j=d.createElement(s),dl=l!='dataLayer'?'&l='+l:'';j.async=true;j.src=
+      'https://www.googletagmanager.com/gtm.js?id='+i+dl;f.parentNode.insertBefore(j,f);
+      })(window,document,'script','dataLayer','GTM-5QHSS699');
+    </script>
+    <!-- End Google Tag Manager -->
     <meta name="description" content={description} />
     {noindex && <meta name="robots" content="noindex, follow" />}
     <link rel="icon" type="image/png" sizes="32x32" href={brand.favicons.icon} />
@@ -48,22 +56,16 @@ const additionalSchemas = structuredData ? (Array.isArray(structuredData) ? stru
     <title>{title}</title>
     <script type="application/ld+json" set:html={JSON.stringify(websiteSchema)} />
     {additionalSchemas.map((schema) => <script type="application/ld+json" set:html={JSON.stringify(schema)} />)}
-    {ga4Id && (
-      <>
-        <script async src={`https://www.googletagmanager.com/gtag/js?id=${ga4Id}`}></script>
-        <script is:inline define:vars={{ ga4Id }}>
-          window.dataLayer = window.dataLayer || [];
-          function gtag(){dataLayer.push(arguments);}
-          gtag('js', new Date());
-          gtag('config', ga4Id);
-        </script>
-      </>
-    )}
     {cloudflareToken && (
       <script defer src="https://static.cloudflareinsights.com/beacon.min.js" data-cf-beacon={JSON.stringify({ token: cloudflareToken })}></script>
     )}
   </head>
   <body>
+    <!-- Google Tag Manager (noscript) -->
+    <noscript>
+      <iframe src="https://www.googletagmanager.com/ns.html?id=GTM-5QHSS699" height="0" width="0" style="display:none;visibility:hidden"></iframe>
+    </noscript>
+    <!-- End Google Tag Manager (noscript) -->
     <a class="skip-link" href="#main">Skip to content</a>
     <SiteHeader />
     <main id="main"><slot /></main>
