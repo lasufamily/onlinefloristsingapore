@@ -167,6 +167,20 @@ test('contact form posts a simple required message to Formspark', async ({ page 
   await expect(form.locator('select, input[name="deliveryDate"], input[name="deliveryPostalCode"], input[name="budget"], input[name="product"], input[name="consent"]')).toHaveCount(0);
 });
 
+test('contact page centers the form without guidance items', async ({ page }) => {
+  await page.goto('/contact/');
+  await expect(page.locator('.enquiry-intro .trust-item')).toHaveCount(0);
+  const layout = page.locator('.enquiry-layout');
+  const form = page.locator('.enquiry-layout > .enquiry-form');
+  const layoutBox = await layout.boundingBox();
+  const formBox = await form.boundingBox();
+
+  expect(layoutBox).not.toBeNull();
+  expect(formBox).not.toBeNull();
+  expect(formBox!.width).toBeLessThanOrEqual(780);
+  expect(Math.abs(layoutBox!.x + layoutBox!.width / 2 - (formBox!.x + formBox!.width / 2))).toBeLessThan(1);
+});
+
 test('contact form acknowledges a successful submission on the page', async ({ page }) => {
   await page.route('https://submit-form.com/6Aa3k1TjD', async (route) => {
     const headers = {

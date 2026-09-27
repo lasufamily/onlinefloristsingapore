@@ -1,16 +1,12 @@
 ---
-import { Mail, MessageSquareText, Phone } from '@lucide/astro';
 import EnquiryForm from './EnquiryForm.astro';
 ---
 
 <section class="section enquiry-band" id="enquire">
-  <div class="shell enquiry-layout">
+  <div class="shell enquiry-layout centered">
     <div class="enquiry-intro">
       <h2>Reach out to us</h2>
       <p>Use this form for general questions, feedback, corrections, collaborations, or anything else you would like to send to the Hyper Florist team.</p>
-      <div class="trust-item"><MessageSquareText size={22} aria-hidden="true" /><div><h3>Keep it simple</h3><span>Tell us what you need in a short note. We are not using this form for purchase enquiries, order handling, quotes, or lead collection.</span></div></div>
-      <div class="trust-item"><Phone size={22} aria-hidden="true" /><div><h3>Singapore phone format</h3><span>Enter an 8-digit local phone number without country code, spaces, or punctuation, so the contact details stay clear and consistent.</span></div></div>
-      <div class="trust-item"><Mail size={22} aria-hidden="true" /><div><h3>Reply details</h3><span>Leave a valid email address so we can respond if your message needs a follow-up, especially for corrections, source notes, or collaboration questions.</span></div></div>
     </div>
     <EnquiryForm />
   </div>

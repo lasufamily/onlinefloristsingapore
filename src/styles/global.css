@@ -124,10 +124,9 @@ h3 { font-size: 19px; line-height: 1.25; margin: 0; }
 .faq-list details[open] summary::after { content: "−"; }
 .faq-list details p { color: var(--muted); margin: -5px 42px 22px 0; }
 .enquiry-band { background: #ffd9df; }
-.enquiry-layout { display: grid; grid-template-columns: .78fr 1.22fr; gap: 74px; align-items: start; }
-.enquiry-intro { position: sticky; top: 28px; }
-.enquiry-intro p { color: #4d4b3f; max-width: 480px; }
-.enquiry-intro .trust-item span { color: #45483f; }
+.enquiry-layout.centered { display: grid; grid-template-columns: minmax(0, 780px); justify-content: center; gap: 28px; }
+.enquiry-layout.centered .enquiry-intro { position: static; text-align: center; }
+.enquiry-layout.centered .enquiry-intro p { color: #4d4b3f; max-width: 640px; margin: 14px auto 0; }
 .enquiry-form { background: white; border-radius: 6px; padding: 30px; border: 1px solid rgba(23,24,22,.12); }
 .form-grid { display: grid; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 18px; }
 .field { min-width: 0; }
