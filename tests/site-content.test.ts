@@ -1,13 +1,41 @@
 import { existsSync, readFileSync } from 'node:fs';
+import { createHash } from 'node:crypto';
+import { fileURLToPath } from 'node:url';
+import sharp from 'sharp';
 import { describe, expect, it } from 'vitest';
 import { canonicalPages } from '../src/lib/site-pages';
 
 const knowledgePath = new URL('../src/data/knowledge-pages.json', import.meta.url);
+const knowledgeImagesPath = new URL('../src/data/knowledge-images.json', import.meta.url);
 const faqPath = new URL('../src/data/faq.json', import.meta.url);
 
 function loadJson<T>(url: URL): T {
   expect(existsSync(url), `${url.pathname} must exist`).toBe(true);
   return JSON.parse(readFileSync(url, 'utf8')) as T;
+}
+
+async function differenceHash(imagePath: URL): Promise<boolean[]> {
+  const { data } = await sharp(fileURLToPath(imagePath))
+    .resize(17, 16, { fit: 'fill' })
+    .greyscale()
+    .raw()
+    .toBuffer({ resolveWithObject: true });
+
+  const bits: boolean[] = [];
+  for (let y = 0; y < 16; y += 1) {
+    for (let x = 0; x < 16; x += 1) {
+      bits.push(data[(y * 17) + x] > data[(y * 17) + x + 1]);
+    }
+  }
+  return bits;
+}
+
+function hashSimilarity(first: boolean[], second: boolean[]): number {
+  const matchingBits = first.reduce(
+    (count, bit, index) => count + Number(bit === second[index]),
+    0,
+  );
+  return matchingBits / first.length;
 }
 
 type KnowledgePage = {
@@ -34,6 +62,12 @@ type FaqEntry = {
   relatedPages: string[];
   sources: { label: string; url: string }[];
   priority: number;
+};
+
+type KnowledgeImage = {
+  path: string;
+  filename: string;
+  alt: string;
 };
 
 const requiredHubs = [
@@ -111,9 +145,56 @@ describe('knowledge-base content inventory', () => {
     for (const page of pages) {
       expect(page.image, page.path).toMatch(/^\/images\/.+\.(jpg|png|webp)$/);
       expect(existsSync(new URL(`../public${page.image}`, import.meta.url)), page.image).toBe(true);
-      expect(page.imageAlt, page.path).toContain(page.heading);
       expect(page.imageAlt, page.path).toContain('Singapore');
+      expect(page.imageAlt.trim().split(/\s+/).length, page.path).toBeGreaterThanOrEqual(7);
     }
+  });
+
+  it('defines one distinct visual brief for every knowledge page', () => {
+    const pages = loadJson<KnowledgePage[]>(knowledgePath);
+    const images = loadJson<KnowledgeImage[]>(knowledgeImagesPath);
+    const pagePaths = pages.map(({ path }) => path).sort();
+    const imagePaths = images.map(({ path }) => path).sort();
+
+    expect(imagePaths).toEqual(pagePaths);
+    expect(new Set(images.map(({ filename }) => filename)).size).toBe(images.length);
+    expect(new Set(images.map(({ alt }) => alt)).size).toBe(images.length);
+
+    for (const image of images) {
+      expect(image.filename).toMatch(/^[a-z0-9-]+\.jpg$/);
+      expect(image.alt).toContain('Singapore');
+
+      const page = pages.find(({ path }) => path === image.path);
+      expect(page?.image).toBe(`/images/generated/pages/${image.filename}`);
+      expect(page?.imageAlt).toBe(image.alt);
+    }
+  });
+
+  it('does not reuse exact or perceptually near-identical page images', async () => {
+    const pages = loadJson<KnowledgePage[]>(knowledgePath);
+    const images = await Promise.all(pages.map(async (page) => {
+      const imagePath = new URL(`../public${page.image}`, import.meta.url);
+      const contents = readFileSync(imagePath);
+      return {
+        path: page.path,
+        digest: createHash('sha256').update(contents).digest('hex'),
+        differenceHash: await differenceHash(imagePath),
+      };
+    }));
+
+    expect(new Set(images.map(({ digest }) => digest)).size).toBe(images.length);
+
+    const repeatedPairs: string[] = [];
+    for (let first = 0; first < images.length; first += 1) {
+      for (let second = first + 1; second < images.length; second += 1) {
+        const similarity = hashSimilarity(images[first].differenceHash, images[second].differenceHash);
+        if (similarity >= 0.85) {
+          repeatedPairs.push(`${images[first].path} and ${images[second].path} (${Math.round(similarity * 100)}%)`);
+        }
+      }
+    }
+
+    expect(repeatedPairs, repeatedPairs.join('\n')).toEqual([]);
   });
 
   it('does not include alcohol, wine, or non-halal meat products in public knowledge content', () => {

@@ -1,0 +1,532 @@
+[
+  {
+    "path": "/flowers/",
+    "filename": "flowers.jpg",
+    "alt": "Fresh mixed flowers arranged in a sunlit Singapore florist studio"
+  },
+  {
+    "path": "/flowers/fresh/",
+    "filename": "flowers-fresh.jpg",
+    "alt": "Fresh seasonal flowers in buckets at a Singapore florist preparation bench"
+  },
+  {
+    "path": "/flowers/fresh/roses/",
+    "filename": "flowers-fresh-roses.jpg",
+    "alt": "Mixed rose varieties arranged in a bright Singapore apartment"
+  },
+  {
+    "path": "/flowers/fresh/roses/red-roses/",
+    "filename": "flowers-fresh-roses-red-roses.jpg",
+    "alt": "Deep red rose bouquet displayed in a modern Singapore home"
+  },
+  {
+    "path": "/flowers/fresh/roses/white-roses-meaning/",
+    "filename": "flowers-fresh-roses-white-roses-meaning.jpg",
+    "alt": "White roses in soft daylight beside a Singapore window"
+  },
+  {
+    "path": "/flowers/fresh/roses/yellow-roses-meaning/",
+    "filename": "flowers-fresh-roses-yellow-roses-meaning.jpg",
+    "alt": "Yellow rose posy in a colourful Singapore shophouse interior"
+  },
+  {
+    "path": "/flowers/fresh/roses/99-roses-meaning/",
+    "filename": "flowers-fresh-roses-99-roses-meaning.jpg",
+    "alt": "Large statement bouquet of red roses in a Singapore condominium lobby"
+  },
+  {
+    "path": "/flowers/fresh/roses/rose-bouquet-guide/",
+    "filename": "flowers-fresh-roses-rose-bouquet-guide.jpg",
+    "alt": "Three rose bouquet styles compared at a Singapore florist shop"
+  },
+  {
+    "path": "/flowers/fresh/sunflowers/",
+    "filename": "flowers-fresh-sunflowers.jpg",
+    "alt": "Fresh sunflowers on a sunny Singapore HDB balcony"
+  },
+  {
+    "path": "/flowers/fresh/sunflowers/meaning/",
+    "filename": "flowers-fresh-sunflowers-meaning.jpg",
+    "alt": "Radiant sunflower arrangement in a breezy Singapore home"
+  },
+  {
+    "path": "/flowers/fresh/sunflowers/bouquet-guide/",
+    "filename": "flowers-fresh-sunflowers-bouquet-guide.jpg",
+    "alt": "Wrapped sunflower bouquet with blue flowers at a Singapore florist"
+  },
+  {
+    "path": "/flowers/fresh/sunflowers/care/",
+    "filename": "flowers-fresh-sunflowers-care.jpg",
+    "alt": "Sunflowers in clean vase water for flower care in Singapore"
+  },
+  {
+    "path": "/flowers/fresh/tulips/",
+    "filename": "flowers-fresh-tulips.jpg",
+    "alt": "Fresh mixed tulips arranged in a cool Singapore home"
+  },
+  {
+    "path": "/flowers/fresh/tulips/meaning/",
+    "filename": "flowers-fresh-tulips-meaning.jpg",
+    "alt": "Red white and purple tulips displayed by colour in Singapore"
+  },
+  {
+    "path": "/flowers/fresh/tulips/care/",
+    "filename": "flowers-fresh-tulips-care.jpg",
+    "alt": "Tulips supported in a tall vase for care in Singapore weather"
+  },
+  {
+    "path": "/flowers/fresh/lilies/",
+    "filename": "flowers-fresh-lilies.jpg",
+    "alt": "Fresh oriental lilies and buds in a Singapore living room"
+  },
+  {
+    "path": "/flowers/fresh/lilies/meaning/",
+    "filename": "flowers-fresh-lilies-meaning.jpg",
+    "alt": "White and pink lilies in a symbolic Singapore floral display"
+  },
+  {
+    "path": "/flowers/fresh/hydrangeas/",
+    "filename": "flowers-fresh-hydrangeas.jpg",
+    "alt": "Blue and lavender hydrangeas on a rain-cooled Singapore veranda"
+  },
+  {
+    "path": "/flowers/fresh/peonies/",
+    "filename": "flowers-fresh-peonies.jpg",
+    "alt": "Coral and pink peonies displayed in a Singapore condominium"
+  },
+  {
+    "path": "/flowers/fresh/orchids/",
+    "filename": "flowers-fresh-orchids.jpg",
+    "alt": "Purple and white cut orchids in a Singapore shophouse courtyard"
+  },
+  {
+    "path": "/flowers/fresh/carnations/",
+    "filename": "flowers-fresh-carnations.jpg",
+    "alt": "Raspberry peach and cream carnations in a Singapore HDB home"
+  },
+  {
+    "path": "/flowers/fresh/gerberas/",
+    "filename": "flowers-fresh-gerberas.jpg",
+    "alt": "Colourful gerbera daisies arranged in a Singapore studio"
+  },
+  {
+    "path": "/flowers/fresh/babys-breath/",
+    "filename": "flowers-fresh-babys-breath.jpg",
+    "alt": "Airy white baby's breath bouquet in a Singapore apartment"
+  },
+  {
+    "path": "/flowers/preserved/",
+    "filename": "flowers-preserved.jpg",
+    "alt": "Preserved roses and hydrangeas displayed in a Singapore home"
+  },
+  {
+    "path": "/flowers/dried/",
+    "filename": "flowers-dried.jpg",
+    "alt": "Dried flowers and seed pods in a Singapore apartment"
+  },
+  {
+    "path": "/flowers/artificial/",
+    "filename": "flowers-artificial.jpg",
+    "alt": "Realistic artificial magnolia stems in a Singapore styling studio"
+  },
+  {
+    "path": "/flowers/meanings/",
+    "filename": "flowers-meanings.jpg",
+    "alt": "Different symbolic flowers arranged on a table in Singapore"
+  },
+  {
+    "path": "/flowers/care/",
+    "filename": "flowers-care.jpg",
+    "alt": "Fresh flower care setup with clean vase water in Singapore"
+  },
+  {
+    "path": "/occasions/",
+    "filename": "occasions.jpg",
+    "alt": "Flower arrangements for different occasions in a Singapore florist showroom"
+  },
+  {
+    "path": "/occasions/birthday/",
+    "filename": "occasions-birthday.jpg",
+    "alt": "Colourful birthday flower bouquet with a gift in a Singapore home"
+  },
+  {
+    "path": "/occasions/anniversary/",
+    "filename": "occasions-anniversary.jpg",
+    "alt": "Burgundy roses and blush orchids for an anniversary in Singapore"
+  },
+  {
+    "path": "/occasions/funeral/",
+    "filename": "occasions-funeral.jpg",
+    "alt": "White funeral flower stand at a quiet Singapore venue"
+  },
+  {
+    "path": "/occasions/graduation/",
+    "filename": "occasions-graduation.jpg",
+    "alt": "Graduation bouquet with a plain mortarboard at a Singapore campus"
+  },
+  {
+    "path": "/occasions/grand-opening/",
+    "filename": "occasions-grand-opening.jpg",
+    "alt": "Grand opening flower stand outside a Singapore shophouse"
+  },
+  {
+    "path": "/occasions/proposal/",
+    "filename": "occasions-proposal.jpg",
+    "alt": "Proposal flowers with a ring box on a private Singapore garden terrace"
+  },
+  {
+    "path": "/occasions/get-well-soon/",
+    "filename": "occasions-get-well-soon.jpg",
+    "alt": "Cheerful low-scent get well flowers in a Singapore recovery room"
+  },
+  {
+    "path": "/occasions/valentines-day/",
+    "filename": "occasions-valentines-day.jpg",
+    "alt": "Crimson roses and pink tulips for Valentine's Day in Singapore"
+  },
+  {
+    "path": "/occasions/mothers-day/",
+    "filename": "occasions-mothers-day.jpg",
+    "alt": "Pink carnations roses and orchids for Mother's Day in Singapore"
+  },
+  {
+    "path": "/occasions/chinese-new-year/",
+    "filename": "occasions-chinese-new-year.jpg",
+    "alt": "Chinese New Year flowers in a festive Singapore shophouse foyer"
+  },
+  {
+    "path": "/occasions/christmas/",
+    "filename": "occasions-christmas.jpg",
+    "alt": "Tropical Christmas flower centrepiece on a Singapore dining table"
+  },
+  {
+    "path": "/occasions/condolence/",
+    "filename": "occasions-condolence.jpg",
+    "alt": "White condolence flowers in a serene Singapore home entryway"
+  },
+  {
+    "path": "/occasions/condolence/condolence-flowers/",
+    "filename": "occasions-condolence-condolence-flowers.jpg",
+    "alt": "Three white condolence flower choices at a Singapore florist"
+  },
+  {
+    "path": "/occasions/condolence/sympathy-flowers/",
+    "filename": "occasions-condolence-sympathy-flowers.jpg",
+    "alt": "Small white sympathy bouquet in a calm Singapore apartment"
+  },
+  {
+    "path": "/occasions/condolence/condolence-messages/",
+    "filename": "occasions-condolence-condolence-messages.jpg",
+    "alt": "Condolence flowers beside a blank message card in Singapore"
+  },
+  {
+    "path": "/occasions/condolence/wreath-vs-flower-stand/",
+    "filename": "occasions-condolence-wreath-vs-flower-stand.jpg",
+    "alt": "White condolence wreath and flower stand compared in Singapore"
+  },
+  {
+    "path": "/occasions/wedding/",
+    "filename": "occasions-wedding.jpg",
+    "alt": "Coordinated wedding flowers in an elegant Singapore venue"
+  },
+  {
+    "path": "/occasions/wedding/bridal-flowers/",
+    "filename": "occasions-wedding-bridal-flowers.jpg",
+    "alt": "White orchid and rose bridal bouquet in a Singapore heritage hotel"
+  },
+  {
+    "path": "/occasions/wedding/venue-flowers/",
+    "filename": "occasions-wedding-venue-flowers.jpg",
+    "alt": "Tropical wedding venue flowers in a Singapore glasshouse"
+  },
+  {
+    "path": "/flowers-for/",
+    "filename": "flowers-for.jpg",
+    "alt": "Different bouquets arranged by recipient at a Singapore florist"
+  },
+  {
+    "path": "/flowers-for/girlfriend/",
+    "filename": "flowers-for-girlfriend.jpg",
+    "alt": "Pink coral and lavender bouquet for a girlfriend in Singapore"
+  },
+  {
+    "path": "/flowers-for/boyfriend/",
+    "filename": "flowers-for-boyfriend.jpg",
+    "alt": "Blue and white structured bouquet for a boyfriend in Singapore"
+  },
+  {
+    "path": "/flowers-for/wife/",
+    "filename": "flowers-for-wife.jpg",
+    "alt": "Blush rose and burgundy flower bouquet for a wife in Singapore"
+  },
+  {
+    "path": "/flowers-for/husband/",
+    "filename": "flowers-for-husband.jpg",
+    "alt": "Architectural tropical flowers for a husband in Singapore"
+  },
+  {
+    "path": "/flowers-for/mother/",
+    "filename": "flowers-for-mother.jpg",
+    "alt": "Carnation orchid and rose basket for a mother in Singapore"
+  },
+  {
+    "path": "/flowers-for/father/",
+    "filename": "flowers-for-father.jpg",
+    "alt": "Sunflower and green flower arrangement for a father in Singapore"
+  },
+  {
+    "path": "/flowers-for/teacher/",
+    "filename": "flowers-for-teacher.jpg",
+    "alt": "Small appreciation bouquet for a teacher in Singapore"
+  },
+  {
+    "path": "/flowers-for/colleague/",
+    "filename": "flowers-for-colleague.jpg",
+    "alt": "Compact orchid arrangement for a colleague in a Singapore office"
+  },
+  {
+    "path": "/flowers-for/boss/",
+    "filename": "flowers-for-boss.jpg",
+    "alt": "White calla lily and orchid arrangement for a boss in Singapore"
+  },
+  {
+    "path": "/flowers-for/client/",
+    "filename": "flowers-for-client.jpg",
+    "alt": "Formal orchid and rose arrangement for a client in Singapore"
+  },
+  {
+    "path": "/flowers-for/hospital-patient/",
+    "filename": "flowers-for-hospital-patient.jpg",
+    "alt": "Compact low-scent flowers for a hospital patient in Singapore"
+  },
+  {
+    "path": "/flowers-for/bereaved-family/",
+    "filename": "flowers-for-bereaved-family.jpg",
+    "alt": "White sympathy flower basket for a bereaved family in Singapore"
+  },
+  {
+    "path": "/flowers-for/new-parents/",
+    "filename": "flowers-for-new-parents.jpg",
+    "alt": "Soft flowers and baby blanket for new parents in Singapore"
+  },
+  {
+    "path": "/bouquets-and-arrangements/",
+    "filename": "bouquets-and-arrangements.jpg",
+    "alt": "Four bouquet and flower arrangement formats at a Singapore florist"
+  },
+  {
+    "path": "/bouquets-and-arrangements/hand-bouquets/",
+    "filename": "bouquets-and-arrangements-hand-bouquets.jpg",
+    "alt": "Garden-style hand bouquet on a Singapore florist packing bench"
+  },
+  {
+    "path": "/bouquets-and-arrangements/bridal-bouquets/",
+    "filename": "bouquets-and-arrangements-bridal-bouquets.jpg",
+    "alt": "Ivory round bridal bouquet in a Singapore bridal suite"
+  },
+  {
+    "path": "/bouquets-and-arrangements/flower-stands/",
+    "filename": "bouquets-and-arrangements-flower-stands.jpg",
+    "alt": "Tall tropical flower stand on a covered Singapore walkway"
+  },
+  {
+    "path": "/bouquets-and-arrangements/table-arrangements/",
+    "filename": "bouquets-and-arrangements-table-arrangements.jpg",
+    "alt": "Low table flower arrangement in a Singapore dining room"
+  },
+  {
+    "path": "/bouquets-and-arrangements/vase-arrangements/",
+    "filename": "bouquets-and-arrangements-vase-arrangements.jpg",
+    "alt": "Loose fresh flower vase arrangement in a Singapore apartment"
+  },
+  {
+    "path": "/bouquets-and-arrangements/flower-baskets/",
+    "filename": "bouquets-and-arrangements-flower-baskets.jpg",
+    "alt": "Woven flower basket on a shaded Singapore veranda"
+  },
+  {
+    "path": "/bouquets-and-arrangements/wreaths/",
+    "filename": "bouquets-and-arrangements-wreaths.jpg",
+    "alt": "Circular white flower wreath displayed at a Singapore florist"
+  },
+  {
+    "path": "/bouquets-and-arrangements/preserved-flower-domes/",
+    "filename": "bouquets-and-arrangements-preserved-flower-domes.jpg",
+    "alt": "Preserved rose and hydrangea glass dome in a Singapore home"
+  },
+  {
+    "path": "/gift-ideas/",
+    "filename": "gift-ideas.jpg",
+    "alt": "Flowers with varied gift ideas arranged in a Singapore studio"
+  },
+  {
+    "path": "/gift-ideas/wallets/",
+    "filename": "gift-ideas-wallets.jpg",
+    "alt": "Leather wallet with a white orchid posy as a Singapore gift"
+  },
+  {
+    "path": "/gift-ideas/jewellery/",
+    "filename": "gift-ideas-jewellery.jpg",
+    "alt": "Gold pendant with pink spray roses as a Singapore gift"
+  },
+  {
+    "path": "/gift-ideas/gadgets/",
+    "filename": "gift-ideas-gadgets.jpg",
+    "alt": "Useful gadgets with a mini bouquet on a Singapore home desk"
+  },
+  {
+    "path": "/gift-ideas/with-flowers/",
+    "filename": "gift-ideas-with-flowers.jpg",
+    "alt": "Fresh flowers paired with thoughtful gifts in a Singapore home"
+  },
+  {
+    "path": "/gift-ideas/wife/",
+    "filename": "gift-ideas-wife.jpg",
+    "alt": "Blush roses scarf and keepsake gift for a wife in Singapore"
+  },
+  {
+    "path": "/gift-ideas/mother/",
+    "filename": "gift-ideas-mother.jpg",
+    "alt": "Orchids tea and a shawl gift for a mother in Singapore"
+  },
+  {
+    "path": "/hampers/",
+    "filename": "hampers.jpg",
+    "alt": "Fruit tea wellness and flower hampers at a Singapore gift studio"
+  },
+  {
+    "path": "/hampers/newborn/",
+    "filename": "hampers-newborn.jpg",
+    "alt": "Newborn hamper with baby essentials and flowers in Singapore"
+  },
+  {
+    "path": "/hampers/get-well-soon/",
+    "filename": "hampers-get-well-soon.jpg",
+    "alt": "Fruit tea and flower get well hamper in a Singapore home"
+  },
+  {
+    "path": "/hampers/fruit/",
+    "filename": "hampers-fruit.jpg",
+    "alt": "Fresh tropical fruit hamper with orchids in Singapore"
+  },
+  {
+    "path": "/hampers/chocolate/",
+    "filename": "hampers-chocolate.jpg",
+    "alt": "Chocolate and rose gift hamper prepared in Singapore"
+  },
+  {
+    "path": "/hampers/wellness/",
+    "filename": "hampers-wellness.jpg",
+    "alt": "Herbal tea skincare and orchid wellness hamper in Singapore"
+  },
+  {
+    "path": "/hampers/corporate/",
+    "filename": "hampers-corporate.jpg",
+    "alt": "Tea coffee dates and orchid corporate hamper in Singapore"
+  },
+  {
+    "path": "/plants/",
+    "filename": "plants.jpg",
+    "alt": "Varied indoor plants in a bright Singapore apartment"
+  },
+  {
+    "path": "/plants/indoor/",
+    "filename": "plants-indoor.jpg",
+    "alt": "Healthy indoor plants beside a shaded Singapore HDB window"
+  },
+  {
+    "path": "/plants/indoor/low-light/",
+    "filename": "plants-indoor-low-light.jpg",
+    "alt": "Snake ZZ and pothos plants in a low-light Singapore home"
+  },
+  {
+    "path": "/plants/office/",
+    "filename": "plants-office.jpg",
+    "alt": "Desk plants across a modern Singapore office"
+  },
+  {
+    "path": "/plants/orchids/",
+    "filename": "plants-orchids.jpg",
+    "alt": "Potted white orchid with aerial roots on a Singapore balcony"
+  },
+  {
+    "path": "/plants/succulents/",
+    "filename": "plants-succulents.jpg",
+    "alt": "Echeveria haworthia and jade succulents in a Singapore home"
+  },
+  {
+    "path": "/plants/delivery/",
+    "filename": "plants-delivery.jpg",
+    "alt": "Securely packed potted plant for delivery in Singapore"
+  },
+  {
+    "path": "/plants/care/",
+    "filename": "plants-care.jpg",
+    "alt": "Indoor plant care tools on a Singapore service balcony"
+  },
+  {
+    "path": "/guides/",
+    "filename": "guides.jpg",
+    "alt": "Flower guide materials on a Singapore florist consultation table"
+  },
+  {
+    "path": "/guides/choosing-flowers/",
+    "filename": "guides-choosing-flowers.jpg",
+    "alt": "Roses orchids and gerberas compared at a Singapore florist"
+  },
+  {
+    "path": "/guides/flower-delivery/",
+    "filename": "guides-flower-delivery.jpg",
+    "alt": "Fresh bouquet packed securely for flower delivery in Singapore"
+  },
+  {
+    "path": "/guides/same-day-flower-delivery/",
+    "filename": "guides-same-day-flower-delivery.jpg",
+    "alt": "Ready bouquet clock and parcel for same-day flower delivery in Singapore"
+  },
+  {
+    "path": "/guides/flower-budgets/",
+    "filename": "guides-flower-budgets.jpg",
+    "alt": "Small medium and generous flower bouquets compared in Singapore"
+  },
+  {
+    "path": "/guides/message-writing/",
+    "filename": "guides-message-writing.jpg",
+    "alt": "Flower posy with blank message cards on a Singapore writing desk"
+  },
+  {
+    "path": "/guides/flower-etiquette/",
+    "filename": "guides-flower-etiquette.jpg",
+    "alt": "Formal casual and respectful bouquets compared for Singapore flower etiquette"
+  },
+  {
+    "path": "/flower-culture/",
+    "filename": "flower-culture.jpg",
+    "alt": "Singapore flower culture with orchids and tropical blooms in a heritage courtyard"
+  },
+  {
+    "path": "/flower-culture/vanda-miss-joaquim/",
+    "filename": "flower-culture-vanda-miss-joaquim.jpg",
+    "alt": "Vanda Miss Joaquim orchid blooms in a Singapore tropical garden"
+  },
+  {
+    "path": "/flower-culture/flower-dome/",
+    "filename": "flower-culture-flower-dome.jpg",
+    "alt": "Colourful flower beds inside Singapore's Flower Dome conservatory"
+  },
+  {
+    "path": "/flower-culture/gardens-by-the-bay/",
+    "filename": "flower-culture-gardens-by-the-bay.jpg",
+    "alt": "Tropical flowers and Supertrees at Gardens by the Bay Singapore"
+  },
+  {
+    "path": "/flower-culture/local-flower-markets/",
+    "filename": "flower-culture-local-flower-markets.jpg",
+    "alt": "Buckets of fresh flowers at a covered local flower market in Singapore"
+  },
+  {
+    "path": "/flower-culture/tropical-flower-seasonality/",
+    "filename": "flower-culture-tropical-flower-seasonality.jpg",
+    "alt": "Seasonal tropical flowers growing after rain in a Singapore garden"
+  }
+]
