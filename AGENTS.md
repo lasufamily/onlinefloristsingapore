@@ -14,6 +14,7 @@ The site is mostly static Astro output, with Cloudflare Pages Functions handling
 - Keep implementation aligned with the current Astro, TypeScript, Cloudflare Pages, Vitest, and Playwright setup.
 - Prefer structured data files in `src/data/` for editable site content instead of hard-coding content into components.
 - Do not add unverified business claims, fixed prices, same-day availability, business hours, islandwide delivery promises, or live-inventory language.
+- Do not add wine, alcohol, or other alcoholic products, pages, copy, URL paths, image filenames, alt text, or imagery. Do not add non-halal food products such as pork, ham, bacon, or lard in pages, copy, URL paths, image filenames, alt text, or imagery.
 - Do not add affiliate links until the partner URL, disclosure copy, and `sponsored nofollow` treatment are approved.
 - Keep raw IP addresses out of storage; enquiry rate limiting should use the existing keyed hash approach.
 

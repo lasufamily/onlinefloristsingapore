@@ -2112,7 +2112,7 @@
     "heading": "Gift Ideas in Singapore",
     "intro": "Gifts do not always need to be flowers. Use this guide to compare non-floral gifts and small add-ons that can make a flower gesture feel more personal.",
     "image": "/images/generated/pages/gift-ideas.jpg",
-    "imageAlt": "Gift Ideas in Singapore with flowers paired with non-alcohol gift ideas",
+    "imageAlt": "Gift Ideas in Singapore with flowers paired with thoughtful gift ideas",
     "sections": [
       {
         "heading": "Start with the person",
@@ -2142,7 +2142,7 @@
     "heading": "Wallet gifts",
     "intro": "Wallet gifts can feel personal without being too intimate when the style, material, and presentation suit the recipient's daily routine.",
     "image": "/images/generated/pages/gift-ideas-wallets.jpg",
-    "imageAlt": "Wallet gifts in Singapore with flowers paired with non-alcohol gift ideas",
+    "imageAlt": "Wallet gifts in Singapore with flowers paired with thoughtful gift ideas",
     "sections": [
       {
         "heading": "Match daily habits",
@@ -2171,7 +2171,7 @@
     "heading": "Jewellery gifts",
     "intro": "Jewellery gifts can be meaningful, but they need care. Think through style, symbolism, sizing, and how close the relationship is before choosing.",
     "image": "/images/generated/pages/gift-ideas-jewellery.jpg",
-    "imageAlt": "Jewellery gifts in Singapore with flowers paired with non-alcohol gift ideas",
+    "imageAlt": "Jewellery gifts in Singapore with flowers paired with thoughtful gift ideas",
     "sections": [
       {
         "heading": "Read the relationship",
@@ -2200,7 +2200,7 @@
     "heading": "Gadget gifts",
     "intro": "Gadget gifts work best when they solve a real everyday problem. Check compatibility, charging needs, and whether the recipient will actually use it.",
     "image": "/images/generated/pages/gift-ideas-gadgets.jpg",
-    "imageAlt": "Gadget gifts in Singapore with flowers paired with non-alcohol gift ideas",
+    "imageAlt": "Gadget gifts in Singapore with flowers paired with thoughtful gift ideas",
     "sections": [
       {
         "heading": "Check compatibility first",
@@ -2229,7 +2229,7 @@
     "heading": "Gifts with flowers",
     "intro": "Some gifts feel better when they arrive with flowers. The key is choosing a pairing where the bouquet supports the gift instead of distracting from it.",
     "image": "/images/generated/pages/gift-ideas-with-flowers.jpg",
-    "imageAlt": "Gifts with flowers in Singapore with flowers paired with non-alcohol gift ideas",
+    "imageAlt": "Gifts with flowers in Singapore with flowers paired with thoughtful gift ideas",
     "sections": [
       {
         "heading": "Pick one main message",
@@ -2259,7 +2259,7 @@
     "heading": "Gift Ideas for Wife",
     "intro": "Gift ideas for your wife should feel personal, considered, and matched to the moment rather than chosen from a generic list.",
     "image": "/images/generated/pages/gift-ideas-wife.jpg",
-    "imageAlt": "Gift Ideas for Wife in Singapore with flowers paired with non-alcohol gift ideas",
+    "imageAlt": "Gift Ideas for Wife in Singapore with flowers paired with thoughtful gift ideas",
     "sections": [
       {
         "heading": "Start from what she values",
@@ -2290,7 +2290,7 @@
     "heading": "Gift Ideas for Mother",
     "intro": "Gift ideas for your mother should feel warm, useful, and easy for her to enjoy without extra effort.",
     "image": "/images/generated/pages/gift-ideas-mother.jpg",
-    "imageAlt": "Gift Ideas for Mother in Singapore with flowers paired with non-alcohol gift ideas",
+    "imageAlt": "Gift Ideas for Mother in Singapore with flowers paired with thoughtful gift ideas",
     "sections": [
       {
         "heading": "Choose comfort and usefulness",
@@ -2333,7 +2333,7 @@
       },
       {
         "heading": "Confirm timing",
-        "body": "For food, fruit, wine, and wellness items, delivery timing matters. Make sure someone can receive the hamper and that perishable items will not sit outside too long."
+        "body": "For food, fruit, and wellness items, delivery timing matters. Make sure someone can receive the hamper and that perishable items will not sit outside too long."
       }
     ],
     "relatedPages": [
@@ -2446,40 +2446,11 @@
       },
       {
         "heading": "Choose flavours carefully",
-        "body": "Dark, milk, white, nut-filled, alcohol-filled, and assorted chocolates suit different people. Check allergies and preferences before choosing a large mixed hamper."
+        "body": "Dark, milk, white, nut-filled, and assorted chocolates suit different people. Check allergies, halal suitability, and preferences before choosing a large mixed hamper."
       },
       {
         "heading": "Match the occasion",
         "body": "Chocolate hampers can suit thanks, birthdays, apologies, and congratulations. For formal settings, keep the packaging polished and the message direct."
-      }
-    ],
-    "relatedPages": [
-      "/hampers/"
-    ]
-  },
-  {
-    "id": "hampers--wine",
-    "path": "/hampers/wine/",
-    "parent": "/hampers/",
-    "kind": "guide",
-    "title": "Wine hampers | Hyper Florist",
-    "description": "A practical Singapore guide to wine hampers, with tips on recipient fit, alcohol sensitivity, timing, presentation, and delivery.",
-    "heading": "Wine hampers",
-    "intro": "Wine hampers can feel polished, but they are not suitable for every recipient or setting. Check preferences before sending.",
-    "image": "/images/generated/pages/hampers-non-alcohol-gift-hamper.jpg",
-    "imageAlt": "Singapore hamper guide with fruit tea wellness gifts and flowers",
-    "sections": [
-      {
-        "heading": "Confirm alcohol is appropriate",
-        "body": "Wine is not a neutral gift. Consider religious, personal, medical, workplace, and family preferences before choosing alcohol for a hamper."
-      },
-      {
-        "heading": "Pair it thoughtfully",
-        "body": "Snacks, chocolate, fruit, or simple savoury items can make a wine hamper feel complete. Avoid pairings that require refrigeration unless timing is clear."
-      },
-      {
-        "heading": "Keep formal gifts polished",
-        "body": "For corporate or client contexts, use restrained packaging and a clear card. The hamper should feel respectful, not overly personal."
       }
     ],
     "relatedPages": [

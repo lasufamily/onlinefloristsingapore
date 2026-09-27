@@ -14,11 +14,14 @@ type KnowledgePage = {
   id: string;
   path: string;
   parent: string | null;
+  kind: string;
   title: string;
   description: string;
   heading: string;
+  intro: string;
   image: string;
   imageAlt: string;
+  sections: { heading: string; body: string }[];
   relatedPages: string[];
 };
 
@@ -81,6 +84,7 @@ describe('knowledge-base content inventory', () => {
     expect([...paths].filter((path) => path.startsWith('/gifts/hampers/'))).toEqual([]);
     expect(paths.has('/gifts/hampers/')).toBe(false);
     expect(paths.has('/gifts/')).toBe(false);
+    expect(paths.has('/hampers/wine/')).toBe(false);
 
     const giftIdeas = pages.find(({ path }) => path === '/gift-ideas/');
     expect(giftIdeas?.title).toBe('Gift Ideas in Singapore | Hyper Florist');
@@ -107,8 +111,31 @@ describe('knowledge-base content inventory', () => {
     for (const page of pages) {
       expect(page.image, page.path).toMatch(/^\/images\/.+\.(jpg|png|webp)$/);
       expect(existsSync(new URL(`../public${page.image}`, import.meta.url)), page.image).toBe(true);
-      if (page.path !== '/hampers/wine/') expect(page.imageAlt, page.path).toContain(page.heading);
+      expect(page.imageAlt, page.path).toContain(page.heading);
       expect(page.imageAlt, page.path).toContain('Singapore');
+    }
+  });
+
+  it('does not include alcohol, wine, or non-halal meat products in public knowledge content', () => {
+    const pages = loadJson<KnowledgePage[]>(knowledgePath);
+    const bannedProductTerms = /\b(wine|alcohol|champagne|prosecco|beer|liquor|whisky|whiskey|vodka|gin|rum|pork|ham|bacon|lard|non-halal|non halal)\b/i;
+
+    for (const page of pages) {
+      const publicText = [
+        page.id,
+        page.path,
+        page.kind,
+        page.title,
+        page.description,
+        page.heading,
+        page.intro,
+        page.image,
+        page.imageAlt,
+        ...page.sections.flatMap((section) => [section.heading, section.body]),
+        ...page.relatedPages,
+      ].join('\n');
+
+      expect(publicText, page.path).not.toMatch(bannedProductTerms);
     }
   });
 

@@ -40,7 +40,6 @@ export const redirects: RedirectRule[] = [
   { from: '/gifts/hampers/get-well-soon/', to: '/hampers/get-well-soon/', status: 301 },
   { from: '/gifts/hampers/fruit/', to: '/hampers/fruit/', status: 301 },
   { from: '/gifts/hampers/chocolate/', to: '/hampers/chocolate/', status: 301 },
-  { from: '/gifts/hampers/wine/', to: '/hampers/wine/', status: 301 },
   { from: '/gifts/hampers/wellness/', to: '/hampers/wellness/', status: 301 },
   { from: '/gifts/hampers/corporate/', to: '/hampers/corporate/', status: 301 },
   { from: '/gifts/flowers-with-gifts/', to: '/gift-ideas/with-flowers/', status: 301 },
