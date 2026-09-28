@@ -176,7 +176,7 @@ h3 { font-size: 19px; line-height: 1.25; margin: 0; }
 .about-sources a:hover { text-decoration: underline; text-underline-offset: 4px; }
 .site-footer { background: var(--ink); color: white; padding: 54px 0 30px; }
 .footer-grid { display: grid; grid-template-columns: 1.2fr .8fr .8fr; gap: 48px; }
-.footer-logo { display: block; width: min(190px, 52vw); height: auto; }
+.footer-logo { display: block; width: auto; height: 144px; object-fit: contain; }
 .footer-grid p, .footer-grid a { color: #c9ccc6; }
 .footer-grid nav a { display: block; margin: 8px 0; text-decoration: none; }
 .footer-grid nav a:hover { color: white; }
@@ -292,6 +292,7 @@ h3 { font-size: 19px; line-height: 1.25; margin: 0; }
   .shell { width: min(calc(100% - 28px), var(--max)); }
   .site-header { --header-height: 132px; }
   .site-header .brand img { height: 112px; }
+  .footer-logo { height: 112px; }
   .hero { min-height: 660px; }
   .hero-content { padding: 72px 0 54px; }
   .hero-content p { font-size: 17px; }

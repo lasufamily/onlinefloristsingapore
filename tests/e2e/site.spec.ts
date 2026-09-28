@@ -52,7 +52,9 @@ test('homepage presents a knowledge-first flower guide', async ({ page }, testIn
     'GiftingOccasionsFlowers ForGift IdeasHampers',
   ]);
   const logoBox = await headerLogo.boundingBox();
+  const footerLogoBox = await footerLogo.boundingBox();
   expect(logoBox?.height).toBeGreaterThanOrEqual(testInfo.project.name === 'mobile' ? 110 : 140);
+  expect(footerLogoBox?.height).toBe(logoBox?.height);
   await expect(page.locator('.eyebrow, .article-marker, .topic-card .copy > span, .link-card > span')).toHaveCount(0);
   await expect(page.getByRole('heading', { level: 1 })).toHaveText('Flowers for real Singapore occasions');
   await expect(page.locator('.topic-card')).toHaveCount(9);
